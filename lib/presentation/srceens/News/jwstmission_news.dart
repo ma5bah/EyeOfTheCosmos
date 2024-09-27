@@ -1,9 +1,13 @@
+import 'package:eyesofcosmos/data/model/news_item.dart';
+import 'package:eyesofcosmos/data/utility/network_caller.dart';
 import 'package:eyesofcosmos/presentation/srceens/News/news_details_screen.dart';
 import 'package:eyesofcosmos/presentation/utils/image_assets.dart';
 import 'package:eyesofcosmos/presentation/widgets/NewsCard.dart';
 import 'package:eyesofcosmos/presentation/widgets/drawer_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+// Import your NewsItem model and API helper function
 
 class JwstmissionNews extends StatefulWidget {
   const JwstmissionNews({super.key});
@@ -13,14 +17,41 @@ class JwstmissionNews extends StatefulWidget {
 }
 
 class _JwstmissionNewsState extends State<JwstmissionNews> {
+  // State to hold the news items
+  List<NewsItem> newsItems = [];
+  bool isLoading = true;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadNews();
+  }
+
+  // Method to fetch the news items from the API
+  Future<void> _loadNews() async {
+    try {
+      List<NewsItem> fetchedNews =
+          await fetchSingleNewsPage(1); // Call your API function
+      setState(() {
+        newsItems = fetchedNews;
+        isLoading = false;
+      });
+    } catch (e) {
+      print('Error fetching news: $e');
+      setState(() {
+        isLoading = false;
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // backgroundColor: Colors.black12,
         elevation: 0,
         iconTheme: const IconThemeData(
-            color: Colors.white), // Set AppBar icons to white
+          color: Colors.white, // Set AppBar icons to white
+        ),
       ),
       drawer: DrawerWidget(),
       body: Stack(
@@ -35,12 +66,8 @@ class _JwstmissionNewsState extends State<JwstmissionNews> {
             ),
           ),
           Column(
-            // mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              // SizedBox(
-              //   height: MediaQuery.of(context).size.height * 0.09,
-              // ),
               const Padding(
                 padding: EdgeInsets.only(left: 20),
                 child: Text(
@@ -53,31 +80,49 @@ class _JwstmissionNewsState extends State<JwstmissionNews> {
                   ),
                 ),
               ),
-              SizedBox(
-                height: 20,
+              const SizedBox(height: 20),
+              Expanded(
+                child: _buildContent(),
               ),
-              Center(
-                child: Container(
-                  height: MediaQuery.of(context).size.height * 0.7,
-                  child: ListView.builder(
-                    scrollDirection: Axis.vertical,
-                    // Enable horizontal scrolling
-                    itemCount: 5,
-                    itemBuilder: (context, index) {
-                      return InkWell(
-                        onTap: ()=>{
-                          Get.to(NewsDetailsScreen())
-                        },
-                        child: Newscard());
-                    },
-                  ),
-                ),
-              ),
-              
             ],
           ),
         ],
       ),
     );
+  }
+
+  Widget _buildContent() {
+    if (isLoading) {
+      return const Center(
+        child: CircularProgressIndicator(),
+      );
+    } else if (newsItems.isEmpty) {
+      return const Center(
+        child: Text(
+          "No news available",
+          style: TextStyle(color: Colors.white),
+        ),
+      );
+    } else {
+      return ListView.builder(
+        itemCount: newsItems.length,
+        itemBuilder: (context, index) {
+          final newsItem = newsItems[index]; // Get the news item
+          return InkWell(
+            onTap: () {
+              Get.to(NewsDetailsScreen(
+                  // newsItem: newsItem, // Pass the news item to details screen
+                  ));
+            },
+            child: NewsCard(
+              title: newsItem.title,
+              excerpt: newsItem.excerpt,
+              thumbnailUrl: newsItem.thumbnailImg?.url ?? '',
+              publishedDate: newsItem.publishedDate,
+            ),
+          );
+        },
+      );
+    }
   }
 }
