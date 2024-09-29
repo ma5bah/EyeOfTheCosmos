@@ -73,6 +73,7 @@ flutter:
     - assets/images/bottomnavbaricons/
     - assets/images/toptrends/
     - assets/images/gamingsection/
+    - assets/json/
 
 
 

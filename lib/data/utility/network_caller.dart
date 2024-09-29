@@ -1,10 +1,11 @@
 // ignore_for_file: constant_identifier_names
 
 import 'dart:convert';
+import 'package:eyesofcosmos/data/model/image_item.dart';
 import 'package:eyesofcosmos/data/model/news_item.dart';
+import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
 
-/// Fetches the total number of news items available from the API.
 Future<int> getTotalNewsNumber() async {
   const String newsApiUrl =
       "https://smd-cms.nasa.gov/wp-json/smd/v1/content-list/?"
@@ -33,7 +34,6 @@ Future<int> getTotalNewsNumber() async {
   return totalItems;
 }
 
-/// Builds the API URL for a specific page number.
 String buildApiUrl(int pageNumber) {
   const String newsApiUrl =
       "https://smd-cms.nasa.gov/wp-json/smd/v1/content-list/?"
@@ -46,8 +46,6 @@ String buildApiUrl(int pageNumber) {
   return "$newsApiUrl&paged=$pageNumber";
 }
 
-/// Fetches news data for a specific page.
-/// Returns a Map containing the response data.
 Future<Map<String, dynamic>> _fetchNewsPage(int pageNumber) async {
   final url = Uri.parse(buildApiUrl(pageNumber));
   final response = await http.get(url);
@@ -66,8 +64,6 @@ Future<Map<String, dynamic>> _fetchNewsPage(int pageNumber) async {
   return json;
 }
 
-/// Fetches a single page of news items.
-/// Returns a list of NewsItem objects.
 Future<List<NewsItem>> fetchSingleNewsPage(int pageNumber) async {
   try {
     // Fetch the data for the given page
@@ -75,30 +71,72 @@ Future<List<NewsItem>> fetchSingleNewsPage(int pageNumber) async {
 
     // Treat 'items' as a List of dynamic objects
     final List<dynamic> items = data['value']['items'];
-    print('Total items: ${items.length}');
-    
-    for (var item in items) {
-      print('Item type: ${item.runtimeType}');
-      print('Item content: $item');
-      print(item['customFields']);
-    }
+    // print('Total items: ${items.length}');
+
+    // for (var item in items) {
+    //   print('Item type: ${item.runtimeType}');
+    //   print('Item content: $item');
+    //   print(item['customFields']);
+    // }
 
     var retItems = items
         .map((item) {
           try {
             return NewsItem.fromJson(item as Map<String, dynamic>);
           } catch (e) {
-            print("Error in parsing item: $item");
             print("Error details: $e");
             return null;
           }
         })
         .where((element) => element != null)
         .toList();
-        
+
     return retItems.cast<NewsItem>();
   } catch (error) {
     print("Error fetching single news page: $error");
     return []; // Return an empty list in case of error
   }
+}
+
+Future<List<ImageData>> fetchAllImages() async {
+  const String jsonFile = "assets/json/image.json";
+
+  try {
+    final data = await rootBundle.loadString(jsonFile);
+    final List<dynamic> items = jsonDecode(data);
+
+    return items.map((item) {
+      try {
+        return ImageData.fromJson(item as Map<String, dynamic>);
+      } catch (e) {
+        print("Error parsing item: $e");
+        return null;
+      }
+    }).where((element) => element != null).cast<ImageData>().toList();
+  } catch (error) {
+    print("Error fetching all images: $error");
+    return [];
+  }
+}
+
+int calculateTotalPages(int totalItems, int itemsPerPage) {
+  return totalItems == 0 ? 0 : (totalItems / itemsPerPage).ceil();
+}
+
+Future<List<ImageData>> fetchPaginatedImages(int pageNumber) async {
+  const int itemsPerPage = 20;
+  final allImages = await fetchAllImages();
+  int totalItems = allImages.length;
+  int totalPages = calculateTotalPages(totalItems, itemsPerPage);
+
+  if (pageNumber < 1 || pageNumber > totalPages) {
+    print("Invalid page number: $pageNumber. Must be between 1 and $totalPages.");
+    return [];
+  }
+
+  final int startIndex = (pageNumber - 1) * itemsPerPage;
+  return allImages.sublist(
+    startIndex,
+    (startIndex + itemsPerPage).clamp(0, totalItems),
+  );
 }
