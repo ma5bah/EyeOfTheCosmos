@@ -25,6 +25,7 @@ class _JwstmissionNewsState extends State<JwstmissionNews> {
   void initState() {
     super.initState();
     _loadNews();
+ fetchAllImages();
   }
 
   // Method to fetch the news items from the API

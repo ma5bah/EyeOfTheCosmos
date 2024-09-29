@@ -8,7 +8,6 @@ class NewsItem {
   final String permalink;
   final String publishedDate;
   final String readTime;
-  final int thumbnailId;
   final ThumbnailImg? thumbnailImg;
 
   NewsItem({
@@ -21,7 +20,6 @@ class NewsItem {
     required this.permalink,
     required this.publishedDate,
     required this.readTime,
-    required this.thumbnailId,
     this.thumbnailImg,
   });
 
@@ -36,7 +34,6 @@ class NewsItem {
       permalink: json['permalink'] as String? ?? '',
       publishedDate: json['publishedDate'] as String? ?? '',
       readTime: json['readTime'] as String? ?? '',
-      thumbnailId: json['thumbnailId'] as int? ?? 0,
       thumbnailImg: json['thumbnailImg'] != null
           ? ThumbnailImg.fromJson(json['thumbnailImg'] as Map<String, dynamic>)
           : null,
@@ -57,7 +54,6 @@ class NewsItem {
       'permalink': permalink,
       'publishedDate': publishedDate,
       'readTime': readTime,
-      'thumbnailId': thumbnailId,
       'thumbnailImg': thumbnailImg,
     };
   }

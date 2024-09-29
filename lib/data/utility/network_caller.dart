@@ -84,6 +84,7 @@ Future<List<NewsItem>> fetchSingleNewsPage(int pageNumber) async {
           try {
             return NewsItem.fromJson(item as Map<String, dynamic>);
           } catch (e) {
+            print(item);
             print("Error details: $e");
             return null;
           }
@@ -105,14 +106,29 @@ Future<List<ImageData>> fetchAllImages() async {
     final data = await rootBundle.loadString(jsonFile);
     final List<dynamic> items = jsonDecode(data);
 
-    return items.map((item) {
+    Map<String, ImageData> mergedData = {};
+
+    for (var item in items) {
       try {
-        return ImageData.fromJson(item as Map<String, dynamic>);
+        String key = item['id'] as String;
+
+        // Create ImageData from the JSON item
+        ImageData imageData = ImageData.fromJson(item as Map<String, dynamic>);
+
+        if (mergedData.containsKey(key)) {
+          // If already exists, merge the download URLs
+          mergedData[key]!.downloadUrls.addAll(imageData.downloadUrls);
+          mergedData[key]!.downloadUrls =
+              mergedData[key]!.downloadUrls.toSet().toList();
+        } else {
+          mergedData[key] = imageData;
+        }
       } catch (e) {
         print("Error parsing item: $e");
-        return null;
       }
-    }).where((element) => element != null).cast<ImageData>().toList();
+    }
+
+    return mergedData.values.toList(); // Return merged data as a list
   } catch (error) {
     print("Error fetching all images: $error");
     return [];
@@ -130,7 +146,8 @@ Future<List<ImageData>> fetchPaginatedImages(int pageNumber) async {
   int totalPages = calculateTotalPages(totalItems, itemsPerPage);
 
   if (pageNumber < 1 || pageNumber > totalPages) {
-    print("Invalid page number: $pageNumber. Must be between 1 and $totalPages.");
+    print(
+        "Invalid page number: $pageNumber. Must be between 1 and $totalPages.");
     return [];
   }
 
