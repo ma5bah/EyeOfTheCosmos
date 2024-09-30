@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:get/get.dart';
 
-
 class Item {
   String title;
   // String imageUrl;
@@ -28,7 +27,6 @@ List<Item> value = [
       description:
           "Black holes vary in size. Most massive galaxies are thought to have a supermassive black hole (hundreds of thousands to billions of times the mass of our Sun) at their centers. Other, much smaller, black holes are collapsed stars.Black holes are so dense that light cannot escape. This means we cannot 'see' them directly, but there are indirect ways to detect and learn about them.Choose to study black holes and you might learn how the nuclei of galaxies are powered or about the life cycles of stars!",
       bgImage: "assets/images/gamingsection/buildyourtelescope/blackhole.png"),
-  
 ];
 
 class BuildYourOwnLevel1Page4 extends StatefulWidget {
@@ -47,11 +45,11 @@ class _BuildYourOwnLevel1Page4State extends State<BuildYourOwnLevel1Page4> {
   void initState() {
     // TODO: implement initState
     super.initState();
-   WidgetsBinding.instance.addPostFrameCallback((_) {
-    appController.updateState('${controller}', 5);
-
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      appController.updateState('${controller}', 5);
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -85,7 +83,7 @@ class _BuildYourOwnLevel1Page4State extends State<BuildYourOwnLevel1Page4> {
             const SizedBox(
               height: 20,
             ),
-        
+
             Center(
               child: Container(
                 height: MediaQuery.of(context).size.height * 0.4,
@@ -137,13 +135,13 @@ class _BuildYourOwnLevel1Page4State extends State<BuildYourOwnLevel1Page4> {
                     }),
               ),
             ),
-        
+
             SizedBox(
               height: 10,
             ),
-        Obx(() => Text('Current State: ${appController.myState}')),
+            Obx(() => Text('Current State: ${appController.myState}')),
 
-          Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
@@ -168,7 +166,9 @@ class _BuildYourOwnLevel1Page4State extends State<BuildYourOwnLevel1Page4> {
               ],
             ),
 
-            SizedBox(height: 10,),
+            SizedBox(
+              height: 10,
+            ),
             Container(
               height: MediaQuery.of(context).size.height * 0.3,
               width: MediaQuery.of(context).size.width * 1,
@@ -180,9 +180,7 @@ class _BuildYourOwnLevel1Page4State extends State<BuildYourOwnLevel1Page4> {
                 child: Text(value[controller].description),
               ),
             ),
-        
-          
-        
+
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.02,
             ),
