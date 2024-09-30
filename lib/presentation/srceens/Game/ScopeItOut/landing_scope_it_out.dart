@@ -1,84 +1,106 @@
-import 'package:eyesofcosmos/presentation/utils/image_assets.dart';
-import 'package:eyesofcosmos/data/model/scope_it_out_model.dart';
+import 'package:eyesofcosmos/presentation/srceens/Game/ScopeItOut/level_zero.dart';
 
-import 'package:eyesofcosmos/presentation/widgets/gaming_feature_card.dart';
-import 'package:eyesofcosmos/presentation/widgets/level_card.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class ScopeItOutLanding extends StatelessWidget {
+
+
+class ScopeItOutLanding extends StatefulWidget {
   const ScopeItOutLanding({super.key});
+
+  @override
+  State<ScopeItOutLanding> createState() => _ScopeItOutLandingState();
+}
+
+class _ScopeItOutLandingState extends State<ScopeItOutLanding> {
+  final List<String> _texts = [
+    'Hey there, I am Astro',
+    'Welcome to the James\nWebb Space Telescope Adventure! ',
+    "Today, you'll' learn \nhow the JWST helps us to explore universe",
+    'Get ready to start our mission?',
+    'Do you know, what is Reflective Telescope?',
+    "If you don't know, \nlet's dive into following lesson.",
+  ];
+
+  int _currentIndex = 0;
+
+  void _updateText() {
+    if (_currentIndex + 1 == _texts.length) {
+      Get.to(LevelZero());
+    }
+    setState(() {
+      _currentIndex = (_currentIndex + 1) % _texts.length;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        // backgroundColor: Colors.black12,
-        elevation: 0,
-        iconTheme: const IconThemeData(
-            color: Colors.white), // Set AppBar icons to white
-      ),
-      
-      body: Stack(
-        fit: StackFit.expand,
-        children: <Widget>[
-          Container(
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(ImageAssets.onBoardingBackground3Jpg),
-                fit: BoxFit.cover,
+      body: GestureDetector(
+        onTap: _updateText,
+        child: Stack(
+          children: <Widget>[
+            Container(
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(
+                      'assets/images/scopeitoutgaminglanding.jpg'), // Ensure you have this image in your assets folder
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
-          ),
-          Column(
-            // mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              // SizedBox(
-              //   height: MediaQuery.of(context).size.height * 0.09,
-              // ),
-              const Padding(
-                padding: EdgeInsets.only(left: 20,bottom:20),
-                child: Text(
-                  'Learn About Telescope',
-                  textAlign: TextAlign.left,
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 30,
-                    fontFamily: 'PoetsenOne',
+            Align(
+              alignment: Alignment.centerLeft,
+              child: Container(
+                width: MediaQuery.of(context).size.width * 0.8,
+                height: MediaQuery.of(context).size.height * 0.5,
+                child: Stack(
+                  alignment: Alignment.center, // Adjust the alignment as needed
+                  children: <Widget>[
+                    Container(
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage(
+                              'assets/images/gamingsection/scopeitout/textbox.png'),
+                          fit: BoxFit.fitWidth,
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 40),
+                      child: Text(
+                        _texts[_currentIndex],
+                        style: const TextStyle(
+                          fontSize: 17,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Align(
+              alignment: Alignment.bottomRight,
+              child: Padding(
+                padding: const EdgeInsets.only(right: 10),
+                child: Container(
+                  width: MediaQuery.of(context).size.width * 0.7,
+                  height: MediaQuery.of(context).size.height * 0.5,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage(
+                          'assets/images/gamingsection/scopeitout/astroavater.png'), // Ensure you have this image in your assets folder
+                      fit: BoxFit.fitWidth,
+                    ),
                   ),
                 ),
               ),
-
-              
-
-              // const Spacer(),
-              GamingFeatureCard(text: 'This game teaches the player the basic concepts behind telescope design. The Webb Telescope may be unusual in appearance - but it has a lot in common with simple tube-shaped telescopes. The game includes an introduction to different types of telescopes and two telescope matching interactions',),
-              const SizedBox(
-                height: 20,
-              ),
-              Center(
-                  child: Container(
-                      height: MediaQuery.of(context).size.height * 0.46,
-                      child: ListView.builder(
-                        scrollDirection: Axis.vertical,
-                        // Enable horizontal scrolling
-                        itemCount: scopeItOurGameLevels.length,
-                        itemBuilder: (context, index) {
-                          return InkWell(
-                            onTap: scopeItOurGameLevels[index].onTap,
-                            child: Padding(
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: 10, vertical: 5),
-                                child: LevelCard(text: scopeItOurGameLevels[index].title ,),
-                          ));
-                        },
-                      ))),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.02,
-              ),
-            ],
-          ),
-        ],
+            ),
+          ],
+        ),
       ),
     );
   }

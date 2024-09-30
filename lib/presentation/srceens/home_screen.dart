@@ -1,12 +1,11 @@
-import 'package:eyesofcosmos/presentation/srceens/flutter_web_view.dart';
-
+import 'package:eyesofcosmos/data/model/audio_manager_model.dart';
 import 'package:eyesofcosmos/presentation/utils/image_assets.dart';
 import 'package:eyesofcosmos/presentation/widgets/Feature_card.dart';
 import 'package:eyesofcosmos/presentation/widgets/drawer_widget.dart';
 import 'package:eyesofcosmos/presentation/widgets/home_screen_trends_card.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:eyesofcosmos/data/model/top_trends_model.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -16,8 +15,45 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  // late AudioPlayer _audioPlayer;
+  // bool _isPlaying = false;
+  @override
+  // @override
+  // void initState() {
+  //   super.initState();
+    
+  //   _audioPlayer = AudioPlayer();
+  //   _playAudio();
+  // }
+
+  // @override
+  // void dispose() {
+  //   _audioPlayer.stop();
+  //   _audioPlayer.dispose();
+  //   super.dispose();
+  // }
+
+  // void _playAudio() async {
+
+  //    await _audioPlayer.setReleaseMode(ReleaseMode.loop); // Set the player to loop mode  
+ 
+  // // if (result == 1) { // Check if the audio started playing successfully  
+  // //   setState(() {  
+  // //     _isPlaying = true;  
+  // //   });  
+  // // } else {  
+  // //   // Handle the error, maybe show a message to the user  
+  // // } 
+  //   await _audioPlayer
+  //       .play(AssetSource('music/homescreen_background.mp3'));
+  //   setState(() {
+  //     _isPlaying = true;
+  //   });
+  // }
+
   @override
   Widget build(BuildContext context) {
+    AudioManager().playMusic('music/homescreen_background.mp3');
     return Scaffold(
       appBar: AppBar(
         // backgroundColor: Colors.black12,
@@ -55,7 +91,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               ),
-
+              
               const Padding(
                 padding: EdgeInsets.only(left: 20),
                 child: Text(
@@ -71,11 +107,15 @@ class _HomeScreenState extends State<HomeScreen> {
               // SizedBox(
               //   height: MediaQuery.of(context).size.height * 0.2,
               // ),
-              SizedBox(height:10),
+              SizedBox(height: 10),
 
               // const Spacer(),
-               FeaturedCard(text: "fgsdfg",),
-               SizedBox(height: 20,),
+              FeaturedCard(
+                text: "fgsdfg",
+              ),
+              SizedBox(
+                height: 20,
+              ),
 
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 20),
@@ -126,7 +166,9 @@ class _HomeScreenState extends State<HomeScreen> {
                             child: Padding(
                                 padding: EdgeInsets.symmetric(
                                     horizontal: 10, vertical: 5),
-                                child: HomeScreenTrendsCard(title:exploreItems[index].title,imageUrl:exploreItems[index].imageUrl)),
+                                child: HomeScreenTrendsCard(
+                                    title: exploreItems[index].title,
+                                    imageUrl: exploreItems[index].imageUrl)),
                           );
                         },
                       ))),

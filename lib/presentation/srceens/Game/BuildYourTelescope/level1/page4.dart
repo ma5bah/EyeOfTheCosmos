@@ -1,28 +1,34 @@
 import 'package:eyesofcosmos/application/controllers/buildyourtelescopevaluecontroller.dart';
-import 'package:eyesofcosmos/presentation/srceens/Game/BuildYourTelescope/level1/page3.dart';
 import 'package:eyesofcosmos/presentation/srceens/Game/BuildYourTelescope/level1/page5.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:get/get.dart';
+
 
 class Item {
   String title;
   // String imageUrl;
   int id;
   String description;
+  String bgImage;
   // VoidCallback onTap;
 
   Item({
-    required this.id,
     required this.title,
-    required this.description
-    // required this.imageUrl,
+    required this.id,
+    required this.description,
+    required this.bgImage,
   });
 }
 
 List<Item> value = [
-  Item(id: 0, title: "Flutter",description: "sdfsa" ),
-  Item(id: 1, title: "Rakib",description: "sdfasdf"),
+  Item(
+      id: 0,
+      title: "Single Primary",
+      description:
+          "Black holes vary in size. Most massive galaxies are thought to have a supermassive black hole (hundreds of thousands to billions of times the mass of our Sun) at their centers. Other, much smaller, black holes are collapsed stars.Black holes are so dense that light cannot escape. This means we cannot 'see' them directly, but there are indirect ways to detect and learn about them.Choose to study black holes and you might learn how the nuclei of galaxies are powered or about the life cycles of stars!",
+      bgImage: "assets/images/gamingsection/buildyourtelescope/blackhole.png"),
+  
 ];
 
 class BuildYourOwnLevel1Page4 extends StatefulWidget {
@@ -41,7 +47,10 @@ class _BuildYourOwnLevel1Page4State extends State<BuildYourOwnLevel1Page4> {
   void initState() {
     // TODO: implement initState
     super.initState();
-     appController.updateState('${controller}', 5);
+   WidgetsBinding.instance.addPostFrameCallback((_) {
+    appController.updateState('${controller}', 5);
+
+    });
   }
   @override
   Widget build(BuildContext context) {
@@ -82,7 +91,7 @@ class _BuildYourOwnLevel1Page4State extends State<BuildYourOwnLevel1Page4> {
                 height: MediaQuery.of(context).size.height * 0.4,
                 width: MediaQuery.of(context).size.width * 0.8,
                 child: MasonryGridView.count(
-                    itemCount: 2,
+                    itemCount: value.length,
                     crossAxisCount: 2,
                     itemBuilder: (BuildContext context, int index) {
                       return InkWell(
@@ -95,12 +104,14 @@ class _BuildYourOwnLevel1Page4State extends State<BuildYourOwnLevel1Page4> {
                           padding: EdgeInsets.only(right: 10, bottom: 10),
                           child: Container(
                             width: 100,
-                            height: controller == value[index].id ? 100 : 90,
+                            height: 100,
                             decoration: BoxDecoration(
-                              border: Border.all(color: Colors.white),
+                              border: Border.all(
+                                  color: controller == value[index].id
+                                      ? Colors.blue
+                                      : Colors.white),
                               image: DecorationImage(
-                                image: AssetImage(
-                                    'assets/images/gamingsection/replectiveTelescope.png'),
+                                image: AssetImage(value[index].bgImage),
                                 fit: BoxFit.cover,
                               ),
                             ),
@@ -136,32 +147,38 @@ class _BuildYourOwnLevel1Page4State extends State<BuildYourOwnLevel1Page4> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  "WebLength",
+                  "Optics",
                   style: TextStyle(
                       color: Colors.white,
                       fontSize: 30,
                       fontWeight: FontWeight.bold),
                 ),
-                InkWell(
-                  onTap: () {
-                    Get.to( BuildTelescopeLevel1FinalScreen());
-                  },
+                OutlinedButton(
                   child: Text(
                     "Next Page",
                     style: TextStyle(
                         color: Colors.white,
-                        fontSize: 30,
+                        fontSize: 20,
                         fontWeight: FontWeight.bold),
                   ),
+                  onPressed: () {
+                    Get.to(BuildTelescopeLevel1FinalScreen());
+                  },
                 ),
               ],
             ),
+
+            SizedBox(height: 10,),
             Container(
-               height: MediaQuery.of(context).size.height * 0.3,
-                width: MediaQuery.of(context).size.width * 1,
-                decoration: BoxDecoration(color: const Color.fromARGB(164, 255, 255, 255)
-                ),
+              height: MediaQuery.of(context).size.height * 0.3,
+              width: MediaQuery.of(context).size.width * 1,
+              decoration: BoxDecoration(
+                  color: const Color.fromARGB(162, 223, 230, 231),
+                  borderRadius: BorderRadius.circular(10.0)),
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
                 child: Text(value[controller].description),
+              ),
             ),
         
           

@@ -33,7 +33,7 @@ class Scopeitoutgamelevel1card extends StatelessWidget {
                 Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
-                    color: Colors.amber,
+                    color: Colors.white.withOpacity(0.5),
                   ),
                   child: Center(
                     child: Padding(

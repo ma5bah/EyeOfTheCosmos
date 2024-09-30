@@ -1,0 +1,20 @@
+[
+    {
+        "planet_name":"mercury",
+        "positionfromthesun":"",
+        "radius":"",
+        "distancefromsun":"",
+        "numberofmoons":"",
+        "gravity":"",
+        
+
+
+
+        "headerimage":"mercury.png",
+        "detailsimages":[
+            "1st.png","2nd.png","3rd.png","4th.png"
+        ],
+        "video_url":"youtubeline"
+
+    }
+]

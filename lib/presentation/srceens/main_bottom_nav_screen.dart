@@ -1,4 +1,5 @@
 import 'package:eyesofcosmos/application/controllers/main_bottom_nav_controller.dart';
+import 'package:eyesofcosmos/presentation/srceens/Game/ScopeItOut/doubtsolvingpage.dart';
 import 'package:eyesofcosmos/presentation/srceens/Game/landing_game.dart';
 import 'package:eyesofcosmos/presentation/srceens/Jwstcapture/landingScreen.dart';
 import 'package:eyesofcosmos/presentation/srceens/home_screen.dart';
@@ -21,7 +22,7 @@ class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
   final List<Widget> _screens = [
     HomeScreen(),
     JWSTCaptureLanding(),
-    HomeScreen(),
+    Doubtsolvingpage(),
     GamingSectionLanding(),
     JwstmissionNews(),
 

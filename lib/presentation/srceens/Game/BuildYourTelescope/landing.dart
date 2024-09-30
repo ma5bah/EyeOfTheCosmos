@@ -1,3 +1,4 @@
+import 'package:eyesofcosmos/data/model/audio_manager_model.dart';
 import 'package:eyesofcosmos/presentation/utils/image_assets.dart';
 import 'package:eyesofcosmos/data/model/build_your_telescope_model.dart';
 
@@ -10,6 +11,7 @@ class BuildYourTelescopeLanding extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
       appBar: AppBar(
         // backgroundColor: Colors.black12,

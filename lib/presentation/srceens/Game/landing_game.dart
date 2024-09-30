@@ -1,3 +1,4 @@
+import 'package:eyesofcosmos/data/model/audio_manager_model.dart';
 import 'package:eyesofcosmos/data/model/gaming_landing_section_model.dart';
 
 import 'package:eyesofcosmos/presentation/widgets/drawer_widget.dart';
@@ -14,6 +15,7 @@ class GamingSectionLanding extends StatefulWidget {
 class _GamingSectionLandingState extends State<GamingSectionLanding> {
   @override
   Widget build(BuildContext context) {
+    AudioManager().playMusic('music/game_screen.mp3');
     return Scaffold(
       appBar: AppBar(
         // backgroundColor: Colors.black12,

@@ -10,18 +10,49 @@ class Item {
   int id;
   String description;
   // VoidCallback onTap;
+  String img;
 
-  Item({
-    required this.id,
-    required this.title,
-    required this.description
-    // required this.imageUrl,
-  });
+  Item(
+      {required this.id,
+      required this.title,
+      required this.description,
+      required this.img
+      // required this.imageUrl,
+      });
 }
 
 List<Item> value = [
-  Item(id: 0, title: "Flutter",description: "sdfsa" ),
-  Item(id: 1, title: "Rakib",description: "sdfasdf"),
+  Item(
+      id: 0,
+      title: "Infrared",
+      description: "sdfsa",
+      img: 'assets/images/gamingsection/buildyourtelescope/level01/infrared.jpg'),
+  Item(
+      id: 1,
+      title: "Optical",
+      description: "sdfasdf",
+      img: 'assets/images/gamingsection/buildyourtelescope/level01/optical.jpg'),
+  Item(
+      id: 2,
+      title: "Ultraviolet",
+      description: "sdfasdf",
+      img:
+          'assets/images/gamingsection/buildyourtelescope/level01/ultraviolet.jpg'),
+  Item(
+      id: 3,
+      title: "Microwave",
+      description: "sdfasdf",
+      img: 'assets/images/gamingsection/buildyourtelescope/level01/galaxy.jpg'),
+  Item(
+      id: 4,
+      title: "X-ray",
+      description: "sdfasdf",
+      img: 'assets/images/gamingsection/buildyourtelescope/level01/xray.jpg'),
+  Item(
+      id: 5,
+      title: "Gamma-Ray",
+      description: "sdfasdf",
+      img: 'assets/images/gamingsection/buildyourtelescope/level01/gamma.jpg'),
 ];
 
 class BuildYourOwnLevel1Page2 extends StatefulWidget {
@@ -39,7 +70,12 @@ class _BuildYourOwnLevel1Page2State extends State<BuildYourOwnLevel1Page2> {
   void initState() {
     // TODO: implement initState
     super.initState();
+
+
+     WidgetsBinding.instance.addPostFrameCallback((_) {
     appController.updateState('${controller}', 2);
+
+    });
   }
   @override
   
@@ -81,7 +117,7 @@ class _BuildYourOwnLevel1Page2State extends State<BuildYourOwnLevel1Page2> {
                 height: MediaQuery.of(context).size.height * 0.4,
                 width: MediaQuery.of(context).size.width * 0.8,
                 child: MasonryGridView.count(
-                    itemCount: 2,
+                    itemCount: value.length,
                     crossAxisCount: 2,
                     itemBuilder: (BuildContext context, int index) {
                       return InkWell(
@@ -94,12 +130,14 @@ class _BuildYourOwnLevel1Page2State extends State<BuildYourOwnLevel1Page2> {
                           padding: EdgeInsets.only(right: 10, bottom: 10),
                           child: Container(
                             width: 100,
-                            height: controller == value[index].id ? 100 : 90,
+                            height: 100 ,
                             decoration: BoxDecoration(
-                              border: Border.all(color: Colors.white),
+                              border: Border.all(
+                                  color: controller == value[index].id
+                                      ? Colors.blue
+                                      : Colors.white),
                               image: DecorationImage(
-                                image: AssetImage(
-                                    'assets/images/gamingsection/replectiveTelescope.png'),
+                                image: AssetImage(value[index].img),
                                 fit: BoxFit.cover,
                               ),
                             ),
@@ -141,28 +179,31 @@ class _BuildYourOwnLevel1Page2State extends State<BuildYourOwnLevel1Page2> {
                       fontSize: 30,
                       fontWeight: FontWeight.bold),
                 ),
-                InkWell(
-                  onTap: () {
-                    Get.to(BuildYourOwnLevel1Page3());
-                  },
+              OutlinedButton(
                   child: Text(
                     "Next Page",
                     style: TextStyle(
                         color: Colors.white,
-                        fontSize: 30,
+                        fontSize: 20,
                         fontWeight: FontWeight.bold),
                   ),
+                  onPressed: () {
+                    Get.to(BuildYourOwnLevel1Page3());
+                  },
                 ),
               ],
             ),
-            Container(
-               height: MediaQuery.of(context).size.height * 0.3,
-                width: MediaQuery.of(context).size.width * 1,
-                decoration: BoxDecoration(color: const Color.fromARGB(164, 255, 255, 255)
-                ),
+             Container(
+              height: MediaQuery.of(context).size.height * 0.3,
+              width: MediaQuery.of(context).size.width * 1,
+              decoration: BoxDecoration(
+                  color: const Color.fromARGB(162, 223, 230, 231),
+                  borderRadius: BorderRadius.circular(10.0)),
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
                 child: Text(value[controller].description),
+              ),
             ),
-        
           
         
             SizedBox(

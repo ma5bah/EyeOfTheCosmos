@@ -8,17 +8,33 @@ class Item {
   // String imageUrl;
   int id;
   String description;
+  String bgImage;
   // VoidCallback onTap;
 
-  Item({required this.id, required this.title, required this.description
-      // required this.imageUrl,
-      });
+  Item({
+    required this.title,
+    required this.id,
+    required this.description,
+    required this.bgImage,
+  });
 }
 
 List<Item> value = [
-  Item(id: 0, title: "Flutter", description: "sdfsa"),
-  Item(id: 1, title: "Rakib", description: "sdfasdf"),
+  Item(
+      id: 0,
+      title: "Optical Spectrometer",
+      description:
+          "Black holes vary in size. Most massive galaxies are thought to have a supermassive black hole (hundreds of thousands to billions of times the mass of our Sun) at their centers. Other, much smaller, black holes are collapsed stars.Black holes are so dense that light cannot escape. This means we cannot 'see' them directly, but there are indirect ways to detect and learn about them.Choose to study black holes and you might learn how the nuclei of galaxies are powered or about the life cycles of stars!",
+      bgImage: "assets/images/gamingsection/buildyourtelescope/blackhole.png"),
+  Item(
+      id: 1,
+      title: "Optical Camera",
+      description:
+          "Because light from objects that are very far away from us must travel a long time to reach us, when we observe these objects, we are really seeing them as they were a long time ago. Studying the most distant objects can help us to learn about the first ever galaxies, and maybe even the first stars.Additionally, the Big Bang (which occurred ~13.8 billion years ago) left residual radiation. Observing this radiation can help us to understand the conditions of the early universe.Choose to study the early universe and investigate our cosmic beginnings!",
+      bgImage:
+          "assets/images/gamingsection/buildyourtelescope/starformation.png"),
 ];
+
 
 class BuildYourOwnLevel1Page3 extends StatefulWidget {
   const BuildYourOwnLevel1Page3({super.key});
@@ -69,7 +85,7 @@ class _BuildYourOwnLevel1Page3State extends State<BuildYourOwnLevel1Page3> {
             ),
 
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 InkWell(
                   onTap: () {
@@ -84,13 +100,13 @@ class _BuildYourOwnLevel1Page3State extends State<BuildYourOwnLevel1Page3> {
                   child: Padding(
                     padding: EdgeInsets.only(right: 10, bottom: 10),
                     child: Container(
-                      width: 100,
-                      height: specto_controller ? 100 : 90,
+                      width: 150,
+                      height: 100 ,
                       decoration: BoxDecoration(
-                        border: Border.all(color: Colors.white),
+                        border: Border.all(color:specto_controller?Colors.blue: Colors.white),
                         image: DecorationImage(
                           image: AssetImage(
-                              'assets/images/gamingsection/replectiveTelescope.png'),
+                              value[1].bgImage),
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -121,19 +137,19 @@ class _BuildYourOwnLevel1Page3State extends State<BuildYourOwnLevel1Page3> {
                       camera_controller = true;
                       description_controller = 1;
                     }
-                    ;
+                    
                     setState(() {});
                   },
                   child: Padding(
                     padding: EdgeInsets.only(right: 10, bottom: 10),
                     child: Container(
-                      width: 100,
-                      height: camera_controller ? 100 : 90,
+                      width: 150,
+                      height:  100,
                       decoration: BoxDecoration(
-                        border: Border.all(color: Colors.white),
+                        border: Border.all(color:camera_controller? Colors.white:Colors.blue),
                         image: DecorationImage(
                           image: AssetImage(
-                              'assets/images/gamingsection/replectiveTelescope.png'),
+                              value[0].bgImage),
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -160,7 +176,7 @@ class _BuildYourOwnLevel1Page3State extends State<BuildYourOwnLevel1Page3> {
             ),
 
             SizedBox(
-              height: 10,
+              height: 50,
             ),
             Obx(() => Text('Current State: ${appController.myState}')),
 
@@ -174,10 +190,17 @@ class _BuildYourOwnLevel1Page3State extends State<BuildYourOwnLevel1Page3> {
                       fontSize: 30,
                       fontWeight: FontWeight.bold),
                 ),
-                InkWell(
-                  onTap: () {
-                    // Get.to(BuildYourOwnLevel1Page2());
 
+
+                 OutlinedButton(
+                  child: Text(
+                    "Next Page",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  onPressed: () {
                     if (camera_controller && specto_controller)
                       appController.updateState2('11');
                     if (specto_controller && camera_controller == false)
@@ -189,22 +212,21 @@ class _BuildYourOwnLevel1Page3State extends State<BuildYourOwnLevel1Page3> {
                       appController.updateState2('10');
                     Get.to(BuildYourOwnLevel1Page4());
                   },
-                  child: Text(
-                    "Next Page",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 30,
-                        fontWeight: FontWeight.bold),
-                  ),
                 ),
-              ],
+              ]
             ),
-            Container(
+            SizedBox(height: 10,),
+              
+             Container(
               height: MediaQuery.of(context).size.height * 0.3,
               width: MediaQuery.of(context).size.width * 1,
               decoration: BoxDecoration(
-                  color: const Color.fromARGB(164, 255, 255, 255)),
-              child: Text(value[description_controller].description),
+                  color: const Color.fromARGB(162, 223, 230, 231),
+                  borderRadius: BorderRadius.circular(10.0)),
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(value[description_controller].description),
+              ),
             ),
 
             SizedBox(
@@ -213,6 +235,7 @@ class _BuildYourOwnLevel1Page3State extends State<BuildYourOwnLevel1Page3> {
           ],
         ),
       ),
-    );
+    )
+    ;
   }
 }

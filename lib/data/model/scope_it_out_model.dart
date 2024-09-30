@@ -1,4 +1,4 @@
-import 'package:eyesofcosmos/presentation/srceens/Game/ScopeItOut/level_one.dart';
+import 'package:eyesofcosmos/presentation/srceens/Game/ScopeItOut/level_two.dart';
 import 'package:eyesofcosmos/presentation/srceens/Game/ScopeItOut/level_zero.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -23,7 +23,7 @@ List<ScopeItOurGameLevel> scopeItOurGameLevels = [
     title: 'Level One',
    
     onTap: () {
-      Get.to(LevelOne());
+      // Get.to(Level());
     },
   ),
   ScopeItOurGameLevel(
