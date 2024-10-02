@@ -1,4 +1,5 @@
 import 'package:eyesofcosmos/presentation/srceens/Game/BuildYourTelescope/landing.dart';
+import 'package:eyesofcosmos/presentation/srceens/Game/BuildYourTelescope/level1/page1.dart';
 import 'package:eyesofcosmos/presentation/srceens/Game/ScopeItOut/landing_scope_it_out.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -28,7 +29,7 @@ List<GameItem> gameItems = [
     title: 'Build Your \nTelescope',
     imageUrl: 'assets/images/gamingsection/buildyourtelescope.png',
     onTap: () {
-      Get.to(BuildYourTelescopeLanding());
+      Get.to(BuildTelescopeLevel1Page1());
     },
   ),
 ];

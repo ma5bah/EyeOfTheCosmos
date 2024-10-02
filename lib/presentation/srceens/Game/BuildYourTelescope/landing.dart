@@ -26,7 +26,7 @@ class BuildYourTelescopeLanding extends StatelessWidget {
           Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage(ImageAssets.onBoardingBackground3Jpg),
+                image: AssetImage("assets/images/gamingsectionlanding.png"),
                 fit: BoxFit.cover,
               ),
             ),

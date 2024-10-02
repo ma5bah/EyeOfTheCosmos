@@ -19,7 +19,7 @@ class NewsCard extends StatelessWidget {
     return Container(  
       margin: const EdgeInsets.all(10),  
       decoration: BoxDecoration(  
-        color: Colors.white,  
+        color: const Color.fromARGB(255, 201, 191, 191),  
         borderRadius: BorderRadius.circular(10),  
         boxShadow: [  
           BoxShadow(  
@@ -72,17 +72,18 @@ class NewsCard extends StatelessWidget {
                       overflow: TextOverflow.ellipsis,  
                     ),  
                     Row(  
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,  
+                      mainAxisAlignment: MainAxisAlignment.end,  
                       children: [  
-                        TextButton(  
-                          onPressed: () {  
-                            // Add your action for "Read more"
-                          },  
-                          child: const Text('Read more...', style: TextStyle(color: Colors.blue)),  
-                        ),  
+                        // TextButton(  
+                        //   onPressed: () {  
+                        //     // Add your action for "Read more"
+                            
+                        //   },  
+                        //   child: const Text('Read more...', style: TextStyle(color: Colors.blue)),  
+                        // ),  
                         Text(  
                           publishedDate,  
-                          style: const TextStyle(color: Colors.grey, fontSize: 12),  
+                          style: const TextStyle(color: Color.fromARGB(255, 40, 39, 39), fontSize: 12),  
                         ),  
                       ],  
                     ),  

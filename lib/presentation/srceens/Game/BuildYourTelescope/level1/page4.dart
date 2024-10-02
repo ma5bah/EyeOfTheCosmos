@@ -139,7 +139,7 @@ class _BuildYourOwnLevel1Page4State extends State<BuildYourOwnLevel1Page4> {
             SizedBox(
               height: 10,
             ),
-            Obx(() => Text('Current State: ${appController.myState}')),
+            // Obx(() => Text('Current State: ${appController.myState}')),
 
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

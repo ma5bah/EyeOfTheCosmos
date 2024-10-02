@@ -54,24 +54,24 @@ class _BuildTelescopeLevel1FinalScreenState
               height: 20,
             ),
 
-            // Center(
-            //   child: Container(
-            //     height: 300,
-            //     width: MediaQuery.of(context).size.width * 0.5,
-            //     decoration: BoxDecoration(
-            //       image: DecorationImage(
-            //         image: AssetImage(
-            //             'assets/images/gamingsection/buildyourtelescope/level01/opticalir.png'),
-            //         fit: BoxFit.cover,
-            //       ),
-            //     ),
-            //   ),
-            // ),
+            Center(
+              child: Container(
+                height: 300,
+                width: MediaQuery.of(context).size.width * 0.5,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(
+                        'assets/images/gamingsection/buildyourtelescope/level01/opticalir.png'),
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+            ),
 
             SizedBox(
               height: 10,
             ),
-            Obx(() => Text('Current State: ${appController.myState}',style: TextStyle(fontSize: 40,color: Colors.white),)),
+            // Obx(() => Text('Current State: ${appController.myState}',style: TextStyle(fontSize: 40,color: Colors.white),)),
 
             Container(
               height: MediaQuery.of(context).size.height * 0.4,
