@@ -15,13 +15,12 @@ class AudioManager {
   }
 
   Future<void> playMusic(String trackPath) async {
-    print("rakib");
     print("Requested to play: $trackPath");
     if (currentTrack != trackPath) {
-      await _audioPlayer.stop();
-      await _audioPlayer.play(AssetSource(trackPath));
-      currentTrack = trackPath;
+      await _audioPlayer.stop(); // Ensures the player stops previous track
     }
+    await _audioPlayer.play(AssetSource(trackPath));
+    currentTrack = trackPath;
   }
 
   void stopMusic() {
@@ -30,6 +29,7 @@ class AudioManager {
   }
 
   void dispose() {
+    print("rakib");
     _audioPlayer.dispose();
   }
 }

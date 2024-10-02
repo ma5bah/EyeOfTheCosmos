@@ -11,7 +11,8 @@ class BuildYourTelescopeLanding extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    
+    AudioManager().stopMusic();
+    AudioManager().playMusic('music/solar_sections.mp3');
     return Scaffold(
       appBar: AppBar(
         // backgroundColor: Colors.black12,

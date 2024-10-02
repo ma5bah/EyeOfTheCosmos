@@ -1,0 +1,237 @@
+[
+    {
+        "capture_name": "ARP 107",
+        "keyword": ["Galaxy", "Cluster", "SuperNova"],
+        "description": "This image of Arp 107, shown by Webb’s MIRI (Mid-Infrared Instrument), reveals the supermassive black hole that lies in the center of the large spiral galaxy to the right. This black hole, which pulls much of the dust into lanes, also display’s Webb’s characteristic diffraction spikes, caused by the light that it emits interacting with the structure of the telescope itself. Perhaps the defining feature of the region, which MIRI reveals, are the millions of young stars that are forming, highlighted in blue. These stars are surrounded by dusty silicates and soot-like molecules known as polycyclic aromatic hydrocarbons. The small elliptical galaxy to the left, which has already gone through much of its star formation, is composed of many of these organic molecules.",
+        "FastFacts": [
+            {
+                "Object Name": "Arp 107",
+                "Description": "Interacting galaxies"
+            },
+            {
+                "R.A. Position": "10:52:16.82"
+            },
+            {
+                "Dec. Position": "+30:04:0.27"
+            },
+            {
+                "Constellation": "Leo Minor"
+            },
+            {
+                "Distance": "About 450 million light-years"
+            },
+            {
+                "Dimensions": "Image is about 2.4 arcmin across (about 310,000 light-years)"
+            }
+        ],
+        "headingImage": "head.png",
+        "slidingImage": ["1.png", "2.png", "3.png"],
+        "exportlink": "https://webbtelescope.org/contents/media/images/2024/132/01J74B5B0C2MKBE2QXTMW46T4Z?Category=03-galaxies&page=1"
+    },
+
+    {
+        "capture_name": "ARP 142",
+        "keyword": ["Galaxy", "Cluster", "Interacting Galaxies"],
+        "description": "Webb’s mid-infrared view of interacting galaxies Arp 142 seems to sing in primary colors. The background of space is like a yawning darkness speckled with bright, multi-colored beads. This image was taken by MIRI, the telescope’s Mid-Infrared Instrument, which astronomers use to study cooler and older objects, dust, and extremely distant galaxies. Here, the Egg appears as an exceptionally small teal oval with gauzy layers. Mid-infrared light predominantly shows the oldest stars in the elliptical galaxy, which has lost or used up most of its gas and dust. This is why the view is so different from the combined image, which includes near-infrared light. At right, the Penguin’s shape is relatively unchanged. The MIRI image shows all the gas and dust that has been distorted and stretched, as well as the smoke-like material, in blue, that includes carbon-containing molecules, known as polycyclic aromatic hydrocarbons. Next, look for the edge-on galaxy cataloged PGC 1237172 at the top right — a dim, hazy line. Find it by looking for the bright blue star with small diffraction spikes positioned over the top of its left edge. This galaxy nearly disappears in mid-infrared light because its stars are very young and the galaxy isn’t overflowing with dust. Now, scan the full image left to right to spot distant galaxies in the background. The red objects are encased in thick layers of dust. Some are spiral galaxies and others are more distant galaxies that can only be detected as dots or smudges. Green galaxies are laden with dust and are farther away. Bluer galaxies are closer. Zoom in carefully to see if a blue dot has miniscule diffraction spikes — those are stars, not galaxies.",
+        "FastFacts": [
+            {
+                "Object Name": "Arp 142, NGC 2396/2397",
+                "Description": "Interacting Galaxies"
+            },
+            {
+                "R.A. Position": "09:37:43.09"
+            },
+            {
+                "Dec. Position": "+02:45:47.01"
+            },
+            {
+                "Constellation": "Hydra"
+            },
+            {
+                "Distance": "326 million light-years"
+            },
+            {
+                "Dimensions": "Image is about 3.4 arcmin across (about 322,000 light-years)"
+            }
+        ],
+        "headingImage": "head.png",
+        "slidingImage": ["1.png", "2.png", "3.png"],
+        "exportlink": "https://webbtelescope.org/contents/media/images/2024/124/01J06ZFCB5NFP1H75W7Q7PMF79?Category=03-galaxies&page=1"
+    },
+    {
+        "capture_name": "CEERS Crop",
+        "keyword": ["Galaxy", "Cluster", "CEERS"],
+        "description": "The CEERS (Cosmic Evolution Early Release Science) Crop showcases a deep field view of the universe, capturing galaxies at various stages of evolution. This image highlights the intricate structures and colors of distant galaxies, revealing insights into their formation and development over billions of years. The data collected from this observation aids astronomers in understanding the early universe and the formation of stars and galaxies.",
+        "FastFacts": [
+            {
+                "Object Name": "CEERS Crop",
+                "Description": "Deep field view of the universe"
+            },
+            {
+                "R.A. Position": "Various"
+            },
+            {
+                "Dec. Position": "Various"
+            },
+            {
+                "Constellation": "Various"
+            },
+            {
+                "Distance": "Various"
+            },
+            {
+                "Dimensions": "Image dimensions vary"
+            }
+        ],
+        "headingImage": "head.png",
+        "slidingImage": ["1.png", "2.png", "3.png"],
+        "exportlink": "https://webbtelescope.org/contents/media/images/2024/134/01J5E841G3BC9FPQ90TNBVMEWG?Category=03-galaxies&page=1"
+    },    
+
+    {
+        "capture_name": "Goods North",
+        "keyword": ["Galaxy", "Cluster", "Goods North"],
+        "description": "The Goods North image provides a panoramic view of a rich field of galaxies, revealing both nearby and distant celestial objects. This observation helps astronomers study galaxy formation, interactions, and the evolution of cosmic structures over time. The detailed imaging allows for a comprehensive analysis of the various galaxy types present in this region of space.",
+        "FastFacts": [
+            {
+                "Object Name": "Goods North",
+                "Description": "Panoramic view of galaxies"
+            },
+            {
+                "R.A. Position": "Various"
+            },
+            {
+                "Dec. Position": "Various"
+            },
+            {
+                "Constellation": "Various"
+            },
+            {
+                "Distance": "Various"
+            },
+            {
+                "Dimensions": "Image dimensions vary"
+            }
+        ],
+        "headingImage": "head.png",
+        "slidingImage": ["1.png", "2.png", "3.png"],
+        "exportlink": "https://webbtelescope.org/contents/media/images/2024/106/01HDHKT9YT5N08FC4BP1PHQQHC?Category=03-galaxies&page=2&filterUUID=91dfa083-c258-4f9f-bef1-8f40c26f4c97"
+    },
+    
+    {
+        "capture_name": "GS NDG",
+        "keyword": ["Galaxy", "Cluster", "GS NDG"],
+        "description": "GS NDG provides a detailed view of galaxies within a specific region, showcasing the complexities of galaxy interactions and the distribution of dark matter. The observations from this area are crucial for understanding how galaxies evolve and interact over cosmic time scales.",
+        "FastFacts": [
+            {
+                "Object Name": "GS NDG",
+                "Description": "Detailed view of galaxy interactions"
+            },
+            {
+                "R.A. Position": "Various"
+            },
+            {
+                "Dec. Position": "Various"
+            },
+            {
+                "Constellation": "Various"
+            },
+            {
+                "Distance": "Various"
+            },
+            {
+                "Dimensions": "Image dimensions vary"
+            }
+        ],
+        "headingImage": "head.png",
+        "slidingImage": ["1.png", "2.png", "3.png"],
+        "exportlink": "https://webbtelescope.org/contents/media/images/2024/133/01J8J6MA03REY2HMF3QN969G77?Category=03-galaxies&page=1"
+    },
+
+    {
+        "capture_name": "M82",
+        "keyword": ["Galaxy", "Starburst Galaxy", "M82"],
+        "description": "M82, also known as the Cigar Galaxy, is a starburst galaxy characterized by an active rate of star formation. This image reveals the intricate details of its elongated shape and the intense regions of star creation. Observations of M82 help astronomers understand the processes that lead to star formation and the dynamics of interacting galaxies.",
+        "FastFacts": [
+            {
+                "Object Name": "M82",
+                "Description": "Starburst galaxy"
+            },
+            {
+                "R.A. Position": "09:55:52.6"
+            },
+            {
+                "Dec. Position": "+69:40:47.0"
+            },
+            {
+                "Constellation": "Ursa Major"
+            },
+            {
+                "Distance": "About 12 million light-years"
+            },
+            {
+                "Dimensions": "Image is about 11.5 arcmin across"
+            }
+        ],
+        "headingImage": "head.png",
+        "slidingImage": ["1.png", "2.png", "3.png"],
+        "exportlink": "https://webbtelescope.org/contents/media/images/2024/109/01HRD5034FGC71N12FHMGBV0AS?Category=03-galaxies&page=2&filterUUID=91dfa083-c258-4f9f-bef1-8f40c26f4c97"
+    },
+
+    {
+        "capture_name": "PLCK G165.7",
+        "keyword": ["Galaxy", "Cluster", "SuperNova"],
+        "description": "NASA's James Webb Space Telescope's NIRCam (Near-Infrared Camera) image of the galaxy cluster PLCK G165.7+67.0, also known as G165. A foreground cluster, located 3.6 billion light-years away from Earth, is magnifying and bending the light of the distant universe beyond. In this image, astronomers discovered the light of an exploding star — more specifically, a Type Ia supernova — imaged three times, seen as points of light within the prominent red arc at the right-center of the image. To achieve three images, the light traveled along three different paths. Since each path had a different length, and light traveled at the same speed, the supernova was imaged in this Webb observation at three different times during its explosion. The multiply-imaged supernova offers astronomers a unique way to calculate a new value for the Hubble constant — the rate at which the universe is accelerating. The field of G165 is known for a high rate of star formation of more than 300 solar masses per year, an attribute that correlates with higher supernova rates. In this image, blue represents light at 0.9, 1.15, and 1.5 microns (F090W + F115W + F150W), green is 2.0 and 2.77 microns (F200W + F277W), and red is 3.56, 4.1, and 4.44 microns (F356W + F410M + F444W).",
+        "FastFacts": [
+            {
+                "Object Name": "PLCK G165.7+67.0, G165, SN H0pe",
+                "Description": "Galaxy cluster and supernova"
+            },
+            {
+                "R.A. Position": "11:27:15.59"
+            },
+            {
+                "Dec. Position": "+42:28:33.46"
+            },
+            {
+                "Constellation": "Ursa Major"
+            },
+            {
+                "Dimensions": "Image is about 1.5 arcminutes across"
+            }
+        ],
+        "headingImage": "head.png",
+        "slidingImage": ["1.png", "2.png", "3.png"],
+        "exportlink": "https://webbtelescope.org/contents/media/images/01J3DGFZ5PMFA2PM74QGPAGJ7V?Category=03-galaxies&page=1"
+    },
+    
+    {
+        "capture_name": "Question Mark Galaxy",
+        "keyword": ["Galaxy", "Cluster", "Gravitational Lensing"],
+        "description": "The Question Mark Galaxy, also known as the galaxy cluster MACS J1149.6+2223, is a remarkable example of gravitational lensing. This effect occurs when the gravity of a massive object, like the galaxy cluster, bends the light of objects behind it. The result is a stunning view that reveals distant galaxies in the background. The image showcases multiple arcs and images of these background galaxies, with the cluster acting as a cosmic magnifying glass. Astronomers use this phenomenon to study the universe's expansion and the properties of dark matter.",
+        "FastFacts": [
+            {
+                "Object Name": "Question Mark Galaxy",
+                "Description": "Gravitationally lensed galaxy"
+            },
+            {
+                "R.A. Position": "11:49:36.3"
+            },
+            {
+                "Dec. Position": "+22:23:36.0"
+            },
+            {
+                "Constellation": "Leo"
+            },
+            {
+                "Distance": "About 5 billion light-years"
+            },
+            {
+                "Dimensions": "Image is about 2.5 arcmin across"
+            }
+        ],
+        "headingImage": "head.png",
+        "slidingImage": ["1.png", "2.png", "3.png"],
+        "exportlink": "https://webbtelescope.org/contents/media/images/01J3DGFZ5PMFA2PM74QGPAGJ7V?Category=03-galaxies&page=1"
+    }
+]

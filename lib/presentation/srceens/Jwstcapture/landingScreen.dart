@@ -1,4 +1,5 @@
-import 'package:eyesofcosmos/data/model/top_trends_model.dart';
+import 'package:eyesofcosmos/data/model/audio_manager_model.dart';
+import 'package:eyesofcosmos/data/model/jwst_capture_model.dart';
 import 'package:eyesofcosmos/presentation/utils/image_assets.dart';
 import 'package:eyesofcosmos/presentation/widgets/Feature_card.dart';
 import 'package:eyesofcosmos/presentation/widgets/drawer_widget.dart';
@@ -13,8 +14,27 @@ class JWSTCaptureLanding extends StatefulWidget {
 }
 
 class _JWSTCaptureLandingState extends State<JWSTCaptureLanding> {
+
+
+
+
+  @override
+
+void initState() {  
+  super.initState();  
+   AudioManager().playMusic('music/solar_sections.mp3');
+}  
+
+@override  
+void dispose() {  
+  AudioManager().stopMusic();  
+  super.dispose();  
+}  
+
   @override
   Widget build(BuildContext context) {
+   
+   
     return Scaffold(
       appBar: AppBar(
         // backgroundColor: Colors.black12,
@@ -42,7 +62,7 @@ class _JWSTCaptureLandingState extends State<JWSTCaptureLanding> {
               //   height: MediaQuery.of(context).size.height * 0.09,
               // ),
               const Padding(
-                padding: EdgeInsets.only(left: 20,bottom:20),
+                padding: EdgeInsets.only(left: 20, bottom: 20),
                 child: Text(
                   'JWST Capture',
                   textAlign: TextAlign.left,
@@ -54,10 +74,11 @@ class _JWSTCaptureLandingState extends State<JWSTCaptureLanding> {
                 ),
               ),
 
-              
-
               // const Spacer(),
-              FeaturedCard(text:'Step into the cosmos and explore galaxies, planets, and stars like never before. Immerse yourself in the universe, where space unfolds before your eyes.' ,),
+              FeaturedCard(
+                text:
+                    'Step into the cosmos and explore galaxies, planets, and stars like never before. Immerse yourself in the universe, where space unfolds before your eyes.',
+              ),
               const SizedBox(
                 height: 20,
               ),
@@ -67,14 +88,16 @@ class _JWSTCaptureLandingState extends State<JWSTCaptureLanding> {
                       child: ListView.builder(
                         scrollDirection: Axis.vertical,
                         // Enable horizontal scrolling
-                        itemCount: 5,
+                        itemCount: captureItems.length,
                         itemBuilder: (context, index) {
                           return InkWell(
-                            onTap: exploreItems[index].onTap,
+                            onTap: captureItems[index].onTap,
                             child: Padding(
                                 padding: EdgeInsets.symmetric(
                                     horizontal: 10, vertical: 5),
-                                child: HomeScreenTrendsCard(title:exploreItems[index].title,imageUrl:exploreItems[index].imageUrl)),
+                                child: HomeScreenTrendsCard(
+                                    title: captureItems[index].title,
+                                    imageUrl: captureItems[index].imageUrl)),
                           );
                         },
                       ))),

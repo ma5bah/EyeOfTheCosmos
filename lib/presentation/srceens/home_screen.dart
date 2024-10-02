@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:eyesofcosmos/data/model/audio_manager_model.dart';
 import 'package:eyesofcosmos/presentation/utils/image_assets.dart';
 import 'package:eyesofcosmos/presentation/widgets/Feature_card.dart';
@@ -15,45 +16,22 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  // late AudioPlayer _audioPlayer;
-  // bool _isPlaying = false;
-  @override
-  // @override
-  // void initState() {
-  //   super.initState();
-    
-  //   _audioPlayer = AudioPlayer();
-  //   _playAudio();
-  // }
+ @override
 
-  // @override
-  // void dispose() {
-  //   _audioPlayer.stop();
-  //   _audioPlayer.dispose();
-  //   super.dispose();
-  // }
+void initState() {  
+  super.initState();  
+  AudioManager().playMusic('music/homescreen_background.mp3');  
+}  
 
-  // void _playAudio() async {
-
-  //    await _audioPlayer.setReleaseMode(ReleaseMode.loop); // Set the player to loop mode  
- 
-  // // if (result == 1) { // Check if the audio started playing successfully  
-  // //   setState(() {  
-  // //     _isPlaying = true;  
-  // //   });  
-  // // } else {  
-  // //   // Handle the error, maybe show a message to the user  
-  // // } 
-  //   await _audioPlayer
-  //       .play(AssetSource('music/homescreen_background.mp3'));
-  //   setState(() {
-  //     _isPlaying = true;
-  //   });
-  // }
+@override  
+void dispose() {  
+  AudioManager().stopMusic();  
+  super.dispose();  
+}  
 
   @override
   Widget build(BuildContext context) {
-    AudioManager().playMusic('music/homescreen_background.mp3');
+    // AudioManager().playMusic('music/homescreen_background.mp3');
     return Scaffold(
       appBar: AppBar(
         // backgroundColor: Colors.black12,
@@ -61,7 +39,7 @@ class _HomeScreenState extends State<HomeScreen> {
         iconTheme: const IconThemeData(
             color: Colors.white), // Set AppBar icons to white
       ),
-      drawer: DrawerWidget(),
+      drawer: const DrawerWidget(),
       body: Stack(
         fit: StackFit.expand,
         children: <Widget>[
@@ -182,3 +160,6 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
+
+
+

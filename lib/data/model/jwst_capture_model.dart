@@ -1,0 +1,41 @@
+import 'package:eyesofcosmos/application/controllers/main_bottom_nav_controller.dart';
+import 'package:eyesofcosmos/presentation/srceens/Jwstcapture/RecentCaptures/recent_capture_landing.dart';
+import 'package:eyesofcosmos/presentation/srceens/SolarSystem/solar_syestem_landing.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+final MainBottomNavController controller = Get.find();
+class CaptureItem {
+  String title;
+  String imageUrl;
+  VoidCallback onTap;
+
+  CaptureItem(
+      {required this.title, required this.imageUrl, required this.onTap});
+}
+
+List<CaptureItem> captureItems = [
+  CaptureItem(
+    title: 'Recent Capture',
+    imageUrl: 'assets/images/jwstcapture/RecentCaptureLandingbg.png',
+    onTap: () {
+      
+      Get.to(RecentCaptureLanding());
+    },
+  ),
+  CaptureItem(
+    title: 'Galaxy',
+    imageUrl: 'assets/images/jwstcapture/galaxybg.png',
+    onTap: () {
+      controller.changeScreen(1);
+      Get.to(SolarSystemLanding());
+    },
+  ),
+  CaptureItem(
+    title: 'Exoplanets',
+    imageUrl: 'assets/images/jwstcapture/ExoPlanetsBg.png',
+    onTap: () {
+      controller.changeScreen(1);
+      Get.to(SolarSystemLanding());
+    },
+  )
+];
