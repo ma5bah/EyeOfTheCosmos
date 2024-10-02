@@ -112,7 +112,7 @@ class _JwstmissionNewsState extends State<JwstmissionNews> {
           return InkWell(
             onTap: () {
               Get.to(NewsDetailsScreen(
-                  // newsItem: newsItem, // Pass the news item to details screen
+                  item: newsItem, // Pass the news item to details screen
                   ));
             },
             child: NewsCard(

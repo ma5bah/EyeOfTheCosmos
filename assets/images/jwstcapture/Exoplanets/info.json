@@ -1,0 +1,234 @@
+[
+    {
+        "capture_name": "WASP-107b",
+        "keyword": ["Exoplanet", "Gas Giant"],
+        "description": "WASP-107b is a low-density exoplanet that is notable for its large size relative to its mass, suggesting a thick atmosphere. Observations have revealed insights into its atmospheric composition.",
+        "FastFacts": [
+            {
+                "Object Name": "WASP-107b",
+                "Description": "Gas giant exoplanet"
+            },
+            {
+                "R.A. Position": "14:50:07.54"
+            },
+            {
+                "Dec. Position": "-04:22:23.37"
+            },
+            {
+                "Constellation": "Virgo"
+            },
+            {
+                "Distance": "Approximately 200 light-years"
+            },
+            {
+                "Dimensions": "Image dimensions vary"
+            }
+        ],
+        "headingImage": "head.png",
+        "slidingImage": ["1.png", "2.png", "3.png"],
+        "exportlink": ""
+    },
+    {
+        "capture_name": "HD 209458 b",
+        "keyword": ["Exoplanet", "Hot Jupiter"],
+        "description": "HD 209458 b, often referred to as Osiris, is a well-studied hot Jupiter exoplanet that orbits very close to its host star. Its atmosphere is being investigated for signs of water vapor and other compounds.",
+        "FastFacts": [
+            {
+                "Object Name": "HD 209458 b",
+                "Description": "Hot Jupiter exoplanet"
+            },
+            {
+                "R.A. Position": "22:03:10.22"
+            },
+            {
+                "Dec. Position": "+18:53:12.0"
+            },
+            {
+                "Constellation": "Pegasus"
+            },
+            {
+                "Distance": "Approximately 159 light-years"
+            },
+            {
+                "Dimensions": "Image dimensions vary"
+            }
+        ],
+        "headingImage": "head.png",
+        "slidingImage": ["1.png", "2.png", "3.png"],
+        "exportlink": ""
+    },
+    {
+        "capture_name": "HD 189733 b",
+        "keyword": ["Exoplanet", "Hot Jupiter"],
+        "description": "HD 189733 b is a striking hot Jupiter known for its deep blue color, which is a result of its atmospheric composition. Studies are ongoing to understand its weather patterns.",
+        "FastFacts": [
+            {
+                "Object Name": "HD 189733 b",
+                "Description": "Hot Jupiter exoplanet"
+            },
+            {
+                "R.A. Position": "20:06:15.20"
+            },
+            {
+                "Dec. Position": "+22:42:20.0"
+            },
+            {
+                "Constellation": "Vulpecula"
+            },
+            {
+                "Distance": "Approximately 64 light-years"
+            },
+            {
+                "Dimensions": "Image dimensions vary"
+            }
+        ],
+        "headingImage": "head.png",
+        "slidingImage": ["1.png", "2.png", "3.png"],
+        "exportlink": ""
+    },
+    {
+        "capture_name": "TRAPPIST-1e",
+        "keyword": ["Exoplanet", "Potentially Habitable"],
+        "description": "TRAPPIST-1e is one of the seven Earth-sized planets orbiting the star TRAPPIST-1. It is located in the habitable zone, making it a candidate for potential life.",
+        "FastFacts": [
+            {
+                "Object Name": "TRAPPIST-1e",
+                "Description": "Earth-sized exoplanet"
+            },
+            {
+                "R.A. Position": "23:07:48.38"
+            },
+            {
+                "Dec. Position": "-05:09:37.0"
+            },
+            {
+                "Constellation": "Aquarius"
+            },
+            {
+                "Distance": "Approximately 39 light-years"
+            },
+            {
+                "Dimensions": "Image dimensions vary"
+            }
+        ],
+        "headingImage": "head.png",
+        "slidingImage": ["1.png", "2.png", "3.png"],
+        "exportlink": ""
+    },
+    {
+        "capture_name": "LHS 1140 b",
+        "keyword": ["Exoplanet", "Super-Earth"],
+        "description": "LHS 1140 b is a super-Earth exoplanet located within the habitable zone of its star. It is a target for atmospheric studies due to its size and potential for hosting life.",
+        "FastFacts": [
+            {
+                "Object Name": "LHS 1140 b",
+                "Description": "Super-Earth exoplanet"
+            },
+            {
+                "R.A. Position": "04:28:36.95"
+            },
+            {
+                "Dec. Position": "+04:30:34.5"
+            },
+            {
+                "Constellation": "Cetus"
+            },
+            {
+                "Distance": "Approximately 40 light-years"
+            },
+            {
+                "Dimensions": "Image dimensions vary"
+            }
+        ],
+        "headingImage": "head.png",
+        "slidingImage": ["1.png", "2.png", "3.png"],
+        "exportlink": ""
+    },
+    {
+        "capture_name": "GJ 1214 b",
+        "keyword": ["Exoplanet", "Water World"],
+        "description": "GJ 1214 b is a water-rich exoplanet that is classified as a mini-Neptune. Its atmosphere is being studied for water vapor, indicating a potentially ocean-like environment.",
+        "FastFacts": [
+            {
+                "Object Name": "GJ 1214 b",
+                "Description": "Water-rich exoplanet"
+            },
+            {
+                "R.A. Position": "18:08:21.00"
+            },
+            {
+                "Dec. Position": "+04:22:33.0"
+            },
+            {
+                "Constellation": "Ophiuchus"
+            },
+            {
+                "Distance": "Approximately 42 light-years"
+            },
+            {
+                "Dimensions": "Image dimensions vary"
+            }
+        ],
+        "headingImage": "head.png",
+        "slidingImage": ["1.png", "2.png", "3.png"],
+        "exportlink": ""
+    },
+    {
+        "capture_name": "K2-18 b",
+        "keyword": ["Exoplanet", "Potentially Habitable"],
+        "description": "K2-18 b is an exoplanet located within its star's habitable zone. It is of great interest for studying the potential for life due to its size and distance from its host star.",
+        "FastFacts": [
+            {
+                "Object Name": "K2-18 b",
+                "Description": "Potentially habitable exoplanet"
+            },
+            {
+                "R.A. Position": "17:14:23.62"
+            },
+            {
+                "Dec. Position": "+03:36:20.8"
+            },
+            {
+                "Constellation": "Leo"
+            },
+            {
+                "Distance": "Approximately 124 light-years"
+            },
+            {
+                "Dimensions": "Image dimensions vary"
+            }
+        ],
+        "headingImage": "head.png",
+        "slidingImage": ["1.png", "2.png", "3.png"],
+        "exportlink": ""
+    },
+    {
+        "capture_name": "55 Cancri e",
+        "keyword": ["Exoplanet", "Super-Earth"],
+        "description": "55 Cancri e is a super-Earth exoplanet located near a binary star system. It has been a target for atmospheric studies to uncover its composition and potential habitability.",
+        "FastFacts": [
+            {
+                "Object Name": "55 Cancri e",
+                "Description": "Super-Earth exoplanet"
+            },
+            {
+                "R.A. Position": "08:53:19.07"
+            },
+            {
+                "Dec. Position": "+28:19:49.3"
+            },
+            {
+                "Constellation": "Cancer"
+            },
+            {
+                "Distance": "Approximately 41 light-years"
+            },
+            {
+                "Dimensions": "Image dimensions vary"
+            }
+        ],
+        "headingImage": "head.png",
+        "slidingImage": ["1.png", "2.png", "3.png"],
+        "exportlink": ""
+    }
+]

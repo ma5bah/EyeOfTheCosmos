@@ -11,7 +11,8 @@ class BuildYourTelescopeLanding extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    
+    AudioManager().stopMusic();
+    AudioManager().playMusic('music/solar_sections.mp3');
     return Scaffold(
       appBar: AppBar(
         // backgroundColor: Colors.black12,
@@ -26,7 +27,7 @@ class BuildYourTelescopeLanding extends StatelessWidget {
           Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage(ImageAssets.onBoardingBackground3Jpg),
+                image: AssetImage("assets/images/gamingsectionlanding.png"),
                 fit: BoxFit.cover,
               ),
             ),

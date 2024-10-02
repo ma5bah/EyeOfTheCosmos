@@ -167,7 +167,7 @@ class _BuildTelescopeLevel1Page1State extends State<BuildTelescopeLevel1Page1> {
             SizedBox(
               height: 10,
             ),
-            Obx(() => Text('Current State: ${appController.myState}')),
+            // Obx(() => Text('Current State: ${appController.myState}')),
 
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

@@ -9,6 +9,15 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 
+  final List<Widget> screens = [
+    HomeScreen(),
+    JWSTCaptureLanding(),
+    Doubtsolvingpage(),
+    GamingSectionLanding(),
+    JwstmissionNews(),
+
+   
+  ];
 
 class MainBottomNavScreen extends StatefulWidget {
   const MainBottomNavScreen({super.key});
@@ -19,15 +28,6 @@ class MainBottomNavScreen extends StatefulWidget {
 
 class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
   
-  final List<Widget> _screens = [
-    HomeScreen(),
-    JWSTCaptureLanding(),
-    Doubtsolvingpage(),
-    GamingSectionLanding(),
-    JwstmissionNews(),
-
-   
-  ];
 
 
 
@@ -38,10 +38,11 @@ class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
   Widget build(BuildContext context) {
     return GetBuilder<MainBottomNavController>(builder: (controller) {
       return Scaffold(
-        backgroundColor: const Color.fromARGB(30,30,30,1).withOpacity(0.5),
-        body: _screens[controller.currentSelectedIndex],
+        backgroundColor:  Colors.black,
+        body: screens[controller.currentSelectedIndex],
         bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: const Color.fromARGB(30,30,30,1),
+          type: BottomNavigationBarType.fixed,
+          backgroundColor: Colors.black,
           currentIndex: controller.currentSelectedIndex,
           onTap: controller.changeScreen,
           selectedItemColor: Colors.blue.shade800,
