@@ -29,7 +29,8 @@ List<Item> value = [
       title: "Black Holes",
       description:
           "Black holes vary in size. Most massive galaxies are thought to have a supermassive black hole (hundreds of thousands to billions of times the mass of our Sun) at their centers. Other, much smaller, black holes are collapsed stars. Black holes are so dense that light cannot escape. This means we cannot see them directly, but there are indirect ways to detect and learn about them. Choose to study black holes and you might learn how the nuclei of galaxies are powered or about the life cycles of stars!",
-      img: 'assets/images/gamingsection/buildyourtelescope/level01/blackhole.jpg'),
+      img:
+          'assets/images/gamingsection/buildyourtelescope/level01/blackhole.jpg'),
   Item(
       id: 1,
       title: "Star Formation",
@@ -53,9 +54,9 @@ List<Item> value = [
       title: "Exoplanet",
       description:
           "Exoplanets Planets outside the solar system are more common than we once thought. Since the first discovery, we have found thousands of extrasolar planets (there may even be more planets than stars!), and we continue to narrow in on smaller and more earth-like planets. Who knows how far away we are from finding another Earth, or even signs of life elsewhere in the universe? Choose to study exoplanets and learn about the building blocks of planet formation and the evolution of planetary systems.",
-      img: 'assets/images/gamingsection/buildyourtelescope/level01/exoplanet.jpg'),
+      img:
+          'assets/images/gamingsection/buildyourtelescope/level01/exoplanet.jpg'),
 ];
-
 
 class BuildTelescopeLevel1Page1 extends StatefulWidget {
   const BuildTelescopeLevel1Page1({super.key});
@@ -66,17 +67,13 @@ class BuildTelescopeLevel1Page1 extends StatefulWidget {
 }
 
 class _BuildTelescopeLevel1Page1State extends State<BuildTelescopeLevel1Page1> {
-  
-  
-  
   final Buildyourtelescopevaluecontroller appController = Get.find();
   int controller = 0;
   @override
   void initState() {
     // TODO: implement initState
     WidgetsBinding.instance.addPostFrameCallback((_) {
-    appController.updateState('${controller}', 1);
-
+      appController.updateState('${controller}', 1);
     });
     super.initState();
   }
@@ -184,14 +181,14 @@ class _BuildTelescopeLevel1Page1State extends State<BuildTelescopeLevel1Page1> {
                 ),
                 OutlinedButton(
                   child: Text(
-                    "Next Page",
+                    "Next Step",
                     style: TextStyle(
                         color: Colors.white,
                         fontSize: 20,
                         fontWeight: FontWeight.bold),
                   ),
                   onPressed: () {
-                    Get.to(BuildYourOwnLevel1Page2());
+                    Get.to(BuildYourOwnLevel1Page2(selectedIndex: controller));
                   },
                 ),
               ],

@@ -24,17 +24,16 @@ List<Item> value = [
       id: 0,
       title: "Optical Spectrometer",
       description:
-          "Black holes vary in size. Most massive galaxies are thought to have a supermassive black hole (hundreds of thousands to billions of times the mass of our Sun) at their centers. Other, much smaller, black holes are collapsed stars.Black holes are so dense that light cannot escape. This means we cannot 'see' them directly, but there are indirect ways to detect and learn about them.Choose to study black holes and you might learn how the nuclei of galaxies are powered or about the life cycles of stars!",
+          "A spectrometer, or spectrograph, disperses light from an object into a spectrum, revealing unique fingerprint lines for each chemical element. This analysis provides insights into the object's physical properties, such as temperature, mass, chemical composition, and motion. When selecting a spectrometer for a satellite, you can optimize it for various wavelengths, including optical and gamma rays, the latter typically using a scintillator detector.",
       bgImage: "assets/images/gamingsection/buildyourtelescope/blackhole.png"),
   Item(
       id: 1,
       title: "Optical Camera",
       description:
-          "Because light from objects that are very far away from us must travel a long time to reach us, when we observe these objects, we are really seeing them as they were a long time ago. Studying the most distant objects can help us to learn about the first ever galaxies, and maybe even the first stars.Additionally, the Big Bang (which occurred ~13.8 billion years ago) left residual radiation. Observing this radiation can help us to understand the conditions of the early universe.Choose to study the early universe and investigate our cosmic beginnings!",
+          "Camera Telescope cameras work very similarly to ordinary digital cameras. They generally have a kind of shutter to let light in or keep it out, and detectors that convert light into a digital signal. On a satellite, this electronic data is stored and then transmitted to Earth, where it is processed and converted to images. There are many different kinds of cameras. If you choose a camera for your satellite, you can easily build one that is optimized for whatever wavelength you’d like to study.",
       bgImage:
           "assets/images/gamingsection/buildyourtelescope/starformation.png"),
 ];
-
 
 class BuildYourOwnLevel1Page3 extends StatefulWidget {
   const BuildYourOwnLevel1Page3({super.key});
@@ -101,12 +100,13 @@ class _BuildYourOwnLevel1Page3State extends State<BuildYourOwnLevel1Page3> {
                     padding: EdgeInsets.only(right: 10, bottom: 10),
                     child: Container(
                       width: 150,
-                      height: 100 ,
+                      height: 100,
                       decoration: BoxDecoration(
-                        border: Border.all(color:specto_controller?Colors.blue: Colors.white),
+                        border: Border.all(
+                            color:
+                                specto_controller ? Colors.blue : Colors.white),
                         image: DecorationImage(
-                          image: AssetImage(
-                              value[1].bgImage),
+                          image: AssetImage(value[1].bgImage),
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -137,19 +137,20 @@ class _BuildYourOwnLevel1Page3State extends State<BuildYourOwnLevel1Page3> {
                       camera_controller = true;
                       description_controller = 1;
                     }
-                    
+
                     setState(() {});
                   },
                   child: Padding(
                     padding: EdgeInsets.only(right: 10, bottom: 10),
                     child: Container(
                       width: 150,
-                      height:  100,
+                      height: 100,
                       decoration: BoxDecoration(
-                        border: Border.all(color:camera_controller? Colors.white:Colors.blue),
+                        border: Border.all(
+                            color:
+                                camera_controller ? Colors.white : Colors.blue),
                         image: DecorationImage(
-                          image: AssetImage(
-                              value[0].bgImage),
+                          image: AssetImage(value[0].bgImage),
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -180,44 +181,40 @@ class _BuildYourOwnLevel1Page3State extends State<BuildYourOwnLevel1Page3> {
             ),
             Obx(() => Text('Current State: ${appController.myState}')),
 
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  "WebLength",
+            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+              Text(
+                "WebLength",
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold),
+              ),
+              OutlinedButton(
+                child: Text(
+                  "Next Page",
                   style: TextStyle(
                       color: Colors.white,
-                      fontSize: 30,
+                      fontSize: 20,
                       fontWeight: FontWeight.bold),
                 ),
-
-
-                 OutlinedButton(
-                  child: Text(
-                    "Next Page",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold),
-                  ),
-                  onPressed: () {
-                    if (camera_controller && specto_controller)
-                      appController.updateState2('11');
-                    if (specto_controller && camera_controller == false)
-                      appController.updateState2('10');
-                    if (specto_controller == false && camera_controller)
-                      appController.updateState2('01');
-                    if (specto_controller == false &&
-                        camera_controller == false)
-                      appController.updateState2('10');
-                    Get.to(BuildYourOwnLevel1Page4());
-                  },
-                ),
-              ]
+                onPressed: () {
+                  if (camera_controller && specto_controller)
+                    appController.updateState2('11');
+                  if (specto_controller && camera_controller == false)
+                    appController.updateState2('10');
+                  if (specto_controller == false && camera_controller)
+                    appController.updateState2('01');
+                  if (specto_controller == false && camera_controller == false)
+                    appController.updateState2('10');
+                  Get.to(BuildYourOwnLevel1Page4());
+                },
+              ),
+            ]),
+            SizedBox(
+              height: 10,
             ),
-            SizedBox(height: 10,),
-              
-             Container(
+
+            Container(
               height: MediaQuery.of(context).size.height * 0.3,
               width: MediaQuery.of(context).size.width * 1,
               decoration: BoxDecoration(
@@ -235,7 +232,6 @@ class _BuildYourOwnLevel1Page3State extends State<BuildYourOwnLevel1Page3> {
           ],
         ),
       ),
-    )
-    ;
+    );
   }
 }
