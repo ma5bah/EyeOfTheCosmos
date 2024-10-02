@@ -111,7 +111,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
               // const Spacer(),
               FeaturedCard(
-                text: "fgsdfg",
+                text: "Step into the cosmos and explore galaxies,planets, and stars like never before. Immerse yourself in the universe, where space unfolds before your eyes.",
               ),
               SizedBox(
                 height: 20,
@@ -157,7 +157,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Container(
                       height: MediaQuery.of(context).size.height * 0.3,
                       child: ListView.builder(
-                        scrollDirection: Axis.horizontal,
+                        scrollDirection: Axis.vertical,
                         // Enable horizontal scrolling
                         itemCount: exploreItems.length,
                         itemBuilder: (context, index) {

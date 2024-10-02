@@ -1,20 +1,10 @@
 [
     {
-        "planet_name":"mercury",
-        "positionfromthesun":"",
-        "radius":"",
-        "distancefromsun":"",
-        "numberofmoons":"",
-        "gravity":"",
-        
-
-
-
-        "headerimage":"mercury.png",
-        "detailsimages":[
-            "1st.png","2nd.png","3rd.png","4th.png"
-        ],
-        "video_url":"youtubeline"
-
+        "capture_name":"Digital cloud 2s",
+        "keyword":["Galaxy","cluster"],
+        "description":"The galaxy cluster MACS-J0417.5-1154 is so massive it is warping the fabric of space-",
+        "FastFacts":["Object Name: Question Mark Galaxy,Description: Gravitationally lensed galaxy"],
+        "headingImage":"digitalcloud2s.png",
+        "slidingImage":["1.png","2.png","3.png","4.png"]
     }
 ]

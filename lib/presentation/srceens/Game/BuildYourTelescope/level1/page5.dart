@@ -72,7 +72,7 @@ class _BuildTelescopeLevel1FinalScreenState extends State<BuildTelescopeLevel1Fi
             SizedBox(
               height: 10,
             ),
-            // Obx(() => Text('Current State: ${appController.myState}',style: TextStyle(fontSize: 40,color: Colors.white),)),
+            Obx(() => Text('Current State: ${appController.myState}',style: TextStyle(fontSize: 40,color: Colors.white),)),
 
            Container(
               height: MediaQuery.of(context).size.height * 0.4,

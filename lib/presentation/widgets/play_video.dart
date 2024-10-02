@@ -32,22 +32,26 @@ class _VideoExampleState extends State<VideoExample> {
         iconTheme: const IconThemeData(
             color: Colors.white), 
       ),
-      body: YoutubePlayerBuilder(
-        player: YoutubePlayer(
-          controller: _controller,
-          showVideoProgressIndicator: true,
-          onReady: () {
-            print('Player is ready.');
-          },
+      body: Expanded(
+        child: Center(
+          child: YoutubePlayerBuilder(
+            player: YoutubePlayer(
+              controller: _controller,
+              showVideoProgressIndicator: true,
+              onReady: () {
+                print('Player is ready.');
+              },
+            ),
+            builder: (context, player) {
+              return Column(
+                children: [
+                  // Some widgets like loading indicators can be placed here
+                  player,
+                ],
+              );
+            },
+          ),
         ),
-        builder: (context, player) {
-          return Column(
-            children: [
-              // Some widgets like loading indicators can be placed here
-              player,
-            ],
-          );
-        },
       ),
     );
   }
