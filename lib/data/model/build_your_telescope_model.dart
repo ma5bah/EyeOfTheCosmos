@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 
 class BuildYourTelescope {
   String title;
- 
+
   VoidCallback onTap;
 
   BuildYourTelescope({required this.title, required this.onTap});
@@ -13,24 +13,21 @@ class BuildYourTelescope {
 
 List<BuildYourTelescope> buildYourTelescopesLevel = [
   BuildYourTelescope(
-    title: 'Level One',
-    
+    title: 'Start Game',
     onTap: () {
       Get.to(BuildTelescopeLevel1Page1());
     },
   ),
-  BuildYourTelescope(
-    title: 'Level Two',
-   
-    onTap: () {
-      // Get.to(LevelTwo());
-    },
-  ),
-  BuildYourTelescope(
-    title: 'Level Three',
+  // BuildYourTelescope(
+  //   title: 'Level Two',
 
-    onTap: () {},
-  ),
-    
-   
+  //   onTap: () {
+  //     // Get.to(LevelTwo());
+  //   },
+  // ),
+  // BuildYourTelescope(
+  //   title: 'Level Three',
+
+  //   onTap: () {},
+  // ),
 ];

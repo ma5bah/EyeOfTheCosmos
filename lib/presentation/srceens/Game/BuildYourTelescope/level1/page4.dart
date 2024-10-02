@@ -153,7 +153,7 @@ class _BuildYourOwnLevel1Page4State extends State<BuildYourOwnLevel1Page4> {
                 ),
                 OutlinedButton(
                   child: Text(
-                    "Next Page",
+                    "Next Step",
                     style: TextStyle(
                         color: Colors.white,
                         fontSize: 20,
