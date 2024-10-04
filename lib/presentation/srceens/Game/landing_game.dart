@@ -59,28 +59,23 @@ class _GamingSectionLandingState extends State<GamingSectionLanding> {
               const SizedBox(
                 height: 20,
               ),
-              Center(
-                  child: Container(
-                      height: MediaQuery.of(context).size.height * 0.65,
-                      child: ListView.builder(
-                        scrollDirection: Axis.vertical,
-                        // Enable horizontal scrolling
-                        itemCount: gameItems.length,
-                        itemBuilder: (context, index) {
-                          return InkWell(
-                            onTap: gameItems[index].onTap,
-                            child: Padding(
-                                padding: EdgeInsets.symmetric(
-                                    horizontal: 10, vertical: 5),
-                                child: GameScreenLandingCard(
-                                    title: gameItems[index].title,
-                                    imageUrl: gameItems[index].imageUrl)),
-                          );
-                        },
-                      ))),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.02,
-              ),
+              Expanded(
+                  child: ListView.builder(
+                scrollDirection: Axis.vertical,
+                // Enable horizontal scrolling
+                itemCount: gameItems.length,
+                itemBuilder: (context, index) {
+                  return InkWell(
+                    onTap: gameItems[index].onTap,
+                    child: Padding(
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                        child: GameScreenLandingCard(
+                            title: gameItems[index].title,
+                            imageUrl: gameItems[index].imageUrl)),
+                  );
+                },
+              )),
             ],
           ),
         ],

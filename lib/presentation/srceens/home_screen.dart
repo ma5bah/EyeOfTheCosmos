@@ -16,28 +16,25 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
- @override
+  @override
+  void initState() {
+    super.initState();
+    AudioManager().playMusic('music/homescreen_background.mp3');
+  }
 
-void initState() {  
-  super.initState();  
-  AudioManager().playMusic('music/homescreen_background.mp3');  
-}  
-
-@override  
-void dispose() {  
-  AudioManager().stopMusic();  
-  super.dispose();  
-}  
+  @override
+  void dispose() {
+    AudioManager().stopMusic();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     // AudioManager().playMusic('music/homescreen_background.mp3');
     return Scaffold(
       appBar: AppBar(
-        // backgroundColor: Colors.black12,
         elevation: 0,
-        iconTheme: const IconThemeData(
-            color: Colors.white), // Set AppBar icons to white
+        iconTheme: const IconThemeData(color: Colors.white),
       ),
       drawer: const DrawerWidget(),
       body: Stack(
@@ -52,12 +49,8 @@ void dispose() {
             ),
           ),
           Column(
-            // mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              // SizedBox(
-              //   height: MediaQuery.of(context).size.height * 0.09,
-              // ),
               const Padding(
                 padding: EdgeInsets.only(left: 20),
                 child: Text(
@@ -69,7 +62,6 @@ void dispose() {
                   ),
                 ),
               ),
-              
               const Padding(
                 padding: EdgeInsets.only(left: 20),
                 child: Text(
@@ -82,19 +74,14 @@ void dispose() {
                   ),
                 ),
               ),
-              // SizedBox(
-              //   height: MediaQuery.of(context).size.height * 0.2,
-              // ),
-              SizedBox(height: 10),
-
-              // const Spacer(),
-              FeaturedCard(
-                text: "Step into the cosmos and explore galaxies,planets, and stars like never before. Immerse yourself in the universe, where space unfolds before your eyes.",
+              const SizedBox(height: 10),
+              const FeaturedCard(
+                text:
+                    "Step into the cosmos and explore galaxies,planets, and stars like never before. Immerse yourself in the universe, where space unfolds before your eyes.",
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
-
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 20),
                 child: Row(
@@ -128,31 +115,25 @@ void dispose() {
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
-              Center(
-                  child: Container(
-                      height: MediaQuery.of(context).size.height * 0.3,
-                      child: ListView.builder(
-                        scrollDirection: Axis.vertical,
-                        // Enable horizontal scrolling
-                        itemCount: exploreItems.length,
-                        itemBuilder: (context, index) {
-                          return InkWell(
-                            onTap: exploreItems[index].onTap,
-                            child: Padding(
-                                padding: EdgeInsets.symmetric(
-                                    horizontal: 10, vertical: 5),
-                                child: HomeScreenTrendsCard(
-                                    title: exploreItems[index].title,
-                                    imageUrl: exploreItems[index].imageUrl)),
-                          );
-                        },
-                      ))),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.02,
-              ),
+              Expanded(
+                  child: ListView.builder(
+                scrollDirection: Axis.vertical,
+                itemCount: exploreItems.length,
+                itemBuilder: (context, index) {
+                  return InkWell(
+                    onTap: exploreItems[index].onTap,
+                    child: Padding(
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                        child: HomeScreenTrendsCard(
+                            title: exploreItems[index].title,
+                            imageUrl: exploreItems[index].imageUrl)),
+                  );
+                },
+              )),
             ],
           ),
         ],
@@ -160,6 +141,3 @@ void dispose() {
     );
   }
 }
-
-
-
