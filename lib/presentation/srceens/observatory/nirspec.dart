@@ -23,7 +23,7 @@ class _ImageGalleryPageState extends State<ImageGalleryPage> {
   }
 
   Future<void> fetchImages() async {
-    final url = 'https://esawebb.org/images/archive/category/nirspec/';
+    final url = 'https://esawebb.org/images/archive/category/${widget.category.toLowerCase().replaceAll(" ","")}';
     final response = await http.get(Uri.parse(url));
 
     if (response.statusCode == 200) {
@@ -59,7 +59,7 @@ class _ImageGalleryPageState extends State<ImageGalleryPage> {
               return {};
             })
             .where((image) => image.isNotEmpty) // Filter out empty entries
-            .take(10) // Limit to 10 images
+            // .take(10) // Limit to 10 images
             .cast<
                 Map<String, String>>() // Ensure the list is of the correct type
             .toList();

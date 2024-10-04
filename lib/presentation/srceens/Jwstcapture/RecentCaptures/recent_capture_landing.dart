@@ -28,7 +28,6 @@ class _RecentCaptureLandingState extends State<RecentCaptureLanding> {
 
   @override
   void initState() {
-    print("rakib");
     // TODO: implement initState
     loadData();
     super.initState();

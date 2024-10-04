@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 import 'package:eyesofcosmos/presentation/srceens/observatory/nirspec.dart';
+import 'package:http/http.dart' as http;
+import 'package:html/parser.dart' as parser;
 
 class WebbObservatoryPage extends StatefulWidget {
   const WebbObservatoryPage({Key? key}) : super(key: key);
@@ -11,6 +13,30 @@ class WebbObservatoryPage extends StatefulWidget {
 
 class _WebbObservatoryPageState extends State<WebbObservatoryPage> {
   late YoutubePlayerController _youtubeController;
+
+  Future<List<Widget>> fetch_image_category() async {
+    final url = "https://esawebb.org/images/";
+    final response = await http.get(Uri.parse(url));
+    if (response.statusCode == 200) {
+      final document = parser.parse(response.body);
+      final elements = document.getElementsByClassName(
+          "me-3 border border-white btn-outline-primary p-1 mt-2 d-inline-block");
+      elements.map((element) {
+        final src = element.attributes['src'];
+        final titleElement = element.text;
+        print(src);
+        print(titleElement);
+      });
+    }
+    return [
+      _buildChip('Webb Launch'),
+      _buildChip('NIRISS'),
+      _buildChip('NIRCAM'),
+      _buildChip('NIRSPEC'),
+      _buildChip('Instrument Module'),
+      _buildChip('Mid Infrared Instrument')
+    ];
+  }
 
   @override
   void initState() {
@@ -51,7 +77,8 @@ class _WebbObservatoryPageState extends State<WebbObservatoryPage> {
             Stack(
               children: [
                 Image.asset(
-                  'assets/images/toptrends/image2.png', // Replace with your image path
+                  'assets/images/toptrends/image2.png',
+                  // Replace with your image path
                   width: MediaQuery.of(context).size.width,
                   fit: BoxFit.cover,
                 ),
@@ -149,7 +176,8 @@ class _WebbObservatoryPageState extends State<WebbObservatoryPage> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Image.asset(
-                'assets/images/toptrends/image2.png', // Replace with your image path
+                'assets/images/toptrends/image2.png',
+                // Replace with your image path
                 width: MediaQuery.of(context).size.width,
                 fit: BoxFit.cover,
               ),
@@ -215,7 +243,8 @@ class _WebbObservatoryPageState extends State<WebbObservatoryPage> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Image.asset(
-                'assets/images/toptrends/image2.png', // Replace with your image path
+                'assets/images/toptrends/image2.png',
+                // Replace with your image path
                 width: MediaQuery.of(context).size.width,
                 fit: BoxFit.cover,
               ),
@@ -247,14 +276,12 @@ class _WebbObservatoryPageState extends State<WebbObservatoryPage> {
   Widget _buildChip(String label) {
     return GestureDetector(
       onTap: () {
-        if (label == 'NIRSPEC') {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => ImageGalleryPage(category: label),
-            ),
-          );
-        }
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => ImageGalleryPage(category: label),
+          ),
+        );
         // You can add other onTap events for different categories if needed.
       },
       child: Chip(
