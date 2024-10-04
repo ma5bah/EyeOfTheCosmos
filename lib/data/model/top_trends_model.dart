@@ -26,8 +26,8 @@ List<ExploreItem> exploreItems = [
     title: 'Explore Our\nUniverse Game',
     imageUrl: 'assets/images/toptrends/game.png',
     onTap: () {
-      controller.changeScreen(2);
-      Get.to(GamingSectionLanding());
+      controller.changeScreen(3);
+      Get.to(MainBottomNavScreen());
     },
   ),
   // ExploreItem(
@@ -42,8 +42,8 @@ List<ExploreItem> exploreItems = [
     title: ' Explore\nMissions',
     imageUrl: 'assets/images/toptrends/image2.png',
     onTap: () {
-      controller.changeScreen(1); //you
-      Get.to(JwstmissionNews());
+      controller.changeScreen(4); //you
+      Get.to(MainBottomNavScreen());
     },
   ),
   ExploreItem(
