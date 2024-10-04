@@ -3,24 +3,6 @@ import 'package:get/get.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return GetMaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Chatbot',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: ChatScreen(),
-    );
-  }
-}
-
 class ChatScreen extends StatelessWidget {
   final TextEditingController _controller = TextEditingController();
   final ChatController _chatController = Get.put(ChatController());
@@ -35,14 +17,19 @@ class ChatScreen extends StatelessWidget {
       body: Column(
         children: [
           Expanded(
-            child: Obx(() => ListView.builder(
-              controller: _chatController.scrollController,
-              itemCount: _chatController.messages.length,
-              itemBuilder: (context, index) {
-                final message = _chatController.messages[index];
-                return ChatMessageWidget(message: message);
-              },
-            )),
+            child: Obx(() {
+              return ListView.builder(
+                controller: _chatController.scrollController,
+                itemCount: _chatController.messages.length,
+                itemBuilder: (context, index) {
+                  final message = _chatController.messages[index];
+                  return ChatMessageWidget(
+                    message: message,
+                    isLoading: message.isLoading,
+                  );
+                },
+              );
+            }),
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
@@ -84,8 +71,9 @@ class ChatScreen extends StatelessWidget {
 
 class ChatMessageWidget extends StatelessWidget {
   final ChatMessage message;
+  final bool isLoading;
 
-  const ChatMessageWidget({Key? key, required this.message}) : super(key: key);
+  const ChatMessageWidget({Key? key, required this.message, required this.isLoading}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -99,7 +87,11 @@ class ChatMessageWidget extends StatelessWidget {
             color: message.isUserMessage ? Colors.blueAccent : Colors.grey[300],
             borderRadius: BorderRadius.circular(10),
           ),
-          child: Text(
+          child: isLoading
+              ? CircularProgressIndicator(
+            color: message.isUserMessage ? Colors.white : Colors.black,
+          )
+              : Text(
             message.text,
             style: TextStyle(
               color: message.isUserMessage ? Colors.white : Colors.black,
@@ -114,8 +106,9 @@ class ChatMessageWidget extends StatelessWidget {
 class ChatMessage {
   final String text;
   final bool isUserMessage;
+  final bool isLoading;
 
-  ChatMessage({required this.text, required this.isUserMessage});
+  ChatMessage({required this.text, required this.isUserMessage, this.isLoading = false});
 }
 
 class ChatController extends GetxController {
@@ -129,34 +122,49 @@ class ChatController extends GetxController {
     });
   }
 
+  void updateMessage(int index, ChatMessage updatedMessage) {
+    messages[index] = updatedMessage;
+    Future.delayed(Duration(milliseconds: 100), () {
+      scrollController.jumpTo(scrollController.position.maxScrollExtent);
+    });
+  }
+
   Future<void> sendMessageToAI(String message) async {
+    // Add loading message as response
+    int loadingIndex = messages.length;
+    addMessage(ChatMessage(text: '...', isUserMessage: false, isLoading: true));
+
     try {
       var response = await http.post(
-        Uri.parse('https://api.openai.com/v1/chat/completions'),
+        Uri.parse('https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.3/v1/chat/completions'),
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': 'Bearer YOUR_API_KEY',
+          'Authorization': 'Bearer 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', // Replace with your Hugging Face API key
         },
         body: jsonEncode({
-          "model": "gpt-3.5-turbo",
+          "model": "mistralai/Mistral-7B-Instruct-v0.3",
           "messages": [
             {"role": "user", "content": message}
-          ]
+          ],
+          "temperature": 0.5,
+          "max_tokens": 1024,
+          "top_p": 0.7,
+          "stream": false // Disable stream for simplicity
         }),
       );
 
       if (response.statusCode == 200) {
         var data = jsonDecode(response.body);
         String botMessage = data['choices'][0]['message']['content'];
-        addMessage(ChatMessage(
-          text: botMessage,
-          isUserMessage: false,
-        ));
+
+        // Update the loading message with the actual response
+        updateMessage(loadingIndex, ChatMessage(text: botMessage, isUserMessage: false, isLoading: false));
       } else {
-        print("Error: ${response.statusCode}");
+        updateMessage(loadingIndex, ChatMessage(text: 'Failed to get a response', isUserMessage: false));
       }
     } catch (e) {
-      print("Error sending message: $e");
+      // Update the loading message with a failure message
+      updateMessage(loadingIndex, ChatMessage(text: 'Failed to send request', isUserMessage: false));
     }
   }
 }
