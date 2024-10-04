@@ -4,6 +4,7 @@ import 'package:eyesofcosmos/data/model/gaming_landing_section_model.dart';
 import 'package:eyesofcosmos/data/model/jwst_live.dart';
 import 'package:eyesofcosmos/presentation/srceens/Game/landing_game.dart';
 import 'package:eyesofcosmos/presentation/srceens/IFrameView.dart';
+import 'package:eyesofcosmos/presentation/srceens/Jwstcapture/landingScreen.dart';
 import 'package:eyesofcosmos/presentation/srceens/News/jwstmission_news.dart';
 import 'package:eyesofcosmos/presentation/srceens/SolarSystem/solar_syestem_landing.dart';
 import 'package:eyesofcosmos/presentation/srceens/observatory/webobservatory.dart';
@@ -25,6 +26,14 @@ class ExploreItem {
 
 List<ExploreItem> exploreItems = [
   ExploreItem(
+    title: 'Observatory\nJames Webb',
+    imageUrl: 'assets/images/toptrends/image4.png',
+    onTap: () {
+      controller.changeScreen(1);
+      Get.to(WebbObservatoryPage());
+    },
+  ),
+  ExploreItem(
     title: 'Explore Our\nUniverse Game',
     imageUrl: 'assets/images/toptrends/game.png',
     onTap: () {
@@ -32,14 +41,7 @@ List<ExploreItem> exploreItems = [
       Get.to(MainBottomNavScreen());
     },
   ),
-  // ExploreItem(
-  //   title: '3D Universe',
-  //   imageUrl: 'assets/images/toptrends/image1.png',
-  //   onTap: () {
-  //     controller.changeScreen(2);
-  //     Get.to(MainBottomNavScreen());
-  //   },
-  // ),
+
   ExploreItem(
     title: ' Explore\nMissions',
     imageUrl: 'assets/images/toptrends/image2.png',
@@ -52,8 +54,7 @@ List<ExploreItem> exploreItems = [
     title: 'Explore\nJWST Captures',
     imageUrl: 'assets/images/toptrends/image3.png',
     onTap: () {
-      controller.changeScreen(1); //you
-      Get.to(MainBottomNavScreen());
+      Get.to(JWSTCaptureLanding());
     },
   ),
   // ExploreItem(
@@ -61,20 +62,13 @@ List<ExploreItem> exploreItems = [
   //   imageUrl: 'assets/images/toptrends/image4.png',
   //   onTap: () {},
   // ),
-  ExploreItem(
-    title: 'Observatory\nJames Webb',
-    imageUrl: 'assets/images/toptrends/image4.png',
-    onTap: () {
-      controller.changeScreen(1);
-      Get.to(WebbObservatoryPage());
-    },
-  ),
+
   ExploreItem(
     title: 'Solar System\nIn JWST Eyes',
     imageUrl: 'assets/images/toptrends/image5.png',
     onTap: () {
       controller.changeScreen(1);
-      Get.to(WebviewScreen(link: nasa_jwst_eyes,callback: (){}));
+      Get.to(WebviewScreen(link: nasa_jwst_eyes));
     },
   ),
   ExploreItem(

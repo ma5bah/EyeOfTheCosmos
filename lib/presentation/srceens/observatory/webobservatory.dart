@@ -1,3 +1,4 @@
+import 'package:eyesofcosmos/data/model/audio_manager_model.dart';
 import 'package:flutter/material.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 import 'package:eyesofcosmos/presentation/srceens/observatory/nirspec.dart';
@@ -12,6 +13,8 @@ class WebbObservatoryPage extends StatefulWidget {
 }
 
 class _WebbObservatoryPageState extends State<WebbObservatoryPage> {
+
+
   late YoutubePlayerController _youtubeController;
 
   Future<List<Widget>> fetch_image_category() async {
@@ -24,7 +27,6 @@ class _WebbObservatoryPageState extends State<WebbObservatoryPage> {
       List<Widget> x = [];
       for (var element in elements) {
         var src = element.attributes['href'];
-          print('Image category: ${element.text}, Image URL: $src');
         if (src != null) {
           x.add(_buildChip(element.text, src));
         }
@@ -37,6 +39,7 @@ class _WebbObservatoryPageState extends State<WebbObservatoryPage> {
   @override
   void initState() {
     super.initState();
+    AudioManager().playMusic('music/solar_sections.mp3');
     fetch_image_category();
     _youtubeController = YoutubePlayerController(
       initialVideoId: 'zXyz1QtPqUY', // YouTube video ID
@@ -49,6 +52,7 @@ class _WebbObservatoryPageState extends State<WebbObservatoryPage> {
 
   @override
   void dispose() {
+    AudioManager().stopMusic();
     _youtubeController.dispose();
     super.dispose();
   }

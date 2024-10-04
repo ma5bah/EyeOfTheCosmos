@@ -1,3 +1,4 @@
+import 'package:eyesofcosmos/data/model/audio_manager_model.dart';
 import 'package:eyesofcosmos/data/model/news_item.dart';
 import 'package:eyesofcosmos/data/utility/network_caller.dart';
 import 'package:eyesofcosmos/presentation/srceens/News/news_details_screen.dart';
@@ -24,8 +25,15 @@ class _JwstmissionNewsState extends State<JwstmissionNews> {
   @override
   void initState() {
     super.initState();
+    AudioManager().playMusic('music/news_section_music.mp3');
     _loadNews();
- fetchAllImages();
+    fetchAllImages();
+  }
+
+  @override
+  void dispose() {
+    AudioManager().stopMusic();
+    super.dispose();
   }
 
   // Method to fetch the news items from the API
@@ -112,8 +120,8 @@ class _JwstmissionNewsState extends State<JwstmissionNews> {
           return InkWell(
             onTap: () {
               Get.to(NewsDetailsScreen(
-                  item: newsItem, // Pass the news item to details screen
-                  ));
+                item: newsItem, // Pass the news item to details screen
+              ));
             },
             child: NewsCard(
               title: newsItem.title,

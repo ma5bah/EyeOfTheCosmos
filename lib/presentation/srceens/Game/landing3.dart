@@ -14,9 +14,21 @@ class GamingSelectionLanding2 extends StatefulWidget {
 }
 
 class _GamingSelectionLanding2State extends State<GamingSelectionLanding2> {
+
+  @override
+  void initState() {
+    super.initState();
+    AudioManager().playMusic('music/game_screen.mp3');
+  }
+  @override
+  void dispose() {
+    AudioManager().stopMusic();
+    super.dispose();
+  }
+
+
   @override
   Widget build(BuildContext context) {
-    AudioManager().playMusic('music/game_screen.mp3');
     return Scaffold(
       appBar: AppBar(
         // backgroundColor: Colors.black12,

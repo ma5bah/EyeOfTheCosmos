@@ -11,17 +11,24 @@ import 'package:eyesofcosmos/presentation/utils/image_assets.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import 'observatory/webobservatory.dart';
+
 final List<Widget> screens = [
   HomeScreen(),
-  JWSTCaptureLanding(),
-  WebviewScreen(link: nasa_jwst_eyes, callback: () {
-    AudioManager().playMusic('music/solar_sections.mp3');
-  }),
+  // JWSTCaptureLanding(),
+  WebbObservatoryPage(),
+  WebviewScreen(
+      link: nasa_jwst_eyes,
+      onInitFunction: () {
+        AudioManager().playMusic('music/solar_sections.mp3');
+      },
+      onDispose: () {
+        AudioManager().stopMusic();
+      }),
   GamingSectionLanding(),
   JwstmissionNews(),
   Doubtsolvingpage(),
 ];
-
 
 class MainBottomNavScreen extends StatefulWidget {
   const MainBottomNavScreen({super.key});
@@ -48,8 +55,7 @@ class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
           elevation: 4,
           items: [
             BottomNavigationBarItem(
-                icon: Image.asset(ImageAssets.homeicon),
-                label: 'Home'),
+                icon: Image.asset(ImageAssets.homeicon), label: 'Home'),
             BottomNavigationBarItem(
                 icon: Image.asset(ImageAssets.jwstcaptureicon),
                 label: 'JWST Capture'),

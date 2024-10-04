@@ -1,5 +1,6 @@
 import 'package:eyesofcosmos/data/model/image_item.dart';
 import 'package:eyesofcosmos/data/utility/network_caller.dart';
+import 'package:eyesofcosmos/presentation/widgets/image_gallery_item.dart';
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:http/http.dart' as http;
@@ -29,7 +30,7 @@ class ExplorePage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Explore Exoplanets'),
       ),
-      body: FutureBuilder<List<dynamic>>(
+      body: FutureBuilder<List<ImageData>>(
         future: fetchImagesByCategory(category),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
@@ -41,7 +42,17 @@ class ExplorePage extends StatelessWidget {
           } else {
             final images = snapshot.data ?? [];
             print('Images: $images');
-            return Center(child: Text("Got The data"));
+            return ListView.builder(
+              itemCount: images.length,
+              itemBuilder: (context, index) {
+                final imageData = images[index];
+                return ImageGalleryItem(imageData: imageData);
+              },
+            );
+
+
+
+
             // For demo purposes, let's assume images[0], images[1], and images[2] have valid URLs
             // final largeImageUrl =
             //     images[0]['imageUrl']; // Modify with actual API structure

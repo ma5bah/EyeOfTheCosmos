@@ -1,18 +1,32 @@
 import 'package:eyesofcosmos/data/model/audio_manager_model.dart';
 import 'package:eyesofcosmos/presentation/utils/image_assets.dart';
 import 'package:eyesofcosmos/data/model/build_your_telescope_model.dart';
-
 import 'package:eyesofcosmos/presentation/widgets/gaming_feature_card.dart';
 import 'package:eyesofcosmos/presentation/widgets/level_card.dart';
 import 'package:flutter/material.dart';
 
-class BuildYourTelescopeLanding extends StatelessWidget {
-  const BuildYourTelescopeLanding({super.key});
+class BuildYourTelescopeLanding extends StatefulWidget {
+  const BuildYourTelescopeLanding({super.key}); // Use StatefulWidget
 
   @override
-  Widget build(BuildContext context) {
-    AudioManager().stopMusic();
+  _BuildYourTelescopeLandingState createState() => _BuildYourTelescopeLandingState();
+}
+
+class _BuildYourTelescopeLandingState extends State<BuildYourTelescopeLanding> {
+  @override
+  void initState() {
+    super.initState();
     AudioManager().playMusic('music/solar_sections.mp3');
+  }
+
+  @override
+  void dispose() {
+    // Stop music when this widget is removed from the widget tree
+    AudioManager().stopMusic();
+    super.dispose();
+  }
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         // backgroundColor: Colors.black12,

@@ -25,7 +25,7 @@ List<GameItem> gameItems = [
       onTap: () {
         controller.changeScreen(3);
         Get.to(
-            WebviewScreen(link: first_game, callback: () {
+            WebviewScreen(link: first_game, onInitFunction: () {
 
             }));
       }),
@@ -35,14 +35,14 @@ List<GameItem> gameItems = [
       onTap: () {
         controller.changeScreen(3);
         Get.to(
-            WebviewScreen(link: second_game,callback: (){},));
+            WebviewScreen(link: second_game));
       }),
   GameItem(
       title: "3D size Comparison",
       imageUrl: "assets/images/gamingsection/3dvisualgame.png",
       onTap: () {
         controller.changeScreen(3);
-        Get.to(WebviewScreen(link: nasa_jwst_compare, callback: (){}));
+        Get.to(WebviewScreen(link: nasa_jwst_compare));
       }),
 //   GameItem(
 //     title: 'Telescope Eyes\n(Kids)',

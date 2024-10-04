@@ -86,16 +86,17 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                       ),
                       color: Colors.blue,
                       onPressed: () => {
-                            Get.to(WebviewScreen(link: "https://rakibhasan.me",callback: (){}))
+                            Get.to(WebviewScreen(link: "https://rakibhasan.me",onInitFunction: (){}))
                           }),
                   IconButton(
-                      icon: Image.asset(ImageAssets.linkedInLogo,
-                          width: 25, height: 25),
+                      icon: const Icon(
+                        Icons.file_download,
+                      ),
                       color: Colors.blue,
                       onPressed: () => {
                             Get.to(WebviewScreen(
                                 link:
-                                    "https://www.linkedin.com/in/rakib-hasan-cuet/",callback: (){}))
+                                    "https://drive.google.com/file/d/11WBlYiL4OcP6Cj9_SwFRH4HUm94W3rqR/view?usp=drivesdk"))
                           }),
                   IconButton(
                       icon: Image.asset(
@@ -107,7 +108,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                       color: Colors.blue,
                       onPressed: () => {
                             Get.to(WebviewScreen(
-                                link: "https://github.com/Rakib-Hasan25",callback: (){}))
+                                link: "https://github.com/ma5bah/EyesOfCosmos"))
                           })
                 ],
               ),
