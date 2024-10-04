@@ -1,5 +1,6 @@
 import 'package:eyesofcosmos/application/controllers/main_bottom_nav_controller.dart';
 import 'package:eyesofcosmos/data/constants.dart';
+import 'package:eyesofcosmos/data/model/audio_manager_model.dart';
 import 'package:eyesofcosmos/presentation/srceens/Game/ScopeItOut/doubtsolvingpage.dart';
 import 'package:eyesofcosmos/presentation/srceens/Game/landing_game.dart';
 import 'package:eyesofcosmos/presentation/srceens/IFrameView.dart';
@@ -13,11 +14,14 @@ import 'package:get/get.dart';
 final List<Widget> screens = [
   HomeScreen(),
   JWSTCaptureLanding(),
-  WebviewScreen(link: nasa_jwst_eyes),
+  WebviewScreen(link: nasa_jwst_eyes, callback: () {
+    AudioManager().playMusic('music/solar_sections.mp3');
+  }),
   GamingSectionLanding(),
   JwstmissionNews(),
   Doubtsolvingpage(),
 ];
+
 
 class MainBottomNavScreen extends StatefulWidget {
   const MainBottomNavScreen({super.key});

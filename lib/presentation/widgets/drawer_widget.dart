@@ -86,7 +86,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                       ),
                       color: Colors.blue,
                       onPressed: () => {
-                            Get.to(WebviewScreen(link: "https://rakibhasan.me"))
+                            Get.to(WebviewScreen(link: "https://rakibhasan.me",callback: (){}))
                           }),
                   IconButton(
                       icon: Image.asset(ImageAssets.linkedInLogo,
@@ -95,7 +95,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                       onPressed: () => {
                             Get.to(WebviewScreen(
                                 link:
-                                    "https://www.linkedin.com/in/rakib-hasan-cuet/"))
+                                    "https://www.linkedin.com/in/rakib-hasan-cuet/",callback: (){}))
                           }),
                   IconButton(
                       icon: Image.asset(
@@ -107,7 +107,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                       color: Colors.blue,
                       onPressed: () => {
                             Get.to(WebviewScreen(
-                                link: "https://github.com/Rakib-Hasan25"))
+                                link: "https://github.com/Rakib-Hasan25",callback: (){}))
                           })
                 ],
               ),

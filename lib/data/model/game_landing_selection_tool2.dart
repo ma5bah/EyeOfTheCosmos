@@ -25,7 +25,9 @@ List<GameItem> gameItems = [
       onTap: () {
         controller.changeScreen(3);
         Get.to(
-            WebviewScreen(link: "https://beta.vectorclasses.net/first_game"));
+            WebviewScreen(link: first_game, callback: () {
+
+            }));
       }),
   GameItem(
       title: "Matching Time",
@@ -33,14 +35,14 @@ List<GameItem> gameItems = [
       onTap: () {
         controller.changeScreen(3);
         Get.to(
-            WebviewScreen(link: "https://beta.vectorclasses.net/second_game"));
+            WebviewScreen(link: second_game,callback: (){},));
       }),
   GameItem(
       title: "3D size Comparison",
       imageUrl: "assets/images/gamingsection/3dvisualgame.png",
       onTap: () {
         controller.changeScreen(3);
-        Get.to(WebviewScreen(link: nasa_jwst_compare));
+        Get.to(WebviewScreen(link: nasa_jwst_compare, callback: (){}));
       }),
 //   GameItem(
 //     title: 'Telescope Eyes\n(Kids)',

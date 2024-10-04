@@ -74,7 +74,7 @@ List<ExploreItem> exploreItems = [
     imageUrl: 'assets/images/toptrends/image5.png',
     onTap: () {
       controller.changeScreen(1);
-      Get.to(WebviewScreen(link: nasa_jwst_eyes));
+      Get.to(WebviewScreen(link: nasa_jwst_eyes,callback: (){}));
     },
   ),
   ExploreItem(

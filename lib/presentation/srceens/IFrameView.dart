@@ -5,14 +5,24 @@ import 'package:webview_flutter/webview_flutter.dart';
 // ignore: must_be_immutable
 class WebviewScreen extends StatefulWidget {
   String link;
+  // callback function
+  Function callback;
+  WebviewScreen({super.key, required this.link, required this.callback});
 
-  WebviewScreen({super.key, required this.link});
+
 
   @override
   State<WebviewScreen> createState() => _WebviewScreenState();
 }
 
 class _WebviewScreenState extends State<WebviewScreen> {
+
+  @override
+  void initState() {
+    super.initState();
+    widget.callback();
+  }
+
   bool _isLoading = false;
   late final WebViewController _webViewController = WebViewController()
     ..setJavaScriptMode(JavaScriptMode.unrestricted) //which device can open
@@ -42,11 +52,11 @@ class _WebviewScreenState extends State<WebviewScreen> {
                 'https://eyes.nasa.gov/apps/solar-system/#/sc_jwst/compare')) {
               print("Page finished " + url + " " + widget.link);
               Get.back();
-              Get.to(WebviewScreen(link: url));
+              Get.to(WebviewScreen(link: url, callback: widget.callback));
             }
             if(widget.link.startsWith("https://eyes.nasa.gov/apps/solar-system/#/sc_jwst?")){
               Get.back();
-              Get.to(WebviewScreen(link: url));
+              Get.to(WebviewScreen(link: url, callback: widget.callback));
             }
             print("Page finished " + url + " " + widget.link);
           }

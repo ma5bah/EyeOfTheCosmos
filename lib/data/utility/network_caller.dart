@@ -135,6 +135,13 @@ Future<List<ImageData>> fetchAllImages() async {
   }
 }
 
+Future<List<ImageData>> fetchImagesByCategory(String category) async {
+  final allImages = await fetchAllImages();
+  return allImages.where((element) => element.keywords.contains(category)).toList();
+}
+
+
+
 int calculateTotalPages(int totalItems, int itemsPerPage) {
   return totalItems == 0 ? 0 : (totalItems / itemsPerPage).ceil();
 }
