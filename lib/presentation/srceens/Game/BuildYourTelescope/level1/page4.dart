@@ -160,7 +160,8 @@ class _BuildYourOwnLevel1Page4State extends State<BuildYourOwnLevel1Page4> {
                         fontWeight: FontWeight.bold),
                   ),
                   onPressed: () {
-                    Get.to(BuildTelescopeLevel1FinalScreen());
+                    // @TODO: Fix this error
+                    // Get.to(BuildTelescopeLevel1FinalScreen());
                   },
                 ),
               ],
