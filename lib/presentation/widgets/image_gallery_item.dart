@@ -48,7 +48,7 @@ class ImageGalleryItem extends StatelessWidget {
             Container(
               height: 200,
               child: Image.network(
-                imageData.downloadUrls.first.url, // Display the first download URL as image
+                imageData.downloadUrls.last.url,
                 fit: BoxFit.cover,
               ),
             ),

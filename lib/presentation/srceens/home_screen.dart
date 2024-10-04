@@ -1,4 +1,3 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:eyesofcosmos/data/model/audio_manager_model.dart';
 import 'package:eyesofcosmos/presentation/utils/image_assets.dart';
 import 'package:eyesofcosmos/presentation/widgets/Feature_card.dart';
@@ -6,7 +5,8 @@ import 'package:eyesofcosmos/presentation/widgets/drawer_widget.dart';
 import 'package:eyesofcosmos/presentation/widgets/home_screen_trends_card.dart';
 import 'package:flutter/material.dart';
 import 'package:eyesofcosmos/data/model/top_trends_model.dart';
-import 'package:audioplayers/audioplayers.dart';
+import 'package:get/get.dart';
+import 'ai_chatbot.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -82,12 +82,12 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(
                 height: 20,
               ),
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Column(
+                    const Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -108,10 +108,14 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ],
                     ),
-                    Icon(
-                      Icons.rowing_sharp,
-                      color: Colors.white,
-                    )
+                    TextButton(
+                        onPressed: () {
+                          Get.to(ChatScreen());
+                        },
+                        child: const Icon(
+                          Icons.message,
+                          color: Colors.white,
+                        ))
                   ],
                 ),
               ),

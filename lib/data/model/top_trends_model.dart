@@ -80,7 +80,7 @@ List<ExploreItem> exploreItems = [
     },
   ),
   ExploreItem(
-    title: 'Learn About\nOur Planet',
+    title: 'Learn About\nOur Planets',
     imageUrl: 'assets/images/toptrends/learn_about.jpg',
     onTap: () {
       controller.changeScreen(1);
