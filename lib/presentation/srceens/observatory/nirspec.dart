@@ -5,8 +5,9 @@ import 'package:eyesofcosmos/presentation/srceens/observatory/nirspec_details.da
 
 class ImageGalleryPage extends StatefulWidget {
   final String category;
+  final String link;
 
-  const ImageGalleryPage({required this.category, Key? key}) : super(key: key);
+  const ImageGalleryPage({required this.category, required this.link});
 
   @override
   _ImageGalleryPageState createState() => _ImageGalleryPageState();
@@ -23,7 +24,7 @@ class _ImageGalleryPageState extends State<ImageGalleryPage> {
   }
 
   Future<void> fetchImages() async {
-    final url = 'https://esawebb.org/images/archive/category/nirspec/';
+    final url = 'https://esawebb.org${widget.link}';
     final response = await http.get(Uri.parse(url));
 
     if (response.statusCode == 200) {
@@ -59,7 +60,7 @@ class _ImageGalleryPageState extends State<ImageGalleryPage> {
               return {};
             })
             .where((image) => image.isNotEmpty) // Filter out empty entries
-            .take(10) // Limit to 10 images
+            // .take(10) // Limit to 10 images
             .cast<
                 Map<String, String>>() // Ensure the list is of the correct type
             .toList();

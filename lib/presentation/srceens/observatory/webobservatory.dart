@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 import 'package:eyesofcosmos/presentation/srceens/observatory/nirspec.dart';
+import 'package:http/http.dart' as http;
+import 'package:html/parser.dart' as parser;
 
 class WebbObservatoryPage extends StatefulWidget {
   const WebbObservatoryPage({Key? key}) : super(key: key);
@@ -12,9 +14,30 @@ class WebbObservatoryPage extends StatefulWidget {
 class _WebbObservatoryPageState extends State<WebbObservatoryPage> {
   late YoutubePlayerController _youtubeController;
 
+  Future<List<Widget>> fetch_image_category() async {
+    final url = "https://esawebb.org/images/";
+    final response = await http.get(Uri.parse(url));
+    if (response.statusCode == 200) {
+      final document = parser.parse(response.body);
+      final elements = document.getElementsByClassName(
+          "me-3 border border-white btn-outline-primary p-1 mt-2 d-inline-block");
+      List<Widget> x = [];
+      for (var element in elements) {
+        var src = element.attributes['href'];
+          print('Image category: ${element.text}, Image URL: $src');
+        if (src != null) {
+          x.add(_buildChip(element.text, src));
+        }
+      }
+      return x;
+    }
+    return [];
+  }
+
   @override
   void initState() {
     super.initState();
+    fetch_image_category();
     _youtubeController = YoutubePlayerController(
       initialVideoId: 'zXyz1QtPqUY', // YouTube video ID
       flags: YoutubePlayerFlags(
@@ -51,7 +74,8 @@ class _WebbObservatoryPageState extends State<WebbObservatoryPage> {
             Stack(
               children: [
                 Image.asset(
-                  'assets/images/toptrends/image2.png', // Replace with your image path
+                  'assets/images/toptrends/image2.png',
+                  // Replace with your image path
                   width: MediaQuery.of(context).size.width,
                   fit: BoxFit.cover,
                 ),
@@ -84,17 +108,29 @@ class _WebbObservatoryPageState extends State<WebbObservatoryPage> {
             SizedBox(height: 20),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Wrap(
-                spacing: 10,
-                runSpacing: 10,
-                children: [
-                  _buildChip('Webb Launch'),
-                  _buildChip('NIRISS'),
-                  _buildChip('NIRCAM'),
-                  _buildChip('NIRSPEC'),
-                  _buildChip('Instrument Module'),
-                  _buildChip('Mid Infrared Instrument'),
-                ],
+              child: FutureBuilder<List<Widget>>(
+                future: fetch_image_category(),
+                // Your async function that returns a list of widgets
+                builder: (BuildContext context,
+                    AsyncSnapshot<List<Widget>> snapshot) {
+                  if (snapshot.connectionState == ConnectionState.waiting) {
+                    // While the future is being resolved, show a loading indicator
+                    return Center(child: CircularProgressIndicator());
+                  } else if (snapshot.hasError) {
+                    // If an error occurred, show an error message
+                    return Center(child: Text('Error: ${snapshot.error}'));
+                  } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
+                    // If there's no data, display a message
+                    return Center(child: Text('No categories available.'));
+                  } else {
+                    // If the future completed successfully, display the fetched data
+                    return Wrap(
+                      spacing: 10,
+                      runSpacing: 10,
+                      children: snapshot.data!,
+                    );
+                  }
+                },
               ),
             ),
             SizedBox(height: 30),
@@ -149,7 +185,8 @@ class _WebbObservatoryPageState extends State<WebbObservatoryPage> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Image.asset(
-                'assets/images/toptrends/image2.png', // Replace with your image path
+                'assets/images/toptrends/image2.png',
+                // Replace with your image path
                 width: MediaQuery.of(context).size.width,
                 fit: BoxFit.cover,
               ),
@@ -215,7 +252,8 @@ class _WebbObservatoryPageState extends State<WebbObservatoryPage> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Image.asset(
-                'assets/images/toptrends/image2.png', // Replace with your image path
+                'assets/images/toptrends/image2.png',
+                // Replace with your image path
                 width: MediaQuery.of(context).size.width,
                 fit: BoxFit.cover,
               ),
@@ -244,17 +282,15 @@ class _WebbObservatoryPageState extends State<WebbObservatoryPage> {
     );
   }
 
-  Widget _buildChip(String label) {
+  Widget _buildChip(String label, String link) {
     return GestureDetector(
       onTap: () {
-        if (label == 'NIRSPEC') {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => ImageGalleryPage(category: label),
-            ),
-          );
-        }
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => ImageGalleryPage(category: label,link: link),
+          ),
+        );
         // You can add other onTap events for different categories if needed.
       },
       child: Chip(
