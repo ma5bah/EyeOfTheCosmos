@@ -1,5 +1,5 @@
 name: eyesofcosmos
-description: "A new Flutter project."
+description: 'A new Flutter project.'
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -30,7 +30,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
+  # youtube_player_flutter: ^8.0.0
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -43,8 +43,11 @@ dependencies:
   youtube_player_flutter: ^9.0.4
   flutter_staggered_grid_view: ^0.7.0
   http: ^1.2.2
+  html: ^0.15.0
   audioplayers: ^6.1.0
   carousel_slider: ^5.0.0
+  cached_network_image: ^3.2.0
+  
 
 dev_dependencies:
   flutter_test:
@@ -62,7 +65,6 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
-
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
@@ -88,8 +90,7 @@ flutter:
     - assets/images/gamingsection/buildyourtelescope/
     - assets/images/gamingsection/buildyourtelescope/level01/
     - assets/images/gamingsection/scopeitout/
-   
-   
+
     - assets/images/jwstcapture/
     - assets/images/jwstcapture/Recent Captures/
     - assets/images/jwstcapture/Recent Captures/Exoplanet WASP-107b/
@@ -101,24 +102,9 @@ flutter:
     - assets/images/jwstcapture/Recent Captures/MACS J0417.5-1154/
     - assets/images/jwstcapture/Recent Captures/Sarpens Center Crop/
 
-
-
-
-    
-
-
-
-
-
-
-    
-
     - assets/json/
     - assets/json/information.json
     - assets/music/
-
-
-
 
   #   - images/a_dot_ham.jpeg
 
@@ -137,8 +123,8 @@ flutter:
     - family: PoetsenOne
       fonts:
         - asset: fonts/PoetsenOne-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
+    #       - asset: fonts/Schyler-Italic.ttf
+    #         style: italic
     - family: Righteous
       fonts:
         - asset: fonts/Righteous-Regular.ttf

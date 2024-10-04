@@ -5,12 +5,10 @@ import 'package:eyesofcosmos/presentation/utils/image_assets.dart';
 import 'package:get/get.dart';
 
 class BottomNavaigationBar extends StatefulWidget {
- 
-   final Function(int) onTap;
+  final Function(int) onTap;
   final int currentSelectedIndex;
   const BottomNavaigationBar({
     Key? key,
-
     required this.onTap,
     required this.currentSelectedIndex,
   }) : super(key: key);
@@ -26,7 +24,7 @@ class _BottomNavaigationBarState extends State<BottomNavaigationBar> {
       type: BottomNavigationBarType.fixed,
       backgroundColor: Colors.black,
       currentIndex: widget.currentSelectedIndex,
-      onTap: (index)=>widget.onTap(index),
+      onTap: (index) => widget.onTap(index),
       selectedItemColor: Colors.blue.shade800,
       unselectedItemColor: Colors.black,
       showUnselectedLabels: true,
