@@ -14,9 +14,9 @@ final List<Widget> screens = [
   HomeScreen(),
   JWSTCaptureLanding(),
   WebviewScreen(link: nasa_jwst_eyes),
-  // Doubtsolvingpage(),
   GamingSectionLanding(),
   JwstmissionNews(),
+  Doubtsolvingpage(),
 ];
 
 class MainBottomNavScreen extends StatefulWidget {
@@ -41,17 +41,10 @@ class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
           selectedItemColor: Colors.blue.shade800,
           unselectedItemColor: Colors.black,
           showUnselectedLabels: true,
-          // showSelectedLabels: true,
           elevation: 4,
-
           items: [
             BottomNavigationBarItem(
-                backgroundColor: Colors.black12,
-                icon: Image.asset(
-                  ImageAssets.homeicon,
-                  height: 24,
-                  width: 24,
-                ),
+                icon: Image.asset(ImageAssets.homeicon),
                 label: 'Home'),
             BottomNavigationBarItem(
                 icon: Image.asset(ImageAssets.jwstcaptureicon),
@@ -69,15 +62,3 @@ class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
     });
   }
 }
-
-// BottomNavigationBarItem(
-//     icon:  Image.asset(ImageAssets.homeicon), label: 'Home'),
-// BottomNavigationBarItem(
-//     icon: Image.asset(ImageAssets.homeicon), label: 'JWST Capture'),
-// BottomNavigationBarItem(
-//     icon: Image.asset(ImageAssets.homeicon), label: '3D views'),
-// BottomNavigationBarItem(
-//     icon: Image.asset(ImageAssets.homeicon), label: 'Game'),
-
-//     BottomNavigationBarItem(
-//     icon:Image.asset(ImageAssets.homeicon), label: 'JWST Misson And News'),

@@ -26,16 +26,24 @@ class OnboardingPage5 extends StatelessWidget {
             // mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-             const  Padding(
-                padding: EdgeInsets.only(top: 70,right: 20),
+             Padding(
+                padding: const EdgeInsets.only(top: 70,right: 20),
                 child:  Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                  Text("Skip",style: TextStyle(
-                    color: Colors.white,
-                    fontFamily: 'PoetsenOne',
-                    fontSize: 12,
-                  ),)
+                    InkWell(
+                      onTap: () {
+                        Get.to(MainBottomNavScreen());
+                      },
+                      child: const Text(
+                        "Skip",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontFamily: 'PoetsenOne',
+                          fontSize: 12,
+                        ),
+                      ),
+                    )
                 
                 ],),
               ),

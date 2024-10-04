@@ -1,3 +1,4 @@
+import 'package:eyesofcosmos/presentation/srceens/main_bottom_nav_screen.dart';
 import 'package:eyesofcosmos/presentation/srceens/onboarding/page_3.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -25,42 +26,49 @@ class OnboardingPage2 extends StatelessWidget {
             // mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-             const  Padding(
-                padding: EdgeInsets.only(top: 70,right: 20),
-                child:  Row(
+              Padding(
+                padding: const EdgeInsets.only(top: 70, right: 20),
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                  Text("Skip",style: TextStyle(
-                    color: Colors.white,
-                    fontFamily: 'PoetsenOne',
-                    fontSize: 12,
-                  ),)
-                
-                ],),
+                    InkWell(
+                      onTap: () {
+                        Get.to(MainBottomNavScreen());
+                      },
+                      child: const Text(
+                        "Skip",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontFamily: 'PoetsenOne',
+                          fontSize: 12,
+                        ),
+                      ),
+                    )
+                  ],
+                ),
               ),
 
-                 const Padding(
-                  padding: EdgeInsets.only(left: 20),
-                   child: Text(
-                                   'Discover',
-                                   textAlign: TextAlign.left,
-                                   style: TextStyle(
+              const Padding(
+                padding: EdgeInsets.only(left: 20),
+                child: Text(
+                  'Discover',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
                     color: Colors.white,
-                   
                     fontSize: 40,
-                                   ),
-                                 ),
-                 ),
+                  ),
+                ),
+              ),
 
               // SizedBox(
               //   height: MediaQuery.of(context).size.height * 0.3,
               // ),
-              
-             const Spacer(),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 5),
-               child:  Center(
-                 child: Text(
+
+              const Spacer(),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 5),
+                child: Center(
+                  child: Text(
                     'Set sail on an extraordinary interstellar odyssey withJWST. Peer into the depths of space, reveal the hidden mysteries of the cosmos, and marvel at the beauty ofcelestial wonders. The universe awaits your discovery.',
                     textAlign: TextAlign.center,
                     style: TextStyle(
@@ -69,8 +77,8 @@ class OnboardingPage2 extends StatelessWidget {
                       fontSize: 16,
                     ),
                   ),
-               ),
-             ),
+                ),
+              ),
               const Spacer(),
               Center(
                 child: Padding(
@@ -78,18 +86,16 @@ class OnboardingPage2 extends StatelessWidget {
                   child: InkWell(
                     onTap: () => {
                       Get.to(const OnboardingPage3(),
-                       transition: Transition.leftToRightWithFade,  // Specify the transition type here  
-              duration: const Duration(milliseconds: 500)
-                      )
+                          transition: Transition.leftToRightWithFade,
+                          duration: const Duration(milliseconds: 500))
                     },
                     child: Container(
-                      width: MediaQuery.of(context).size.width*0.8,
+                      width: MediaQuery.of(context).size.width * 0.8,
                       height: 150,
                       decoration: const BoxDecoration(
                         image: DecorationImage(
                           image: AssetImage(ImageAssets.onBoardingButtonPng),
                           fit: BoxFit.contain,
-                
                         ),
                       ),
                     ),

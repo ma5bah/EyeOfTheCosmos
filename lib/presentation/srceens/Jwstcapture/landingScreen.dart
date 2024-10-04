@@ -94,9 +94,6 @@ class _JWSTCaptureLandingState extends State<JWSTCaptureLanding> {
                           );
                         },
                       ))),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.02,
-              ),
             ],
           ),
         ],

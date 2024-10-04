@@ -1,3 +1,4 @@
+import 'package:eyesofcosmos/presentation/srceens/main_bottom_nav_screen.dart';
 import 'package:eyesofcosmos/presentation/srceens/onboarding/page_4.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -25,16 +26,24 @@ class OnboardingPage3 extends StatelessWidget {
             // mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-             const  Padding(
-                padding: EdgeInsets.only(top: 70,right: 20),
+             Padding(
+                padding: const EdgeInsets.only(top: 70,right: 20),
                 child:  Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                  Text("Skip",style: TextStyle(
-                    color: Colors.white,
-                    fontFamily: 'PoetsenOne',
-                    fontSize: 12,
-                  ),)
+                    InkWell(
+                      onTap: () {
+                        Get.to(MainBottomNavScreen());
+                      },
+                      child: const Text(
+                        "Skip",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontFamily: 'PoetsenOne',
+                          fontSize: 12,
+                        ),
+                      ),
+                    )
                 
                 ],),
               ),
