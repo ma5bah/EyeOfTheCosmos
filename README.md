@@ -112,9 +112,9 @@ The app leverages real data from several NASA missions and satellites, including
 ---
 
 ## GitHub Repository
-[GitHub Link to Our Project](https://github.com/Rakib-Hasan25/EyesOfCosmos.git)
+[GitHub Link to Our Project](https://github.com/ma5bah/EyesOfCosmos.git)
 
 ## Video Demo
-[Watch the 240-Second Video](https://youtu.be/2ydwoGXQ80Y)
+[Watch the 240-Second Video](https://drive.google.com/file/d/11WBlYiL4OcP6Cj9_SwFRH4HUm94W3rqR/view?usp=drivesdk)
 
 ---
