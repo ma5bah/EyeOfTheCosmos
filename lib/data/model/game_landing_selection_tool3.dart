@@ -1,8 +1,11 @@
+import 'package:eyesofcosmos/application/controllers/main_bottom_nav_controller.dart';
 import 'package:eyesofcosmos/presentation/srceens/Game/BuildYourTelescope/level1/start.dart';
 import 'package:eyesofcosmos/presentation/srceens/Game/ScopeItOut/landing_scope_it_out.dart';
 import 'package:eyesofcosmos/presentation/srceens/Game/landing3.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+final MainBottomNavController controller = Get.find();
 
 class GameItem {
   String title;
@@ -37,6 +40,7 @@ List<GameItem> gameItems = [
     title: 'Telescope Eyes\n(Kids)',
     imageUrl: 'assets/images/gamingsection/scopeitout.png',
     onTap: () {
+      controller.changeScreen(3);
       Get.to(ScopeItOutLanding());
     },
   ),
@@ -44,6 +48,7 @@ List<GameItem> gameItems = [
     title: 'Motion Architect\n(Teens)',
     imageUrl: 'assets/images/gamingsection/buildyourtelescope.png',
     onTap: () {
+      controller.changeScreen(3);
       Get.to(StartGamePage()); // Navigate to the Start Game page
     },
   ),

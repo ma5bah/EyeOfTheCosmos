@@ -1,3 +1,4 @@
+import 'package:eyesofcosmos/application/controllers/main_bottom_nav_controller.dart';
 import 'package:eyesofcosmos/data/constants.dart';
 import 'package:eyesofcosmos/data/model/build_your_telescope_model.dart';
 import 'package:eyesofcosmos/presentation/srceens/Game/BuildYourTelescope/landing2.dart';
@@ -8,6 +9,8 @@ import 'package:eyesofcosmos/presentation/srceens/IFrameView.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:eyesofcosmos/presentation/srceens/Game/BuildYourTelescope/level1/start.dart'; // Import the target page
+
+final MainBottomNavController controller = Get.find();
 
 class GameItem {
   String title;
@@ -45,6 +48,7 @@ List<GameItem> gameItems = [
     title: '3D JWST\nOdessey',
     imageUrl: 'assets/images/gamingsection/scopeitout.png',
     onTap: () {
+      controller.changeScreen(3);
       Get.to(GamingSectionLanding());
     },
   ),
@@ -52,6 +56,7 @@ List<GameItem> gameItems = [
     title: 'Galactic Explore\nGames',
     imageUrl: 'assets/images/gamingsection/scopeitout.png',
     onTap: () {
+      controller.changeScreen(3);
       Get.to(GamingSelectionLanding2());
     },
   ),

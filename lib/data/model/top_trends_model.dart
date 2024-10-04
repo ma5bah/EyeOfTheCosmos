@@ -87,7 +87,7 @@ List<ExploreItem> exploreItems = [
   ),
   ExploreItem(
     title: 'Learn About\nOur Planet',
-    imageUrl: 'assets/images/toptrends/image5.png',
+    imageUrl: 'assets/images/toptrends/learn_about.jpg',
     onTap: () {
       controller.changeScreen(1);
       Get.to(SolarSystemLanding());
