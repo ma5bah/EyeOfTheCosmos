@@ -1,5 +1,6 @@
 import 'package:eyesofcosmos/application/controllers/main_bottom_nav_controller.dart';
 import 'package:eyesofcosmos/data/model/gaming_landing_section_model.dart';
+import 'package:eyesofcosmos/data/model/jwst_live.dart';
 import 'package:eyesofcosmos/presentation/srceens/Game/landing_game.dart';
 import 'package:eyesofcosmos/presentation/srceens/News/jwstmission_news.dart';
 import 'package:eyesofcosmos/presentation/srceens/SolarSystem/solar_syestem_landing.dart';
@@ -78,8 +79,18 @@ List<ExploreItem> exploreItems = [
     title: 'JWST\nLive Tracker',
     imageUrl: 'assets/images/toptrends/image5.png',
     onTap: () {
-      controller.changeScreen(1);
+      controller.changeScreen(0);
       Get.to(JWSTLiveTrackerPage());
     },
   ),
+  ExploreItem(
+    title: 'Learn About\nOur Planet',
+    imageUrl: 'assets/images/toptrends/image5.png',
+    onTap: () {
+      // controller.changeScreen(1);
+      // Get.to(JWSTLiveTracker());
+    },
+  ),
 ];
+
+class JWSTLiveTracker {}
