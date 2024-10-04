@@ -1,6 +1,8 @@
 import 'package:eyesofcosmos/presentation/srceens/Game/BuildYourTelescope/landing.dart';
 import 'package:eyesofcosmos/presentation/srceens/Game/BuildYourTelescope/level1/page1.dart';
 import 'package:eyesofcosmos/presentation/srceens/Game/ScopeItOut/landing_scope_it_out.dart';
+import 'package:eyesofcosmos/presentation/srceens/flutter_web_view.dart';
+import 'package:eyesofcosmos/presentation/srceens/iframe_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -13,11 +15,17 @@ class GameItem {
 }
 
 List<GameItem> gameItems = [
-  GameItem(
-    title: '3D Visual \nGame',
-    imageUrl: 'assets/images/gamingsection/3dvisualgame.png',
-    onTap: () {},
-  ),
+  // GameItem(
+  //   title: '3D Visual \nGame',
+  //   imageUrl: 'assets/images/gamingsection/3dvisualgame.png',
+  //   onTap: () {},
+  // ),
+  GameItem(title: "JWST puzzle", imageUrl:"assets/images/gamingsection/3dvisualgame.png", onTap: (){
+    Get.to(WebviewScreen(link:  "https://beta.vectorclasses.net/first_game"));
+  }),
+  GameItem(title: "Match the part", imageUrl:"assets/images/gamingsection/3dvisualgame.png", onTap: (){
+    Get.to(WebviewScreen(link:  "https://beta.vectorclasses.net/second_game"));
+  }),
   GameItem(
     title: 'Telescope Eyes\n(Kids)',
     imageUrl: 'assets/images/gamingsection/scopeitout.png',
