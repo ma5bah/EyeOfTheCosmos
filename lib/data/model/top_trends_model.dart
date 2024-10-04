@@ -87,8 +87,8 @@ List<ExploreItem> exploreItems = [
     title: 'Learn About\nOur Planet',
     imageUrl: 'assets/images/toptrends/image5.png',
     onTap: () {
-      // controller.changeScreen(1);
-      // Get.to(JWSTLiveTracker());
+      controller.changeScreen(1);
+      Get.to(SolarSystemLanding());
     },
   ),
 ];

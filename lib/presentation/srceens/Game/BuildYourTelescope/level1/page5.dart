@@ -61,7 +61,7 @@ class _BuildTelescopeLevel1FinalScreenState
                 decoration: BoxDecoration(
                   image: DecorationImage(
                     image: AssetImage(
-                        'assets/images/gamingsection/buildyourtelescope/level01/opticalir.png'),
+                        'assets/images/gamingsection/buildyourtelescope/satellite2.jpg'),
                     fit: BoxFit.cover,
                   ),
                 ),
