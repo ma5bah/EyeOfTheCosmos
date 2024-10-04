@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 // ignore: must_be_immutable
 class WebviewScreen extends StatefulWidget {
   String link;
+
   WebviewScreen({super.key, required this.link});
 
   @override
@@ -31,10 +33,17 @@ class _WebviewScreenState extends State<WebviewScreen> {
         },
         onPageFinished: (String url) {
           print("Page finished");
-           setState(() {
-              _isLoading = false; // WebView started loading
-            });
-          if (url.endsWith("tran_type=success")) {
+          setState(() {
+            _isLoading = false; // WebView started loading
+          });
+          if (url.endsWith("tran_type=success")) {}
+          if (url != widget.link) {
+            if (url.startsWith(
+                'https://eyes.nasa.gov/apps/solar-system/#/sc_jwst/compare')) {
+              print("Page finished " + url + " " + widget.link);
+              Get.back();
+              Get.to(WebviewScreen(link: url));
+            }
           }
         },
         onWebResourceError: (WebResourceError error) {},

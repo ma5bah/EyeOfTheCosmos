@@ -1,4 +1,4 @@
-import 'package:eyesofcosmos/presentation/srceens/flutter_web_view.dart';
+import 'package:eyesofcosmos/presentation/srceens/IFrameView.dart';
 import 'package:eyesofcosmos/presentation/utils/image_assets.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
