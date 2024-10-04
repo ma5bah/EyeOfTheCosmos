@@ -1,7 +1,9 @@
 import 'package:eyesofcosmos/application/controllers/main_bottom_nav_controller.dart';
+import 'package:eyesofcosmos/data/constants.dart';
 import 'package:eyesofcosmos/data/model/gaming_landing_section_model.dart';
 import 'package:eyesofcosmos/data/model/jwst_live.dart';
 import 'package:eyesofcosmos/presentation/srceens/Game/landing_game.dart';
+import 'package:eyesofcosmos/presentation/srceens/IFrameView.dart';
 import 'package:eyesofcosmos/presentation/srceens/News/jwstmission_news.dart';
 import 'package:eyesofcosmos/presentation/srceens/SolarSystem/solar_syestem_landing.dart';
 import 'package:eyesofcosmos/presentation/srceens/observatory/webobservatory.dart';
@@ -72,7 +74,7 @@ List<ExploreItem> exploreItems = [
     imageUrl: 'assets/images/toptrends/image5.png',
     onTap: () {
       controller.changeScreen(1);
-      Get.to(JWSTLiveTrackerPage());
+      Get.to(WebviewScreen(link: nasa_jwst_eyes));
     },
   ),
   ExploreItem(

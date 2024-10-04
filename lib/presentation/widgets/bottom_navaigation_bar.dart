@@ -46,7 +46,7 @@ class _BottomNavaigationBarState extends State<BottomNavaigationBar> {
             icon: Image.asset(ImageAssets.jwstcaptureicon),
             label: 'JWST Capture'),
         BottomNavigationBarItem(
-            icon: Image.asset(ImageAssets.dviewsicon), label: '3D views'),
+            icon: Image.asset(ImageAssets.dviewsicon), label: '3D viewsx'),
         BottomNavigationBarItem(
             icon: Image.asset(ImageAssets.gamingicon), label: 'Game'),
         BottomNavigationBarItem(

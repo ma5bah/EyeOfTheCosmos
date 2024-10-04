@@ -44,6 +44,11 @@ class _WebviewScreenState extends State<WebviewScreen> {
               Get.back();
               Get.to(WebviewScreen(link: url));
             }
+            if(widget.link.startsWith("https://eyes.nasa.gov/apps/solar-system/#/sc_jwst?")){
+              Get.back();
+              Get.to(WebviewScreen(link: url));
+            }
+            print("Page finished " + url + " " + widget.link);
           }
         },
         onWebResourceError: (WebResourceError error) {},

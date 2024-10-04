@@ -1,6 +1,8 @@
 import 'package:eyesofcosmos/application/controllers/main_bottom_nav_controller.dart';
+import 'package:eyesofcosmos/data/constants.dart';
 import 'package:eyesofcosmos/presentation/srceens/Game/ScopeItOut/doubtsolvingpage.dart';
 import 'package:eyesofcosmos/presentation/srceens/Game/landing_game.dart';
+import 'package:eyesofcosmos/presentation/srceens/IFrameView.dart';
 import 'package:eyesofcosmos/presentation/srceens/Jwstcapture/landingScreen.dart';
 import 'package:eyesofcosmos/presentation/srceens/home_screen.dart';
 import 'package:eyesofcosmos/presentation/srceens/News/jwstmission_news.dart';
@@ -11,7 +13,8 @@ import 'package:get/get.dart';
 final List<Widget> screens = [
   HomeScreen(),
   JWSTCaptureLanding(),
-  Doubtsolvingpage(),
+  WebviewScreen(link: nasa_jwst_eyes),
+  // Doubtsolvingpage(),
   GamingSectionLanding(),
   JwstmissionNews(),
 ];
