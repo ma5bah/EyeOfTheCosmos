@@ -14,27 +14,20 @@ class JWSTCaptureLanding extends StatefulWidget {
 }
 
 class _JWSTCaptureLandingState extends State<JWSTCaptureLanding> {
-
-
-
+  @override
+  void initState() {
+    super.initState();
+    AudioManager().playMusic('music/solar_sections.mp3');
+  }
 
   @override
-
-void initState() {  
-  super.initState();  
-   AudioManager().playMusic('music/solar_sections.mp3');
-}  
-
-@override  
-void dispose() {  
-  AudioManager().stopMusic();  
-  super.dispose();  
-}  
+  void dispose() {
+    AudioManager().stopMusic();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
-   
-   
     return Scaffold(
       appBar: AppBar(
         // backgroundColor: Colors.black12,

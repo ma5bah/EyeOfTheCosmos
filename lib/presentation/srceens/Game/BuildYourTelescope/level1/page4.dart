@@ -161,7 +161,7 @@ class _BuildYourOwnLevel1Page4State extends State<BuildYourOwnLevel1Page4> {
                   ),
                   onPressed: () {
                     // @TODO: Fix this error
-                    // Get.to(BuildTelescopeLevel1FinalScreen());
+                    Get.to(BuildTelescopeLevel1FinalScreen());
                   },
                 ),
               ],
