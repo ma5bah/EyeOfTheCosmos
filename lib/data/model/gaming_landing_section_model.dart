@@ -1,3 +1,4 @@
+import 'package:eyesofcosmos/data/constants.dart';
 import 'package:eyesofcosmos/data/model/build_your_telescope_model.dart';
 import 'package:eyesofcosmos/presentation/srceens/Game/BuildYourTelescope/landing.dart';
 import 'package:eyesofcosmos/presentation/srceens/Game/ScopeItOut/landing_scope_it_out.dart';
@@ -22,7 +23,7 @@ List<GameItem> gameItems = [
     Get.to(WebviewScreen(link:  "https://beta.vectorclasses.net/second_game"));
   }),
  GameItem(title: "3D size Comparison", imageUrl:"assets/images/gamingsection/3dvisualgame.png", onTap: (){
-    Get.to(WebviewScreen(link:  "https://eyes.nasa.gov/apps/solar-system/#/sc_jwst/compare?featured=false&detailPanel=false&logo=false&search=false&shareButton=false&menu=false&collapseSettingsOptions=true&hideFullScreenToggle=true&hideExternalLinks=true&lighting=flood"));
+    Get.to(WebviewScreen(link:  nasa_jwst_compare));
   }),
   GameItem(
     title: 'Telescope Eyes\n(Kids)',

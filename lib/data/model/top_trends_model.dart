@@ -1,4 +1,5 @@
 import 'package:eyesofcosmos/application/controllers/main_bottom_nav_controller.dart';
+import 'package:eyesofcosmos/data/constants.dart';
 import 'package:eyesofcosmos/data/model/gaming_landing_section_model.dart';
 import 'package:eyesofcosmos/presentation/srceens/Game/landing_game.dart';
 import 'package:eyesofcosmos/presentation/srceens/IFrameView.dart';
@@ -72,7 +73,7 @@ List<ExploreItem> exploreItems = [
     imageUrl: 'assets/images/toptrends/image5.png',
     onTap: () {
       controller.changeScreen(1);
-      Get.to(WebviewScreen(link: "https://eyes.nasa.gov/apps/solar-system/#/home?featured=false&detailPanel=false&logo=false&search=false&shareButton=false&menu=false&collapseSettingsOptions=true&hideFullScreenToggle=true&locked=true&hideExternalLinks=true&lighting=flood"));
+      Get.to(WebviewScreen(link: nasa_jwst_eyes));
     },
   ),
   ExploreItem(

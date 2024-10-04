@@ -67,7 +67,7 @@ class _GamingSectionLandingState extends State<GamingSectionLanding> {
                       child: ListView.builder(
                         scrollDirection: Axis.vertical,
                         // Enable horizontal scrolling
-                        itemCount:gameItems.length ,
+                        itemCount: gameItems.length ,
                         itemBuilder: (context, index) {
                           return InkWell(
                             onTap: gameItems[index].onTap,
