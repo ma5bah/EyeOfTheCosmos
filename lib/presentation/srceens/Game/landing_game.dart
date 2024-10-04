@@ -43,10 +43,10 @@ class _GamingSectionLandingState extends State<GamingSectionLanding> {
               //   height: MediaQuery.of(context).size.height * 0.09,
               // ),
               const Padding(
-                padding: EdgeInsets.only(left: 20,bottom:20),
+                padding: EdgeInsets.only(left: 20, bottom: 20),
                 child: Text(
-                  'Gaming Section',
-                  textAlign: TextAlign.left,
+                  'Explore Your\nFavorite Game',
+                  textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 30,
@@ -54,8 +54,6 @@ class _GamingSectionLandingState extends State<GamingSectionLanding> {
                   ),
                 ),
               ),
-
-              
 
               // const Spacer(),
               const SizedBox(
@@ -67,14 +65,16 @@ class _GamingSectionLandingState extends State<GamingSectionLanding> {
                       child: ListView.builder(
                         scrollDirection: Axis.vertical,
                         // Enable horizontal scrolling
-                        itemCount: gameItems.length ,
+                        itemCount: gameItems.length,
                         itemBuilder: (context, index) {
                           return InkWell(
                             onTap: gameItems[index].onTap,
                             child: Padding(
                                 padding: EdgeInsets.symmetric(
                                     horizontal: 10, vertical: 5),
-                                child: GameScreenLandingCard(title:gameItems[index].title,imageUrl:gameItems[index].imageUrl)),
+                                child: GameScreenLandingCard(
+                                    title: gameItems[index].title,
+                                    imageUrl: gameItems[index].imageUrl)),
                           );
                         },
                       ))),
