@@ -20,7 +20,6 @@ class BuildYourTelescopeLanding extends StatelessWidget {
         iconTheme: const IconThemeData(
             color: Colors.white), // Set AppBar icons to white
       ),
-      
       body: Stack(
         fit: StackFit.expand,
         children: <Widget>[
@@ -40,7 +39,7 @@ class BuildYourTelescopeLanding extends StatelessWidget {
               //   height: MediaQuery.of(context).size.height * 0.09,
               // ),
               const Padding(
-                padding: EdgeInsets.only(left: 20,bottom:20),
+                padding: EdgeInsets.only(left: 20, bottom: 20),
                 child: Text(
                   'Build Your Telescope',
                   textAlign: TextAlign.left,
@@ -53,7 +52,10 @@ class BuildYourTelescopeLanding extends StatelessWidget {
               ),
 
               // const Spacer(),
-              GamingFeatureCard(text: 'This game teaches the player the basic concepts behind telescope design. The Webb Telescope may be unusual in appearance - but it has a lot in common with simple tube-shaped telescopes. The game includes an introduction to different types of telescopes and two telescope matching interactions',),
+              GamingFeatureCard(
+                text:
+                    'This game teaches the player the basic concepts behind telescope design. The Webb Telescope may be unusual in appearance - but it has a lot in common with simple tube-shaped telescopes. The game includes an introduction to different types of telescopes and two telescope matching interactions',
+              ),
               const SizedBox(
                 height: 20,
               ),
@@ -63,15 +65,17 @@ class BuildYourTelescopeLanding extends StatelessWidget {
                       child: ListView.builder(
                         scrollDirection: Axis.vertical,
                         // Enable horizontal scrolling
-                        itemCount:buildYourTelescopesLevel.length,
+                        itemCount: buildYourTelescopesLevel.length,
                         itemBuilder: (context, index) {
                           return InkWell(
-                            onTap:buildYourTelescopesLevel[index].onTap,
-                            child: Padding(
+                              onTap: buildYourTelescopesLevel[index].onTap,
+                              child: Padding(
                                 padding: const EdgeInsets.symmetric(
                                     horizontal: 10, vertical: 5),
-                                child: LevelCard(text:buildYourTelescopesLevel[index].title ,),
-                          ));
+                                child: LevelCard(
+                                  text: buildYourTelescopesLevel[index].title,
+                                ),
+                              ));
                         },
                       ))),
               SizedBox(

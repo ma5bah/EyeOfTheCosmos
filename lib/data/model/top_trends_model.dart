@@ -1,6 +1,11 @@
 import 'package:eyesofcosmos/application/controllers/main_bottom_nav_controller.dart';
+import 'package:eyesofcosmos/data/model/gaming_landing_section_model.dart';
+import 'package:eyesofcosmos/presentation/srceens/Game/landing_game.dart';
+import 'package:eyesofcosmos/presentation/srceens/News/jwstmission_news.dart';
 import 'package:eyesofcosmos/presentation/srceens/SolarSystem/solar_syestem_landing.dart';
+import 'package:eyesofcosmos/presentation/srceens/observatory/webobservatory.dart';
 import 'package:eyesofcosmos/presentation/srceens/main_bottom_nav_screen.dart';
+import 'package:eyesofcosmos/presentation/srceens/jwst_live_tracker/JwstLive.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -17,40 +22,64 @@ class ExploreItem {
 
 List<ExploreItem> exploreItems = [
   ExploreItem(
-    title: '3D Universe',
-    imageUrl: 'assets/images/toptrends/image1.png',
+    title: 'Explore Our\nUniverse Game',
+    imageUrl: 'assets/images/toptrends/game.png',
     onTap: () {
       controller.changeScreen(2);
-      Get.to(MainBottomNavScreen());
+      Get.to(GamingSectionLanding());
     },
   ),
+  // ExploreItem(
+  //   title: '3D Universe',
+  //   imageUrl: 'assets/images/toptrends/image1.png',
+  //   onTap: () {
+  //     controller.changeScreen(2);
+  //     Get.to(MainBottomNavScreen());
+  //   },
+  // ),
   ExploreItem(
-    title: 'JWST Missions',
+    title: ' Explore\nMissions',
     imageUrl: 'assets/images/toptrends/image2.png',
     onTap: () {
-      //  controller.changeScreen();//you
-      // Get.to(MainBottomNavScreen());
+      controller.changeScreen(1); //you
+      Get.to(JwstmissionNews());
     },
   ),
   ExploreItem(
-    title: 'JWST Captures',
+    title: 'Explore\nJWST Captures',
     imageUrl: 'assets/images/toptrends/image3.png',
     onTap: () {
-      controller.changeScreen(1);//you
+      controller.changeScreen(1); //you
       Get.to(MainBottomNavScreen());
     },
   ),
+  // ExploreItem(
+  //   title: 'Own Telescope',
+  //   imageUrl: 'assets/images/toptrends/image4.png',
+  //   onTap: () {},
+  // ),
   ExploreItem(
-    title: 'Own Telescope',
+    title: 'Observatory\nJames Webb',
     imageUrl: 'assets/images/toptrends/image4.png',
-    onTap: () {},
+    onTap: () {
+      controller.changeScreen(1);
+      Get.to(WebbObservatoryPage());
+    },
   ),
   ExploreItem(
-    title: 'Solar System',
+    title: 'Solar System\nIn JWST Eyes',
     imageUrl: 'assets/images/toptrends/image5.png',
     onTap: () {
-      controller.changeScreen(1); 
-      Get.to(SolarSystemLanding());
+      controller.changeScreen(1);
+      Get.to(JWSTLiveTrackerPage());
+    },
+  ),
+  ExploreItem(
+    title: 'JWST\nLive Tracker',
+    imageUrl: 'assets/images/toptrends/image5.png',
+    onTap: () {
+      controller.changeScreen(1);
+      Get.to(JWSTLiveTrackerPage());
     },
   ),
 ];
