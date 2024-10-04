@@ -7,10 +7,10 @@ The "Eye of Cosmos" project, developed by **Team Artemis**, is an immersive, mul
 Through the fusion of JWST imagery and carefully curated music, "Eye of Cosmos" brings the vastness and mystery of the universe to life while informing and inspiring users to learn more about space exploration.
 
 ## Project Demo
-[Watch the Demo Video](https://youtu.be/mtHMyOQ0vzA)
+[Watch the Demo Video](https://drive.google.com/file/d/11WBlYiL4OcP6Cj9_SwFRH4HUm94W3rqR/view?usp=drivesdk)
 
 ## Final Project
-[View the Figma Design](https://www.figma.com/design/zlzt6VWXqtMSGrsUJv3i35/Eye_of_Cosmos_NSAC_2024?node-id=0-1&t=i2ojq7QDrltYai78-1)
+[View the Figma Design](https://www.figma.com/design/zlzt6VWXqtMSGrsUJv3i35/Eye_of_Cosmos_NSAC_2024?node-id=0-1&t=L8BpcSrMxieeEG1B-1)
 
 ---
 
@@ -112,9 +112,9 @@ The app leverages real data from several NASA missions and satellites, including
 ---
 
 ## GitHub Repository
-[GitHub Link to Our Project](https://github.com/Rakib-Hasan25/EyesOfCosmos.git)
+[GitHub Link to Our Project](https://github.com/ma5bah/EyesOfCosmos.git)
 
 ## Video Demo
-[Watch the 240-Second Video](https://youtu.be/2ydwoGXQ80Y)
+[Watch the 240-Second Video](https://drive.google.com/file/d/11WBlYiL4OcP6Cj9_SwFRH4HUm94W3rqR/view?usp=drivesdk)
 
 ---
