@@ -31,7 +31,7 @@ class _GamingSelectionLanding2State extends State<GamingSelectionLanding2> {
           Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("assets/images/GamingSelectionLanding2.png"),
+                image: AssetImage("assets/images/gamingsectionlanding.png"),
                 fit: BoxFit.cover,
               ),
             ),

@@ -3,6 +3,7 @@ import 'package:eyesofcosmos/data/model/build_your_telescope_model.dart';
 import 'package:eyesofcosmos/presentation/srceens/Game/BuildYourTelescope/landing2.dart';
 import 'package:eyesofcosmos/presentation/srceens/Game/ScopeItOut/landing_scope_it_out.dart';
 import 'package:eyesofcosmos/presentation/srceens/Game/landing2.dart';
+import 'package:eyesofcosmos/presentation/srceens/Game/landing3.dart';
 import 'package:eyesofcosmos/presentation/srceens/IFrameView.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -51,7 +52,7 @@ List<GameItem> gameItems = [
     title: 'Galactic Explore\nGames',
     imageUrl: 'assets/images/gamingsection/scopeitout.png',
     onTap: () {
-      Get.to(StartGamePage());
+      Get.to(GamingSelectionLanding2());
     },
   ),
 ];

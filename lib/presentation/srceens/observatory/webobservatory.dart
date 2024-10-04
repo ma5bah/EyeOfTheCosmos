@@ -21,26 +21,23 @@ class _WebbObservatoryPageState extends State<WebbObservatoryPage> {
       final document = parser.parse(response.body);
       final elements = document.getElementsByClassName(
           "me-3 border border-white btn-outline-primary p-1 mt-2 d-inline-block");
-      elements.map((element) {
-        final src = element.attributes['src'];
-        final titleElement = element.text;
-        print(src);
-        print(titleElement);
-      });
+      List<Widget> x = [];
+      for (var element in elements) {
+        var src = element.attributes['href'];
+          print('Image category: ${element.text}, Image URL: $src');
+        if (src != null) {
+          x.add(_buildChip(element.text, src));
+        }
+      }
+      return x;
     }
-    return [
-      _buildChip('Webb Launch'),
-      _buildChip('NIRISS'),
-      _buildChip('NIRCAM'),
-      _buildChip('NIRSPEC'),
-      _buildChip('Instrument Module'),
-      _buildChip('Mid Infrared Instrument')
-    ];
+    return [];
   }
 
   @override
   void initState() {
     super.initState();
+    fetch_image_category();
     _youtubeController = YoutubePlayerController(
       initialVideoId: 'zXyz1QtPqUY', // YouTube video ID
       flags: YoutubePlayerFlags(
@@ -111,17 +108,29 @@ class _WebbObservatoryPageState extends State<WebbObservatoryPage> {
             SizedBox(height: 20),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Wrap(
-                spacing: 10,
-                runSpacing: 10,
-                children: [
-                  _buildChip('Webb Launch'),
-                  _buildChip('NIRISS'),
-                  _buildChip('NIRCAM'),
-                  _buildChip('NIRSPEC'),
-                  _buildChip('Instrument Module'),
-                  _buildChip('Mid Infrared Instrument'),
-                ],
+              child: FutureBuilder<List<Widget>>(
+                future: fetch_image_category(),
+                // Your async function that returns a list of widgets
+                builder: (BuildContext context,
+                    AsyncSnapshot<List<Widget>> snapshot) {
+                  if (snapshot.connectionState == ConnectionState.waiting) {
+                    // While the future is being resolved, show a loading indicator
+                    return Center(child: CircularProgressIndicator());
+                  } else if (snapshot.hasError) {
+                    // If an error occurred, show an error message
+                    return Center(child: Text('Error: ${snapshot.error}'));
+                  } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
+                    // If there's no data, display a message
+                    return Center(child: Text('No categories available.'));
+                  } else {
+                    // If the future completed successfully, display the fetched data
+                    return Wrap(
+                      spacing: 10,
+                      runSpacing: 10,
+                      children: snapshot.data!,
+                    );
+                  }
+                },
               ),
             ),
             SizedBox(height: 30),
@@ -273,13 +282,13 @@ class _WebbObservatoryPageState extends State<WebbObservatoryPage> {
     );
   }
 
-  Widget _buildChip(String label) {
+  Widget _buildChip(String label, String link) {
     return GestureDetector(
       onTap: () {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => ImageGalleryPage(category: label),
+            builder: (context) => ImageGalleryPage(category: label,link: link),
           ),
         );
         // You can add other onTap events for different categories if needed.
