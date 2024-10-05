@@ -81,10 +81,13 @@ class ImageCard extends StatelessWidget {
             height: 200,
             width: double.infinity,
           ),
+
           Padding(
             padding: const EdgeInsets.all(8.0),
+
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
+
               children: [
                 // Title of the image
                 Text(
@@ -100,7 +103,7 @@ class ImageCard extends StatelessWidget {
                   'Release Date: ${imageData.releaseDate}',
                   style: TextStyle(
                     fontSize: 14,
-                    color: Colors.grey[600],
+                    color: Colors.black12,
                   ),
                 ),
                 SizedBox(height: 8),

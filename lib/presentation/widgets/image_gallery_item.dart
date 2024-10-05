@@ -106,6 +106,7 @@ class ImageGalleryItem extends StatelessWidget {
             ),
             SizedBox(height: 16),
             // Learn More Button
+
           ],
         ),
       ),

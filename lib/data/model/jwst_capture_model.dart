@@ -39,6 +39,34 @@ List<CaptureItem> captureItems = [
       Get.to(ExplorePage(category:"Exoplanets")); // Navigate to the new Exoplanets page
     },
   ),
+  CaptureItem(
+    title: 'Explore\nStars',
+    imageUrl: 'assets/images/jwstcapture/ExoPlanetsBg.png',
+    onTap: () {
+      Get.to(ExplorePage(category:"Stars")); // Navigate to the new Exoplanets page
+    },
+  ),
+  CaptureItem(
+    title: 'Explore\nSolar System',
+    imageUrl: 'assets/images/jwstcapture/ExoPlanetsBg.png',
+    onTap: () {
+      Get.to(ExplorePage(category:"Solar System")); // Navigate to the new Exoplanets page
+    },
+  ),
+  CaptureItem(
+    title: 'Explore\nWebb Mission',
+    imageUrl: 'assets/images/jwstcapture/ExoPlanetsBg.png',
+    onTap: () {
+      Get.to(ExplorePage(category:"Webb Mission")); // Navigate to the new Exoplanets page
+    },
+  ),
+  CaptureItem(
+    title: 'Explore\nMiscellaneous',
+    imageUrl: 'assets/images/jwstcapture/ExoPlanetsBg.png',
+    onTap: () {
+      Get.to(ExplorePage(category:"Miscellaneous")); // Navigate to the new Exoplanets page
+    },
+  ),
 
   // CaptureItem(
   //   title: 'Exoplanets',
