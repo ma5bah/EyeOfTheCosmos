@@ -56,7 +56,7 @@ Our challenge was to create a captivating multimedia experience that not only co
 
 ### **How We Developed This Project**
 
-The "Eye of Cosmos" project was built with a mission to deliver an innovative, interactive, and educational tool that transcends traditional learning by blending entertainment and science. We implemented an **Agile Development Methodology** specifically **Scrum**, adhering to iterative updates, feedback integration, and refining the overall user experience.
+The "Eye of the Cosmos" project was built with a mission to deliver an innovative, interactive, and educational tool that transcends traditional learning by blending entertainment and science. We implemented an **Agile Development Methodology** specifically **Scrum**, adhering to iterative updates, feedback integration, and refining the overall user experience.
 
 <img src="/assets/mockup/agile.png" alt="Agile Methodology">
 
@@ -95,6 +95,7 @@ Our aim is to inspire and inform users about the **James Webb Space Telescope** 
 - **Blender**: For 3D model creation
 - **HTTPS Protocol**: Backend for NASA API integration
 - **Flutter**: For cross-platform mobile app development
+- **Dart**: Programming Language
 - **NASA Resources**: For live mission tracking and data
 
 ---
@@ -110,8 +111,9 @@ Several AI tools were utilized to enhance the overall user experience:
 ## Space Agency Data
 
 The app leverages real data from several NASA missions and satellites, including:
-- **[James Webb Space Telescope (JWST)](https://webb.nasa.gov/)**
+- **[NASA Space Agency](https://www.nasa.gov/)**
 - **[Canadian Space Agency Playlist](https://www.asc-csa.gc.ca/eng/multimedia/moon-playlists.asp)**
+- **[The European Space Agency (ESA)](https://esawebb.org/images/)**
 
 ---
 
@@ -126,12 +128,13 @@ The app leverages real data from several NASA missions and satellites, including
 - **[James Webb Live](https://www.youtube.com/live/GN_j_kVsbpI)**
 - **[NASA’s Eyes](https://science.nasa.gov/eyes/)**
 - **[NASA’s Eyes on Solar System](https://eyes.nasa.gov/apps/solar-system/)**
-
+  
 ---
 
 ## GitHub Repository
 [GitHub Link to Our Project](https://github.com/ma5bah/EyesOfCosmos.git)
 
+To know more about our project see the below link-
 ## Video Demo
 [Watch the 240-Second Video](https://drive.google.com/file/d/11WBlYiL4OcP6Cj9_SwFRH4HUm94W3rqR/view)
 
