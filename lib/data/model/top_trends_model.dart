@@ -53,24 +53,11 @@ List<ExploreItem> exploreItems = [
   ExploreItem(
     title: 'Explore\nJWST Captures',
     imageUrl: 'assets/images/toptrends/image3.png',
-    onTap: () {
-      controller.changeScreen(1); //you
-      Get.to(MainBottomNavScreen());
+    onTap: () { //you
+      Get.to(JWSTCaptureLanding());
     },
   ),
-  // ExploreItem(
-  //   title: 'Own Telescope',
-  //   imageUrl: 'assets/images/toptrends/image4.png',
-  //   onTap: () {},
-  // ),
-  ExploreItem(
-    title: 'Observatory\nJames Webb',
-    imageUrl: 'assets/images/toptrends/image4.png',
-    onTap: () {
-      controller.changeScreen(1);
-      Get.to(WebbObservatoryPage());
-    },
-  ),
+  
   ExploreItem(
     title: 'Solar System\nIn JWST Eyes',
     imageUrl: 'assets/images/toptrends/image5.png',

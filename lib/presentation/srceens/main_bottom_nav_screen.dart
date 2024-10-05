@@ -15,7 +15,8 @@ import 'observatory/webobservatory.dart';
 
 final List<Widget> screens = [
   HomeScreen(),
-  JWSTCaptureLanding(),
+  // JWSTCaptureLanding(),
+  WebbObservatoryPage(),
   WebviewScreen(link: nasa_jwst_eyes),
   GamingSectionLanding(),
   JwstmissionNews(),

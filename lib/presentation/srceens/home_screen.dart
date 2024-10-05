@@ -112,9 +112,21 @@ class _HomeScreenState extends State<HomeScreen> {
                         onPressed: () {
                           Get.to(ChatScreen());
                         },
-                        child: const Icon(
-                          Icons.message,
-                          color: Colors.white,
+                        // text + icon combination
+                        child: Row(
+                          children: const [
+                            Text(
+                              'Chat with AI   ',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 12,
+                              ),
+                            ),
+                            Icon(
+                              Icons.chat,
+                              color: Colors.white,
+                            ),
+                          ],
                         ))
                   ],
                 ),
@@ -130,8 +142,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   return InkWell(
                     onTap: exploreItems[index].onTap,
                     child: Padding(
-                        padding:
-                            const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 10, vertical: 5),
                         child: HomeScreenTrendsCard(
                             title: exploreItems[index].title,
                             imageUrl: exploreItems[index].imageUrl)),
