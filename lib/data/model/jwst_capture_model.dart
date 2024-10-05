@@ -1,5 +1,5 @@
 import 'package:eyesofcosmos/application/controllers/main_bottom_nav_controller.dart';
-import 'package:eyesofcosmos/presentation/srceens/Jwstcapture/Exoplanets/exoplanet.dart';
+import 'package:eyesofcosmos/presentation/srceens/Jwstcapture/explore.dart';
 import 'package:eyesofcosmos/presentation/srceens/Jwstcapture/Galaxy/galaxy.dart';
 import 'package:eyesofcosmos/presentation/srceens/Jwstcapture/RecentCaptures/recent_capture_landing.dart';
 import 'package:eyesofcosmos/presentation/srceens/SolarSystem/solar_syestem_landing.dart';
@@ -28,13 +28,43 @@ List<CaptureItem> captureItems = [
   CaptureItem(
     title: 'Explore\nGalaxy',
     imageUrl: 'assets/images/jwstcapture/galaxybg.png',
-    onTap: () {},
+    onTap: () {
+      Get.to(ExplorePage(category: "Galaxies"));
+    },
   ),
   CaptureItem(
     title: 'Explore\nExoplanets',
     imageUrl: 'assets/images/jwstcapture/ExoPlanetsBg.png',
     onTap: () {
-      Get.to(ExoplanetPage()); // Navigate to the new Exoplanets page
+      Get.to(ExplorePage(category:"Exoplanets")); // Navigate to the new Exoplanets page
+    },
+  ),
+  CaptureItem(
+    title: 'Explore\nStars',
+    imageUrl: 'assets/images/jwstcapture/ExoPlanetsBg.png',
+    onTap: () {
+      Get.to(ExplorePage(category:"Stars")); // Navigate to the new Exoplanets page
+    },
+  ),
+  CaptureItem(
+    title: 'Explore\nSolar System',
+    imageUrl: 'assets/images/jwstcapture/ExoPlanetsBg.png',
+    onTap: () {
+      Get.to(ExplorePage(category:"Solar System")); // Navigate to the new Exoplanets page
+    },
+  ),
+  CaptureItem(
+    title: 'Explore\nWebb Mission',
+    imageUrl: 'assets/images/jwstcapture/ExoPlanetsBg.png',
+    onTap: () {
+      Get.to(ExplorePage(category:"Webb Mission")); // Navigate to the new Exoplanets page
+    },
+  ),
+  CaptureItem(
+    title: 'Explore\nMiscellaneous',
+    imageUrl: 'assets/images/jwstcapture/ExoPlanetsBg.png',
+    onTap: () {
+      Get.to(ExplorePage(category:"Miscellaneous")); // Navigate to the new Exoplanets page
     },
   ),
 

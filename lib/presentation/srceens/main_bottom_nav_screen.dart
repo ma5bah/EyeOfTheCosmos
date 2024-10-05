@@ -1,5 +1,6 @@
 import 'package:eyesofcosmos/application/controllers/main_bottom_nav_controller.dart';
 import 'package:eyesofcosmos/data/constants.dart';
+import 'package:eyesofcosmos/data/model/audio_manager_model.dart';
 import 'package:eyesofcosmos/presentation/srceens/Game/ScopeItOut/doubtsolvingpage.dart';
 import 'package:eyesofcosmos/presentation/srceens/Game/landing_game.dart';
 import 'package:eyesofcosmos/presentation/srceens/IFrameView.dart';
@@ -10,13 +11,15 @@ import 'package:eyesofcosmos/presentation/utils/image_assets.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import 'observatory/webobservatory.dart';
+
 final List<Widget> screens = [
-  const HomeScreen(),
-  const JWSTCaptureLanding(),
+  HomeScreen(),
+  JWSTCaptureLanding(),
   WebviewScreen(link: nasa_jwst_eyes),
-  const GamingSectionLanding(),
-  const JwstmissionNews(),
-  const Doubtsolvingpage(),
+  GamingSectionLanding(),
+  JwstmissionNews(),
+  Doubtsolvingpage(),
 ];
 
 class MainBottomNavScreen extends StatefulWidget {
@@ -44,8 +47,7 @@ class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
           elevation: 4,
           items: [
             BottomNavigationBarItem(
-                icon: Image.asset(ImageAssets.homeicon),
-                label: 'Home'),
+                icon: Image.asset(ImageAssets.homeicon), label: 'Home'),
             BottomNavigationBarItem(
                 icon: Image.asset(ImageAssets.jwstcaptureicon),
                 label: 'JWST Capture'),

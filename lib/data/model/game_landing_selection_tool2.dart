@@ -22,7 +22,9 @@ List<GameItem> gameItems = [
       onTap: () {
         controller.changeScreen(3);
         Get.to(
-            WebviewScreen(link: "https://beta.vectorclasses.net/first_game"));
+            WebviewScreen(link: first_game, onInitFunction: () {
+
+            }));
       }),
   GameItem(
       title: "Matching Time",
@@ -30,7 +32,7 @@ List<GameItem> gameItems = [
       onTap: () {
         controller.changeScreen(3);
         Get.to(
-            WebviewScreen(link: "https://beta.vectorclasses.net/second_game"));
+            WebviewScreen(link: second_game));
       }),
   GameItem(
       title: "3D size Comparison",

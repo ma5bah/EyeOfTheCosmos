@@ -5,14 +5,34 @@ import 'package:webview_flutter/webview_flutter.dart';
 // ignore: must_be_immutable
 class WebviewScreen extends StatefulWidget {
   String link;
+  Function? onInitFunction;
+  Function? onDispose;
 
-  WebviewScreen({super.key, required this.link});
+  WebviewScreen({super.key, required this.link, this.onInitFunction, this.onDispose});
 
   @override
   State<WebviewScreen> createState() => _WebviewScreenState();
 }
 
 class _WebviewScreenState extends State<WebviewScreen> {
+  @override
+  void initState() {
+    super.initState();
+    if (widget.onInitFunction != null) {
+      print("Init function called");
+      widget.onInitFunction!();
+    }
+  }
+
+  @override
+  void dispose() {
+    if (widget.onDispose != null) {
+      print("Dispose function called");
+      widget.onDispose!();
+    }
+    super.dispose();
+  }
+
   bool _isLoading = false;
   late final WebViewController _webViewController = WebViewController()
     ..setJavaScriptMode(JavaScriptMode.unrestricted) //which device can open
@@ -27,6 +47,7 @@ class _WebviewScreenState extends State<WebviewScreen> {
         },
         onPageStarted: (String url) {
           print("Page started");
+
           setState(() {
             _isLoading = false; // WebView started loading
           });
@@ -42,11 +63,12 @@ class _WebviewScreenState extends State<WebviewScreen> {
                 'https://eyes.nasa.gov/apps/solar-system/#/sc_jwst/compare')) {
               print("Page finished $url ${widget.link}");
               Get.back();
-              Get.to(WebviewScreen(link: url));
+              Get.to(WebviewScreen(link: url, onInitFunction: widget.onInitFunction));
             }
-            if(widget.link.startsWith("https://eyes.nasa.gov/apps/solar-system/#/sc_jwst?")){
+            if (widget.link.startsWith(
+                "https://eyes.nasa.gov/apps/solar-system/#/sc_jwst?")) {
               Get.back();
-              Get.to(WebviewScreen(link: url));
+              Get.to(WebviewScreen(link: url, onInitFunction: widget.onInitFunction));
             }
             print("Page finished $url ${widget.link}");
           }
