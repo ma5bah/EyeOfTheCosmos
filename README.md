@@ -1,4 +1,4 @@
-# Eye of Cosmos
+# Eye of the Cosmos
 
 ## Overview of Our Project
 
