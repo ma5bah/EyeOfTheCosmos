@@ -23,7 +23,7 @@ class RecentCaptureModel {
     if (json['FastFacts'] != null) {
       fastFacts = <FastFacts>[];
       json['FastFacts'].forEach((v) {
-        fastFacts!.add(new FastFacts.fromJson(v));
+        fastFacts!.add(FastFacts.fromJson(v));
       });
     }
     headingImage = json['headingImage'];

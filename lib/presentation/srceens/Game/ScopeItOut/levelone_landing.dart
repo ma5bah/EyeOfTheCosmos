@@ -24,7 +24,7 @@ class _LeveloneLandingState extends State<LeveloneLanding> {
 
   void _updateText() {
     if (_currentIndex + 1 == _texts.length) {
-      Get.to(LevelOneStartingConversation());
+      Get.to(const LevelOneStartingConversation());
     }
     setState(() {
       _currentIndex = (_currentIndex + 1) % _texts.length;
@@ -39,7 +39,7 @@ class _LeveloneLandingState extends State<LeveloneLanding> {
         child: Stack(
           children: <Widget>[
             Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage(
                       'assets/images/scopeitoutgaminglanding.jpg'), // Ensure you have this image in your assets folder
@@ -49,14 +49,14 @@ class _LeveloneLandingState extends State<LeveloneLanding> {
             ),
             Align(
               alignment: Alignment.centerLeft,
-              child: Container(
+              child: SizedBox(
                 width: MediaQuery.of(context).size.width * 0.8,
                 height: MediaQuery.of(context).size.height * 0.5,
                 child: Stack(
                   alignment: Alignment.center, // Adjust the alignment as needed
                   children: <Widget>[
                     Container(
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         image: DecorationImage(
                           image: AssetImage(
                               'assets/images/gamingsection/scopeitout/textbox.png'),
@@ -87,7 +87,7 @@ class _LeveloneLandingState extends State<LeveloneLanding> {
                 child: Container(
                   width: MediaQuery.of(context).size.width * 0.7,
                   height: MediaQuery.of(context).size.height * 0.5,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage(
                           'assets/images/gamingsection/scopeitout/astroavater2.png'), // Ensure you have this image in your assets folder

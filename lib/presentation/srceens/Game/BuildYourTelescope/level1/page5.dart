@@ -58,7 +58,7 @@ class _BuildTelescopeLevel1FinalScreenState
               child: Container(
                 height: 300,
                 width: MediaQuery.of(context).size.width * 0.5,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   image: DecorationImage(
                     image: AssetImage(
                         'assets/images/gamingsection/buildyourtelescope/satellite2.jpg'),
@@ -68,7 +68,7 @@ class _BuildTelescopeLevel1FinalScreenState
               ),
             ),
 
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             // Obx(() => Text('Current State: ${appController.myState}',style: TextStyle(fontSize: 40,color: Colors.white),)),

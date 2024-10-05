@@ -1,12 +1,9 @@
 import 'package:eyesofcosmos/application/controllers/main_bottom_nav_controller.dart';
 import 'package:eyesofcosmos/data/constants.dart';
-import 'package:eyesofcosmos/data/model/build_your_telescope_model.dart';
-import 'package:eyesofcosmos/presentation/srceens/Game/BuildYourTelescope/landing.dart';
-import 'package:eyesofcosmos/presentation/srceens/Game/ScopeItOut/landing_scope_it_out.dart';
 import 'package:eyesofcosmos/presentation/srceens/IFrameView.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:eyesofcosmos/presentation/srceens/Game/BuildYourTelescope/level1/start.dart'; // Import the target page
+// Import the target page
 
 final MainBottomNavController controller = Get.find();
 

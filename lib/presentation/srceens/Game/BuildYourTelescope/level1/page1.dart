@@ -73,7 +73,7 @@ class _BuildTelescopeLevel1Page1State extends State<BuildTelescopeLevel1Page1> {
   void initState() {
     // TODO: implement initState
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      appController.updateState('${controller}', 1);
+      appController.updateState('$controller', 1);
     });
     super.initState();
   }
@@ -113,7 +113,7 @@ class _BuildTelescopeLevel1Page1State extends State<BuildTelescopeLevel1Page1> {
             ),
 
             Center(
-              child: Container(
+              child: SizedBox(
                 height: MediaQuery.of(context).size.height * 0.4,
                 width: MediaQuery.of(context).size.width * 0.8,
                 child: MasonryGridView.count(
@@ -123,11 +123,11 @@ class _BuildTelescopeLevel1Page1State extends State<BuildTelescopeLevel1Page1> {
                       return InkWell(
                         onTap: () {
                           controller = index;
-                          appController.updateState('${controller}', 1);
+                          appController.updateState('$controller', 1);
                           setState(() {});
                         },
                         child: Padding(
-                          padding: EdgeInsets.only(right: 10, bottom: 10),
+                          padding: const EdgeInsets.only(right: 10, bottom: 10),
                           child: Container(
                             width: 100,
                             height: 100,
@@ -147,8 +147,8 @@ class _BuildTelescopeLevel1Page1State extends State<BuildTelescopeLevel1Page1> {
                                   left: 20,
                                   bottom: 20,
                                   child: Text(
-                                    '${value[index].title}',
-                                    style: TextStyle(
+                                    value[index].title,
+                                    style: const TextStyle(
                                       color: Colors.red,
                                       fontSize: 16,
                                       fontWeight: FontWeight.bold,
@@ -164,7 +164,7 @@ class _BuildTelescopeLevel1Page1State extends State<BuildTelescopeLevel1Page1> {
               ),
             ),
 
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             // Obx(() => Text('Current State: ${appController.myState}')),
@@ -172,7 +172,7 @@ class _BuildTelescopeLevel1Page1State extends State<BuildTelescopeLevel1Page1> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
+                const Text(
                   "Science",
                   style: TextStyle(
                       color: Colors.white,
@@ -180,7 +180,7 @@ class _BuildTelescopeLevel1Page1State extends State<BuildTelescopeLevel1Page1> {
                       fontWeight: FontWeight.bold),
                 ),
                 OutlinedButton(
-                  child: Text(
+                  child: const Text(
                     "Next Step",
                     style: TextStyle(
                         color: Colors.white,
@@ -194,7 +194,7 @@ class _BuildTelescopeLevel1Page1State extends State<BuildTelescopeLevel1Page1> {
               ],
             ),
 
-            SizedBox(
+            const SizedBox(
               height: 5,
             ),
             Container(

@@ -46,7 +46,7 @@ class _BuildYourOwnLevel1Page4State extends State<BuildYourOwnLevel1Page4> {
     // TODO: implement initState
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      appController.updateState('${controller}', 5);
+      appController.updateState('$controller', 5);
     });
   }
 
@@ -85,7 +85,7 @@ class _BuildYourOwnLevel1Page4State extends State<BuildYourOwnLevel1Page4> {
             ),
 
             Center(
-              child: Container(
+              child: SizedBox(
                 height: MediaQuery.of(context).size.height * 0.4,
                 width: MediaQuery.of(context).size.width * 0.8,
                 child: MasonryGridView.count(
@@ -96,10 +96,10 @@ class _BuildYourOwnLevel1Page4State extends State<BuildYourOwnLevel1Page4> {
                         onTap: () {
                           controller = index;
                           setState(() {});
-                          appController.updateState('${controller}', 5);
+                          appController.updateState('$controller', 5);
                         },
                         child: Padding(
-                          padding: EdgeInsets.only(right: 10, bottom: 10),
+                          padding: const EdgeInsets.only(right: 10, bottom: 10),
                           child: Container(
                             width: 100,
                             height: 100,
@@ -119,8 +119,8 @@ class _BuildYourOwnLevel1Page4State extends State<BuildYourOwnLevel1Page4> {
                                   left: 20,
                                   bottom: 20,
                                   child: Text(
-                                    '${value[index].title}',
-                                    style: TextStyle(
+                                    value[index].title,
+                                    style: const TextStyle(
                                       color: Colors.red,
                                       fontSize: 16,
                                       fontWeight: FontWeight.bold,
@@ -136,7 +136,7 @@ class _BuildYourOwnLevel1Page4State extends State<BuildYourOwnLevel1Page4> {
               ),
             ),
 
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             // Obx(() => Text('Current State: ${appController.myState}')),
@@ -144,7 +144,7 @@ class _BuildYourOwnLevel1Page4State extends State<BuildYourOwnLevel1Page4> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
+                const Text(
                   "Optics",
                   style: TextStyle(
                       color: Colors.white,
@@ -152,7 +152,7 @@ class _BuildYourOwnLevel1Page4State extends State<BuildYourOwnLevel1Page4> {
                       fontWeight: FontWeight.bold),
                 ),
                 OutlinedButton(
-                  child: Text(
+                  child: const Text(
                     "Next Step",
                     style: TextStyle(
                         color: Colors.white,
@@ -161,13 +161,13 @@ class _BuildYourOwnLevel1Page4State extends State<BuildYourOwnLevel1Page4> {
                   ),
                   onPressed: () {
                     // @TODO: Fix this error
-                    Get.to(BuildTelescopeLevel1FinalScreen());
+                    Get.to(const BuildTelescopeLevel1FinalScreen());
                   },
                 ),
               ],
             ),
 
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Container(

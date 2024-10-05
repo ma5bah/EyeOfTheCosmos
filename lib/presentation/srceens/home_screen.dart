@@ -127,7 +127,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     onTap: exploreItems[index].onTap,
                     child: Padding(
                         padding:
-                            EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                            const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                         child: HomeScreenTrendsCard(
                             title: exploreItems[index].title,
                             imageUrl: exploreItems[index].imageUrl)),

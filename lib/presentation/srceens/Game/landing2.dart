@@ -23,7 +23,7 @@ class _GamingSectionLandingState extends State<GamingSectionLanding> {
         iconTheme: const IconThemeData(
             color: Colors.white), // Set AppBar icons to white
       ),
-      drawer: DrawerWidget(),
+      drawer: const DrawerWidget(),
       body: Stack(
         fit: StackFit.expand,
         children: <Widget>[
@@ -60,7 +60,7 @@ class _GamingSectionLandingState extends State<GamingSectionLanding> {
                 height: 20,
               ),
               Center(
-                  child: Container(
+                  child: SizedBox(
                       height: MediaQuery.of(context).size.height * 0.65,
                       child: ListView.builder(
                         scrollDirection: Axis.vertical,
@@ -70,7 +70,7 @@ class _GamingSectionLandingState extends State<GamingSectionLanding> {
                           return InkWell(
                             onTap: gameItems[index].onTap,
                             child: Padding(
-                                padding: EdgeInsets.symmetric(
+                                padding: const EdgeInsets.symmetric(
                                     horizontal: 10, vertical: 5),
                                 child: GameScreenLandingCard(
                                     title: gameItems[index].title,

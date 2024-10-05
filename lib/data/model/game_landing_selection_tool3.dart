@@ -41,7 +41,7 @@ List<GameItem> gameItems = [
     imageUrl: 'assets/images/gamingsection/scopeitout.png',
     onTap: () {
       controller.changeScreen(3);
-      Get.to(ScopeItOutLanding());
+      Get.to(const ScopeItOutLanding());
     },
   ),
   GameItem(

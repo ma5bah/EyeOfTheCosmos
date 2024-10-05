@@ -11,12 +11,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 final List<Widget> screens = [
-  HomeScreen(),
-  JWSTCaptureLanding(),
+  const HomeScreen(),
+  const JWSTCaptureLanding(),
   WebviewScreen(link: nasa_jwst_eyes),
-  GamingSectionLanding(),
-  JwstmissionNews(),
-  Doubtsolvingpage(),
+  const GamingSectionLanding(),
+  const JwstmissionNews(),
+  const Doubtsolvingpage(),
 ];
 
 class MainBottomNavScreen extends StatefulWidget {

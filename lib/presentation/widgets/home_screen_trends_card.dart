@@ -7,10 +7,10 @@ class HomeScreenTrendsCard extends StatelessWidget {
   final String title;
   final String imageUrl;
   const HomeScreenTrendsCard({
-    Key? key,
+    super.key,
     required this.title,
     required this.imageUrl,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -44,15 +44,15 @@ class HomeScreenTrendsCard extends StatelessWidget {
             child: Row(
               children: <Widget>[
                 Text(
-                  '${title}',
-                  style: TextStyle(
+                  title,
+                  style: const TextStyle(
                     color: Colors.white,
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(width: 10), // Space between text and icon
-                Icon(
+                const SizedBox(width: 10), // Space between text and icon
+                const Icon(
                   Icons.arrow_forward,
                   color: Colors.white,
                   size: 30,

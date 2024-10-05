@@ -24,9 +24,9 @@ class _LevelTwoState extends State<LevelTwo> {
         actions: [
            OutlinedButton(
                     onPressed: () {
-                      Get.to(LevelTwoEnding());
+                      Get.to(const LevelTwoEnding());
                     },
-                    child: Text(
+                    child: const Text(
                       "Next Section",
                       style: TextStyle(
                           color: Colors.white,
@@ -70,11 +70,11 @@ class _LevelTwoState extends State<LevelTwo> {
                           }
                           setState(() {});
                         },
-                        child: Text(
+                        child: const Text(
                           "<Prev",
                           style: TextStyle(color: Colors.white, fontSize: 18),
                         )),
-                    SizedBox(
+                    const SizedBox(
                       width: 10,
                     ),
                     InkWell(
@@ -84,7 +84,7 @@ class _LevelTwoState extends State<LevelTwo> {
                           }
                           setState(() {});
                         },
-                        child: Text("Next>",
+                        child: const Text("Next>",
                             style:
                                 TextStyle(color: Colors.white, fontSize: 18))),
                   ],
@@ -97,8 +97,8 @@ class _LevelTwoState extends State<LevelTwo> {
             ),
             //  const Scopeitoutgamelevel1card(heading: "hi", description: "fsdfas", imageUrl: "fdsfs"),
             
-            if(slidecontroller==1) Scopeitoutgamelevel1card(heading: "Observer of EyePiece",description: "sfd",imageUrl: "fsdf",),
-            if(slidecontroller==2) Scopeitoutgamelevel1card(heading: "Tripod",description: "sfd",imageUrl: "fsdf",),
+            if(slidecontroller==1) const Scopeitoutgamelevel1card(heading: "Observer of EyePiece",description: "sfd",imageUrl: "fsdf",),
+            if(slidecontroller==2) const Scopeitoutgamelevel1card(heading: "Tripod",description: "sfd",imageUrl: "fsdf",),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.02,
             ),

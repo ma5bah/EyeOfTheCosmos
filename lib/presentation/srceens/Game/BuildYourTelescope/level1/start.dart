@@ -10,7 +10,7 @@ class StartGamePage extends StatelessWidget {
         children: [
           // Background image
           Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage(
                     'assets/images/gamingsection/buildyourtelescope/startbg.png'), // Replace with your background image path
@@ -23,7 +23,7 @@ class StartGamePage extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
+                const Text(
                   'Welcome to Build Your Telescope!',
                   style: TextStyle(
                     fontSize: 24,
@@ -31,22 +31,22 @@ class StartGamePage extends StatelessWidget {
                   ),
                   textAlign: TextAlign.center,
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 // Start Game Button
                 SizedBox(
                   width: 200, // Set a fixed width for both buttons
                   child: ElevatedButton(
                     onPressed: () {
                       // Navigate to the first level of the game
-                      Get.to(BuildTelescopeLevel1Page1());
+                      Get.to(const BuildTelescopeLevel1Page1());
                     },
-                    child: Text('Start Game'),
                     style: ElevatedButton.styleFrom(
                         // primary: Colors.blueAccent, // Button background color
                         ),
+                    child: Text('Start Game'),
                   ),
                 ),
-                SizedBox(height: 10), // Spacing between buttons
+                const SizedBox(height: 10), // Spacing between buttons
                 // Exit Button
                 SizedBox(
                   width: 200, // Set a fixed width for both buttons
@@ -61,20 +61,20 @@ class StartGamePage extends StatelessWidget {
                             Get.back(); // Close the dialog
                             Get.back(); // Navigate back to the previous page
                           },
-                          child: Text("Yes"),
+                          child: const Text("Yes"),
                         ),
                         cancel: ElevatedButton(
                           onPressed: () {
                             Get.back(); // Close the dialog
                           },
-                          child: Text("No"),
+                          child: const Text("No"),
                         ),
                       );
                     },
-                    child: Text('Exit'),
                     style: ElevatedButton.styleFrom(
                         // primary: Colors.redAccent, // Button background color for exit
                         ),
+                    child: Text('Exit'),
                   ),
                 ),
               ],

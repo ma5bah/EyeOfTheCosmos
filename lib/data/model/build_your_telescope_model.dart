@@ -15,7 +15,7 @@ List<BuildYourTelescope> buildYourTelescopesLevel = [
   BuildYourTelescope(
     title: 'Start Game',
     onTap: () {
-      Get.to(BuildTelescopeLevel1Page1());
+      Get.to(const BuildTelescopeLevel1Page1());
     },
   ),
   // BuildYourTelescope(

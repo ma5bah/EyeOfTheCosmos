@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 import 'package:html/parser.dart' as parser;
 
 class WebbObservatoryPage extends StatefulWidget {
-  const WebbObservatoryPage({Key? key}) : super(key: key);
+  const WebbObservatoryPage({super.key});
 
   @override
   _WebbObservatoryPageState createState() => _WebbObservatoryPageState();
@@ -15,7 +15,7 @@ class _WebbObservatoryPageState extends State<WebbObservatoryPage> {
   late YoutubePlayerController _youtubeController;
 
   Future<List<Widget>> fetch_image_category() async {
-    final url = "https://esawebb.org/images/";
+    const url = "https://esawebb.org/images/";
     final response = await http.get(Uri.parse(url));
     if (response.statusCode == 200) {
       final document = parser.parse(response.body);
@@ -40,7 +40,7 @@ class _WebbObservatoryPageState extends State<WebbObservatoryPage> {
     fetch_image_category();
     _youtubeController = YoutubePlayerController(
       initialVideoId: 'zXyz1QtPqUY', // YouTube video ID
-      flags: YoutubePlayerFlags(
+      flags: const YoutubePlayerFlags(
         autoPlay: false,
         mute: false,
       ),
@@ -61,7 +61,7 @@ class _WebbObservatoryPageState extends State<WebbObservatoryPage> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.white),
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () {
             // Handle back button press
           },
@@ -79,7 +79,7 @@ class _WebbObservatoryPageState extends State<WebbObservatoryPage> {
                   width: MediaQuery.of(context).size.width,
                   fit: BoxFit.cover,
                 ),
-                Positioned(
+                const Positioned(
                   bottom: 20,
                   left: 20,
                   child: Column(
@@ -105,7 +105,7 @@ class _WebbObservatoryPageState extends State<WebbObservatoryPage> {
                 ),
               ],
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: FutureBuilder<List<Widget>>(
@@ -115,13 +115,13 @@ class _WebbObservatoryPageState extends State<WebbObservatoryPage> {
                     AsyncSnapshot<List<Widget>> snapshot) {
                   if (snapshot.connectionState == ConnectionState.waiting) {
                     // While the future is being resolved, show a loading indicator
-                    return Center(child: CircularProgressIndicator());
+                    return const Center(child: CircularProgressIndicator());
                   } else if (snapshot.hasError) {
                     // If an error occurred, show an error message
                     return Center(child: Text('Error: ${snapshot.error}'));
                   } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
                     // If there's no data, display a message
-                    return Center(child: Text('No categories available.'));
+                    return const Center(child: Text('No categories available.'));
                   } else {
                     // If the future completed successfully, display the fetched data
                     return Wrap(
@@ -133,9 +133,9 @@ class _WebbObservatoryPageState extends State<WebbObservatoryPage> {
                 },
               ),
             ),
-            SizedBox(height: 30),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
+            const SizedBox(height: 30),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20),
               child: Text(
                 'Designing Webb Video',
                 style: TextStyle(
@@ -145,22 +145,22 @@ class _WebbObservatoryPageState extends State<WebbObservatoryPage> {
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: YoutubePlayer(
                 controller: _youtubeController,
                 showVideoProgressIndicator: true,
                 progressIndicatorColor: Colors.amber,
-                progressColors: ProgressBarColors(
+                progressColors: const ProgressBarColors(
                   playedColor: Colors.amber,
                   handleColor: Colors.amberAccent,
                 ),
               ),
             ),
-            SizedBox(height: 30),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
+            const SizedBox(height: 30),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20),
               child: Text(
                 'The Webb Space Telescope is the most powerful space telescope ever made - and the most complex one yet designed. Did you know that the telescope\'s history stretches back before the Hubble Space Telescope was launched? This video explores the various early concept designs for Webb, including the criteria and the problems solved.',
                 style: TextStyle(
@@ -169,9 +169,9 @@ class _WebbObservatoryPageState extends State<WebbObservatoryPage> {
                 ),
               ),
             ),
-            SizedBox(height: 20),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
+            const SizedBox(height: 20),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20),
               child: Text(
                 'Major Components',
                 style: TextStyle(
@@ -181,7 +181,7 @@ class _WebbObservatoryPageState extends State<WebbObservatoryPage> {
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Image.asset(
@@ -191,7 +191,7 @@ class _WebbObservatoryPageState extends State<WebbObservatoryPage> {
                 fit: BoxFit.cover,
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(
@@ -202,43 +202,43 @@ class _WebbObservatoryPageState extends State<WebbObservatoryPage> {
                     description:
                         'The primary mirror is the heart of Webb. It is made up of 18 hexagonal segments, forming a large mirror 6.5 meters in diameter, which collects infrared light from distant galaxies, stars, and planets.',
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   _buildComponentItem(
                     title: 'Sunshield',
                     description:
                         'The sunshield is as big as a tennis court and is designed to protect Webb from the heat of the Sun, Earth, and Moon, keeping its instruments cool enough to detect faint infrared signals.',
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   _buildComponentItem(
                     title: 'NIRCam',
                     description:
                         'NIRCam (Near Infrared Camera) is Webb\'s primary imaging instrument. It detects light from the earliest stars and galaxies that formed in the universe, as well as stars in nearby galaxies and young stars in the Milky Way.',
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   _buildComponentItem(
                     title: 'NIRSpec',
                     description:
                         'NIRSpec (Near Infrared Spectrograph) will observe up to 100 objects simultaneously over a field of view, helping scientists study the formation of stars and distant galaxies.',
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   _buildComponentItem(
                     title: 'MIRI',
                     description:
                         'MIRI (Mid-Infrared Instrument) will provide mid-infrared imaging and spectroscopy, allowing Webb to see distant objects obscured by cosmic dust, and analyze planets, asteroids, and the disks where planets form.',
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   _buildComponentItem(
                     title: 'Fine Guidance Sensor',
                     description:
                         'The Fine Guidance Sensor (FGS) ensures that Webb is accurately pointed at its targets, providing the stability needed for the telescope\'s instruments to capture clear images.',
                   ),
-                  SizedBox(height: 30),
+                  const SizedBox(height: 30),
                 ],
               ),
             ),
-            SizedBox(height: 20),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
+            const SizedBox(height: 20),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20),
               child: Text(
                 'Key Elements',
                 style: TextStyle(
@@ -248,7 +248,7 @@ class _WebbObservatoryPageState extends State<WebbObservatoryPage> {
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Image.asset(
@@ -258,9 +258,9 @@ class _WebbObservatoryPageState extends State<WebbObservatoryPage> {
                 fit: BoxFit.cover,
               ),
             ),
-            SizedBox(height: 20),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
+            const SizedBox(height: 20),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20),
               child: Text(
                 'The Observatory consists of:\n'
                 '- The Optical Telescope Element (OTE) includes:\n'
@@ -275,7 +275,7 @@ class _WebbObservatoryPageState extends State<WebbObservatoryPage> {
                 ),
               ),
             ),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
           ],
         ),
       ),
@@ -296,7 +296,7 @@ class _WebbObservatoryPageState extends State<WebbObservatoryPage> {
       child: Chip(
         label: Text(
           label,
-          style: TextStyle(
+          style: const TextStyle(
             color: Colors.white,
           ),
         ),
@@ -312,16 +312,16 @@ class _WebbObservatoryPageState extends State<WebbObservatoryPage> {
       children: [
         Text(
           title,
-          style: TextStyle(
+          style: const TextStyle(
             color: Colors.white,
             fontSize: 20,
             fontWeight: FontWeight.bold,
           ),
         ),
-        SizedBox(height: 10),
+        const SizedBox(height: 10),
         Text(
           description,
-          style: TextStyle(
+          style: const TextStyle(
             color: Colors.white70,
             fontSize: 16,
           ),

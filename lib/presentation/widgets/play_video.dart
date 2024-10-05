@@ -17,7 +17,7 @@ class _VideoExampleState extends State<VideoExample> {
     super.initState();
     _controller = YoutubePlayerController(
       initialVideoId: widget.videoId, // Id of the YouTube video
-      flags: YoutubePlayerFlags(
+      flags: const YoutubePlayerFlags(
         autoPlay: false,
       ),
     );

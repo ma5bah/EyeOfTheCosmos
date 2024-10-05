@@ -21,17 +21,17 @@ class ExoplanetPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Explore Exoplanets'),
+        title: const Text('Explore Exoplanets'),
       ),
       body: FutureBuilder<List<dynamic>>(
         future: fetchExoplanetImages(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return Center(child: CircularProgressIndicator());
+            return const Center(child: CircularProgressIndicator());
           } else if (snapshot.hasError) {
             return Center(child: Text('Error: ${snapshot.error}'));
           } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
-            return Center(child: Text('No data available.'));
+            return const Center(child: Text('No data available.'));
           } else {
             final images = snapshot.data ?? [];
 
@@ -51,12 +51,12 @@ class ExoplanetPage extends StatelessWidget {
                   // Large Image at the top
                   CachedNetworkImage(
                     imageUrl: largeImageUrl,
-                    placeholder: (context, url) => CircularProgressIndicator(),
-                    errorWidget: (context, url, error) => Icon(Icons.error),
+                    placeholder: (context, url) => const CircularProgressIndicator(),
+                    errorWidget: (context, url, error) => const Icon(Icons.error),
                     height: 300,
                     fit: BoxFit.cover,
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   // Smaller images in a row
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -65,8 +65,8 @@ class ExoplanetPage extends StatelessWidget {
                       CachedNetworkImage(
                         imageUrl: smallImageUrl1,
                         placeholder: (context, url) =>
-                            CircularProgressIndicator(),
-                        errorWidget: (context, url, error) => Icon(Icons.error),
+                            const CircularProgressIndicator(),
+                        errorWidget: (context, url, error) => const Icon(Icons.error),
                         height: 150,
                         width: 100,
                         fit: BoxFit.cover,
@@ -75,8 +75,8 @@ class ExoplanetPage extends StatelessWidget {
                       CachedNetworkImage(
                         imageUrl: smallImageUrl2,
                         placeholder: (context, url) =>
-                            CircularProgressIndicator(),
-                        errorWidget: (context, url, error) => Icon(Icons.error),
+                            const CircularProgressIndicator(),
+                        errorWidget: (context, url, error) => const Icon(Icons.error),
                         height: 150,
                         width: 100,
                         fit: BoxFit.cover,
@@ -85,17 +85,17 @@ class ExoplanetPage extends StatelessWidget {
                       CachedNetworkImage(
                         imageUrl: smallImageUrl3,
                         placeholder: (context, url) =>
-                            CircularProgressIndicator(),
-                        errorWidget: (context, url, error) => Icon(Icons.error),
+                            const CircularProgressIndicator(),
+                        errorWidget: (context, url, error) => const Icon(Icons.error),
                         height: 150,
                         width: 100,
                         fit: BoxFit.cover,
                       ),
                     ],
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   // Additional content (optional)
-                  Text(
+                  const Text(
                     'EXOPLANET TRANSMISSION SPECTRUM',
                     style: TextStyle(
                         fontSize: 18,
@@ -103,11 +103,11 @@ class ExoplanetPage extends StatelessWidget {
                         color: Colors.white),
                   ),
                   // Placeholder for any additional charts or images
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   Container(
                     height: 200,
                     color: Colors.black, // Placeholder container for the chart
-                    child: Center(
+                    child: const Center(
                       child: Text(
                         'Transmission Spectrum Data Goes Here',
                         style: TextStyle(color: Colors.white),

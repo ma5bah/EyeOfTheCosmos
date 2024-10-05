@@ -6,7 +6,7 @@ import 'package:eyesofcosmos/presentation/srceens/observatory/nirspec_details.da
 class ImageGalleryPage extends StatefulWidget {
   final String category;
 
-  const ImageGalleryPage({required this.category, Key? key}) : super(key: key);
+  const ImageGalleryPage({required this.category, super.key});
 
   @override
   _ImageGalleryPageState createState() => _ImageGalleryPageState();
@@ -23,7 +23,7 @@ class _ImageGalleryPageState extends State<ImageGalleryPage> {
   }
 
   Future<void> fetchImages() async {
-    final url = 'https://esawebb.org/images/archive/category/nirspec/';
+    const url = 'https://esawebb.org/images/archive/category/nirspec/';
     final response = await http.get(Uri.parse(url));
 
     if (response.statusCode == 200) {
@@ -44,7 +44,7 @@ class _ImageGalleryPageState extends State<ImageGalleryPage> {
                   'title': titleElement ?? 'No Title',
                   'description':
                       'This is a description of the image titled "${titleElement ?? 'No Title'}".' // Static description
-                } as Map<String, String>; // Cast to Map<String, String>
+                }; // Cast to Map<String, String>
               }
               return {};
             })
@@ -71,9 +71,9 @@ class _ImageGalleryPageState extends State<ImageGalleryPage> {
       ),
       backgroundColor: Colors.black,
       body: isLoading
-          ? Center(child: CircularProgressIndicator())
+          ? const Center(child: CircularProgressIndicator())
           : imageDetails.isEmpty
-              ? Center(
+              ? const Center(
                   child: Text('No images found',
                       style: TextStyle(color: Colors.white)))
               : ListView.builder(
@@ -116,7 +116,7 @@ class _ImageGalleryPageState extends State<ImageGalleryPage> {
                             );
                           },
                           errorBuilder: (context, error, stackTrace) {
-                            return Center(
+                            return const Center(
                                 child: Icon(Icons.error, color: Colors.red));
                           },
                         ),

@@ -55,7 +55,7 @@ class _ImageGalleryPageState extends State<ImageGalleryPage> {
                   'description':
                       'Read more details: [click here]($url)', // Updated description
                   'detailPageUrl': detailPageUrl, // Store the details page URL
-                } as Map<String, String>; // Cast to Map<String, String>
+                }; // Cast to Map<String, String>
               }
               return {};
             })
@@ -82,9 +82,9 @@ class _ImageGalleryPageState extends State<ImageGalleryPage> {
       ),
       backgroundColor: Colors.black,
       body: isLoading
-          ? Center(child: CircularProgressIndicator())
+          ? const Center(child: CircularProgressIndicator())
           : imageDetails.isEmpty
-              ? Center(
+              ? const Center(
                   child: Text('No images found',
                       style: TextStyle(color: Colors.white)))
               : ListView.builder(
@@ -127,7 +127,7 @@ class _ImageGalleryPageState extends State<ImageGalleryPage> {
                             );
                           },
                           errorBuilder: (context, error, stackTrace) {
-                            return Center(
+                            return const Center(
                                 child: Icon(Icons.error, color: Colors.red));
                           },
                         ),
