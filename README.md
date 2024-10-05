@@ -1,16 +1,20 @@
 # Eye of the Cosmos
 
-## Overview of Our Project
+## High-Level Summary
 
 The "Eye of the Cosmos" project, developed by **Team Artemis**, is an immersive, multimedia experience designed to captivate a broad audience by harmonizing the discoveries of the **James Webb Space Telescope (JWST)** with compelling visuals and evocative music. In addition to providing a visually stunning journey through the cosmos, the project also includes engaging 3D educational games and interactive features to teach users of all ages about JWST and its groundbreaking mission to explore the universe.
 
 Through the fusion of JWST imagery and carefully curated music, "Eye of the Cosmos" brings the vastness and mystery of the universe to life while informing and inspiring users to learn more about space exploration.
 
 ## Project Demo
-[Watch the Demo Video](https://drive.google.com/file/d/11WBlYiL4OcP6Cj9_SwFRH4HUm94W3rqR/view)
+[Watch the Demo Video](https://youtu.be/Sb3rIIA-Heg?si=j6x6aw8uk-gT7fQ0)
 
 ## Final Project
+
 [View the Figma Design](https://www.figma.com/design/zlzt6VWXqtMSGrsUJv3i35/Eye_of_Cosmos_NSAC_2024?node-id=0-1&t=L8BpcSrMxieeEG1B-1)
+
+To experience the interactive 3D visuals with musical harmony, it is recommended to download the following app and use the headphone for better experience. 
+[View the Github repo with release version](https://github.com/ma5bah/EyesOfCosmos)
 
 ---
 
