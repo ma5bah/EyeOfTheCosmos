@@ -39,7 +39,7 @@ class _WebbObservatoryPageState extends State<WebbObservatoryPage> {
   @override
   void initState() {
     super.initState();
-    AudioManager().playMusic('music/solar_sections.mp3');
+    AudioManager().playMusic('music/observatory_music.mp3');
     fetch_image_category();
     _youtubeController = YoutubePlayerController(
       initialVideoId: 'zXyz1QtPqUY', // YouTube video ID

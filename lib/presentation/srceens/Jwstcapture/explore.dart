@@ -3,35 +3,35 @@ import 'package:eyesofcosmos/data/utility/network_caller.dart';
 import 'package:eyesofcosmos/presentation/widgets/image_gallery_item.dart';
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:http/http.dart' as http;
-import 'dart:convert';
+import 'package:get/get.dart';
 
 class ExplorePage extends StatelessWidget {
-  final category;
+  final String category;
 
   ExplorePage({required this.category});
-
 
   // Fetching the image data from the API
   Future<List<ImageData>> fetchExoplanetImages() async {
     final response = await fetchAllImages();
-    List<ImageData> ret_data=[];
-    for(var item in response){
-      if(item.keywords.contains(category)){
-        ret_data.add(item);
+    List<ImageData> retData = [];
+
+    for (var item in response) {
+      if (item.keywords.contains(category)) {
+        retData.add(item);
       }
     }
-    return ret_data;
+
+    return retData;
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Explore Exoplanets'),
+        title: Text('Explore $category'),
       ),
       body: FutureBuilder<List<ImageData>>(
-        future: fetchImagesByCategory(category),
+        future: fetchExoplanetImages(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return Center(child: CircularProgressIndicator());
@@ -41,103 +41,101 @@ class ExplorePage extends StatelessWidget {
             return Center(child: Text('No data available.'));
           } else {
             final images = snapshot.data ?? [];
-            print('Images: $images');
             return ListView.builder(
               itemCount: images.length,
               itemBuilder: (context, index) {
                 final imageData = images[index];
-                return ImageGalleryItem(imageData: imageData);
+                return ImageCard(imageData: imageData);
               },
             );
-
-
-
-
-            // For demo purposes, let's assume images[0], images[1], and images[2] have valid URLs
-            // final largeImageUrl =
-            //     images[0]['imageUrl']; // Modify with actual API structure
-            // final smallImageUrl1 =
-            //     images[1]['imageUrl']; // Modify with actual API structure
-            // final smallImageUrl2 =
-            //     images[2]['imageUrl']; // Modify with actual API structure
-            // final smallImageUrl3 =
-            //     images[3]['imageUrl']; // Modify with actual API structure
-
-            // return SingleChildScrollView(
-            //   child: Column(
-            //     children: [
-            //       // Large Image at the top
-            //       CachedNetworkImage(
-            //         imageUrl: largeImageUrl,
-            //         placeholder: (context, url) => CircularProgressIndicator(),
-            //         errorWidget: (context, url, error) => Icon(Icons.error),
-            //         height: 300,
-            //         fit: BoxFit.cover,
-            //       ),
-            //       SizedBox(height: 10),
-            //       // Smaller images in a row
-            //       Row(
-            //         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            //         children: [
-            //           // Small Image 1
-            //           CachedNetworkImage(
-            //             imageUrl: smallImageUrl1,
-            //             placeholder: (context, url) =>
-            //                 CircularProgressIndicator(),
-            //             errorWidget: (context, url, error) => Icon(Icons.error),
-            //             height: 150,
-            //             width: 100,
-            //             fit: BoxFit.cover,
-            //           ),
-            //           // Small Image 2
-            //           CachedNetworkImage(
-            //             imageUrl: smallImageUrl2,
-            //             placeholder: (context, url) =>
-            //                 CircularProgressIndicator(),
-            //             errorWidget: (context, url, error) => Icon(Icons.error),
-            //             height: 150,
-            //             width: 100,
-            //             fit: BoxFit.cover,
-            //           ),
-            //           // Small Image 3
-            //           CachedNetworkImage(
-            //             imageUrl: smallImageUrl3,
-            //             placeholder: (context, url) =>
-            //                 CircularProgressIndicator(),
-            //             errorWidget: (context, url, error) => Icon(Icons.error),
-            //             height: 150,
-            //             width: 100,
-            //             fit: BoxFit.cover,
-            //           ),
-            //         ],
-            //       ),
-            //       SizedBox(height: 20),
-            //       // Additional content (optional)
-            //       Text(
-            //         'EXOPLANET TRANSMISSION SPECTRUM',
-            //         style: TextStyle(
-            //             fontSize: 18,
-            //             fontWeight: FontWeight.bold,
-            //             color: Colors.white),
-            //       ),
-            //       // Placeholder for any additional charts or images
-            //       SizedBox(height: 20),
-            //       Container(
-            //         height: 200,
-            //         color: Colors.black, // Placeholder container for the chart
-            //         child: Center(
-            //           child: Text(
-            //             'Transmission Spectrum Data Goes Here',
-            //             style: TextStyle(color: Colors.white),
-            //           ),
-            //         ),
-            //       ),
-            //     ],
-            //   ),
-            // );
-            //
           }
         },
+      ),
+    );
+  }
+}
+
+class ImageCard extends StatelessWidget {
+  final ImageData imageData;
+
+  ImageCard({required this.imageData});
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+      elevation: 4,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          // Image section
+          CachedNetworkImage(
+            imageUrl: imageData.downloadUrls.last.url,
+            placeholder: (context, url) => Container(
+              height: 200,
+              child: Center(child: CircularProgressIndicator()),
+            ),
+            errorWidget: (context, url, error) => Icon(Icons.error),
+            fit: BoxFit.cover,
+            height: 200,
+            width: double.infinity,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // Title of the image
+                Text(
+                  imageData.title,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(height: 8),
+                // Release date or description
+                Text(
+                  'Release Date: ${imageData.releaseDate}',
+                  style: TextStyle(
+                    fontSize: 14,
+                    color: Colors.grey[600],
+                  ),
+                ),
+                SizedBox(height: 8),
+                // Caption or short description
+                Text(
+                  imageData.caption,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    fontSize: 14,
+                    color: Colors.grey[800],
+                  ),
+                ),
+                SizedBox(height: 8),
+                // Action button (optional)
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    TextButton(
+                      onPressed: () {
+                        // Add your action here, for example, navigate to details page
+                      },
+                      child: TextButton(
+                onPressed: (){
+                  Get.to(ImageGalleryItem(imageData: imageData));
+                },
+                        child: Text("Learn More"),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }

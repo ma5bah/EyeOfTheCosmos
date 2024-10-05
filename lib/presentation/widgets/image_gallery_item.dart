@@ -106,18 +106,6 @@ class ImageGalleryItem extends StatelessWidget {
             ),
             SizedBox(height: 16),
             // Learn More Button
-            Center(
-              child: ElevatedButton(
-                onPressed: () {
-                  // Handle button tap, possibly navigate to detailsUrl
-                },
-                child: Text('Learn More'),
-                style: ElevatedButton.styleFrom(
-                  foregroundColor: Colors.white,
-                  backgroundColor: Colors.blue, // Text color
-                ),
-              ),
-            ),
           ],
         ),
       ),
