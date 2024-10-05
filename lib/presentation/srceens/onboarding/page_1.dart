@@ -29,7 +29,7 @@ class OnboardingPage1 extends StatelessWidget {
                 height: MediaQuery.of(context).size.height * 0.3,
               ),
               const Text(
-                'Eyes of\n Cosmos',
+                'Eye of\n Cosmos',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   color: Colors.white,

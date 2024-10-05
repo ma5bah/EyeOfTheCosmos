@@ -29,7 +29,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                 child: Padding(
                   padding: EdgeInsets.only(top: 10),
                   child: Text(
-                    'Eyes of Cosmos',
+                    'Eye of Cosmos',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 24,

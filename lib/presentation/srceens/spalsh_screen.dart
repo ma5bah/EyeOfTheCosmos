@@ -45,7 +45,7 @@ class _SpalshScreenState extends State<SpalshScreen> {
                 height: MediaQuery.of(context).size.height * 0.125,
               ),
               const Text(
-                'Unlock the \nUniverse with \nthe Eyes of JWST',
+                'Unlock the \nUniverse with \nthe Eye of JWST',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   color: Colors.white,

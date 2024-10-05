@@ -58,7 +58,7 @@ class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
                 icon: Image.asset(ImageAssets.homeicon), label: 'Home'),
             BottomNavigationBarItem(
                 icon: Image.asset(ImageAssets.jwstcaptureicon),
-                label: 'JWST Capture'),
+                label: 'Webb Observatory'),
             BottomNavigationBarItem(
                 icon: Image.asset(ImageAssets.dviewsicon), label: '3D views'),
             BottomNavigationBarItem(
