@@ -6,16 +6,16 @@ import 'package:eyesofcosmos/data/model/news_item.dart';
 class NewsDetailsScreen extends StatelessWidget {
   final NewsItem item;
   const NewsDetailsScreen({
-    Key? key,
+    super.key,
     required this.item,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.white),
+        iconTheme: const IconThemeData(color: Colors.white),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -34,7 +34,8 @@ class NewsDetailsScreen extends StatelessWidget {
               ),
             ), // Placeholder for an image at the bottom
             Container(
-              padding: EdgeInsets.all(16),
+              padding: const EdgeInsets.all(16),
+              color: Colors.black,
               child: Text(
                 item.title,
                 style: TextStyle(
@@ -43,13 +44,12 @@ class NewsDetailsScreen extends StatelessWidget {
                   color: Colors.white,
                 ),
               ),
-              color: Colors.black,
             ),
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: Text(
                 item.excerpt,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 16,
                   color: Colors.white,
                 ),

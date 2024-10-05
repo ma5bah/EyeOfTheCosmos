@@ -35,7 +35,7 @@ class _JWSTCaptureLandingState extends State<JWSTCaptureLanding> {
         iconTheme: const IconThemeData(
             color: Colors.white), // Set AppBar icons to white
       ),
-      drawer: DrawerWidget(),
+      drawer: const DrawerWidget(),
       body: Stack(
         fit: StackFit.expand,
         children: <Widget>[
@@ -68,7 +68,7 @@ class _JWSTCaptureLandingState extends State<JWSTCaptureLanding> {
               ),
 
               // const Spacer(),
-              FeaturedCard(
+              const FeaturedCard(
                 text:
                     'Step into the cosmos and explore galaxies, planets, and stars like never before. Immerse yourself in the universe, where space unfolds before your eyes.',
               ),
@@ -76,7 +76,7 @@ class _JWSTCaptureLandingState extends State<JWSTCaptureLanding> {
                 height: 20,
               ),
               Center(
-                  child: Container(
+                  child: SizedBox(
                       height: MediaQuery.of(context).size.height * 0.46,
                       child: ListView.builder(
                         scrollDirection: Axis.vertical,
@@ -86,7 +86,7 @@ class _JWSTCaptureLandingState extends State<JWSTCaptureLanding> {
                           return InkWell(
                             onTap: captureItems[index].onTap,
                             child: Padding(
-                                padding: EdgeInsets.symmetric(
+                                padding: const EdgeInsets.symmetric(
                                     horizontal: 10, vertical: 5),
                                 child: HomeScreenTrendsCard(
                                     title: captureItems[index].title,

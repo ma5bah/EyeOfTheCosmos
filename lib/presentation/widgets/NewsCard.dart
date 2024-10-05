@@ -7,12 +7,12 @@ class NewsCard extends StatelessWidget {
   final String publishedDate;
 
   const NewsCard({
-    Key? key,
+    super.key,
     required this.title,
     required this.excerpt,
     required this.thumbnailUrl,
     required this.publishedDate,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -97,7 +97,7 @@ class _BuildYourOwnLevel1Page3State extends State<BuildYourOwnLevel1Page3> {
                     setState(() {});
                   },
                   child: Padding(
-                    padding: EdgeInsets.only(right: 10, bottom: 10),
+                    padding: const EdgeInsets.only(right: 10, bottom: 10),
                     child: Container(
                       width: 150,
                       height: 100,
@@ -116,8 +116,8 @@ class _BuildYourOwnLevel1Page3State extends State<BuildYourOwnLevel1Page3> {
                             left: 20,
                             bottom: 20,
                             child: Text(
-                              '${value[1].title}',
-                              style: TextStyle(
+                              value[1].title,
+                              style: const TextStyle(
                                 color: Colors.red,
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold,
@@ -141,7 +141,7 @@ class _BuildYourOwnLevel1Page3State extends State<BuildYourOwnLevel1Page3> {
                     setState(() {});
                   },
                   child: Padding(
-                    padding: EdgeInsets.only(right: 10, bottom: 10),
+                    padding: const EdgeInsets.only(right: 10, bottom: 10),
                     child: Container(
                       width: 150,
                       height: 100,
@@ -160,8 +160,8 @@ class _BuildYourOwnLevel1Page3State extends State<BuildYourOwnLevel1Page3> {
                             left: 20,
                             bottom: 20,
                             child: Text(
-                              '${value[0].title}',
-                              style: TextStyle(
+                              value[0].title,
+                              style: const TextStyle(
                                 color: Colors.red,
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold,
@@ -176,13 +176,13 @@ class _BuildYourOwnLevel1Page3State extends State<BuildYourOwnLevel1Page3> {
               ],
             ),
 
-            SizedBox(
+            const SizedBox(
               height: 50,
             ),
             // Obx(() => Text('Current State: ${appController.myState}')),
 
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-              Text(
+              const Text(
                 "WebLength",
                 style: TextStyle(
                     color: Colors.white,
@@ -190,7 +190,7 @@ class _BuildYourOwnLevel1Page3State extends State<BuildYourOwnLevel1Page3> {
                     fontWeight: FontWeight.bold),
               ),
               OutlinedButton(
-                child: Text(
+                child: const Text(
                   "Next Step",
                   style: TextStyle(
                       color: Colors.white,
@@ -198,19 +198,23 @@ class _BuildYourOwnLevel1Page3State extends State<BuildYourOwnLevel1Page3> {
                       fontWeight: FontWeight.bold),
                 ),
                 onPressed: () {
-                  if (camera_controller && specto_controller)
+                  if (camera_controller && specto_controller) {
                     appController.updateState2('11');
-                  if (specto_controller && camera_controller == false)
+                  }
+                  if (specto_controller && camera_controller == false) {
                     appController.updateState2('10');
-                  if (specto_controller == false && camera_controller)
+                  }
+                  if (specto_controller == false && camera_controller) {
                     appController.updateState2('01');
-                  if (specto_controller == false && camera_controller == false)
+                  }
+                  if (specto_controller == false && camera_controller == false) {
                     appController.updateState2('10');
-                  Get.to(BuildYourOwnLevel1Page4());
+                  }
+                  Get.to(const BuildYourOwnLevel1Page4());
                 },
               ),
             ]),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
 

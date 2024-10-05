@@ -22,7 +22,7 @@ class _PlayPlanetVideoState extends State<PlayPlanetVideo> {
     
     _controller = YoutubePlayerController(
       initialVideoId: videoId ??"BBAyRBTfsOU" , // Id of the YouTube video
-      flags: YoutubePlayerFlags(
+      flags: const YoutubePlayerFlags(
         autoPlay: false,
       ),
     );

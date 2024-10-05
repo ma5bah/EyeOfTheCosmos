@@ -40,7 +40,7 @@ class HomeScreen extends StatelessWidget {
                   mainAxisAlignment:
                       MainAxisAlignment.center, // Center text vertically
                   children: [
-                    Text(
+                    const Text(
                       "Hello Good People, We're",
                       style: TextStyle(
                         fontSize: 16,
@@ -52,7 +52,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                     RichText(
                       textAlign: TextAlign.center,
-                      text: TextSpan(
+                      text: const TextSpan(
                         children: [
                           TextSpan(
                             text: " Team Artemis",
@@ -93,8 +93,8 @@ class HomeScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-                    SizedBox(height: 20),
-                    Text(
+                    const SizedBox(height: 20),
+                    const Text(
                       "Our mission is to blend art and science by transforming the stunning visuals from the James Webb Space Telescope into an immersive musical experience.",
                       style: TextStyle(
                         fontSize: 16,
@@ -103,8 +103,8 @@ class HomeScreen extends StatelessWidget {
                       ),
                       textAlign: TextAlign.center,
                     ),
-                    SizedBox(height: 20),
-                    Text(
+                    const SizedBox(height: 20),
+                    const Text(
                       "Together, we're dedicated to inspiring curiosity and helping everyone appreciate the wonders of the universe a little more. Join us on this cosmic adventure with Eye of Cosmos—we can't wait for you to explore the stars with us!",
                       style: TextStyle(
                         fontSize: 16,
@@ -122,7 +122,7 @@ class HomeScreen extends StatelessWidget {
             top: 20,
             left: 10,
             child: IconButton(
-              icon: Icon(Icons.arrow_back, color: Colors.black, size: 28),
+              icon: const Icon(Icons.arrow_back, color: Colors.black, size: 28),
               onPressed: () {
                 Navigator.pop(context); // Go back to the previous screen
               },

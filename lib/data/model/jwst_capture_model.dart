@@ -22,7 +22,7 @@ List<CaptureItem> captureItems = [
     title: 'Explore\nRecent Capture',
     imageUrl: 'assets/images/jwstcapture/RecentCaptureLandingbg.png',
     onTap: () {
-      Get.to(RecentCaptureLanding());
+      Get.to(const RecentCaptureLanding());
     },
   ),
   CaptureItem(

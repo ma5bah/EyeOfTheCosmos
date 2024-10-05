@@ -61,7 +61,7 @@ class _WebviewScreenState extends State<WebviewScreen> {
           if (url != widget.link) {
             if (url.startsWith(
                 'https://eyes.nasa.gov/apps/solar-system/#/sc_jwst/compare')) {
-              print("Page finished " + url + " " + widget.link);
+              print("Page finished $url ${widget.link}");
               Get.back();
               Get.to(WebviewScreen(link: url, onInitFunction: widget.onInitFunction));
             }
@@ -70,7 +70,7 @@ class _WebviewScreenState extends State<WebviewScreen> {
               Get.back();
               Get.to(WebviewScreen(link: url, onInitFunction: widget.onInitFunction));
             }
-            print("Page finished " + url + " " + widget.link);
+            print("Page finished $url ${widget.link}");
           }
         },
         onWebResourceError: (WebResourceError error) {},

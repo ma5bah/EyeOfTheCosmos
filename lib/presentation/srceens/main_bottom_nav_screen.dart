@@ -15,16 +15,8 @@ import 'observatory/webobservatory.dart';
 
 final List<Widget> screens = [
   HomeScreen(),
-  // JWSTCaptureLanding(),
-  WebbObservatoryPage(),
-  WebviewScreen(
-      link: nasa_jwst_eyes,
-      onInitFunction: () {
-        AudioManager().playMusic('music/solar_sections.mp3');
-      },
-      onDispose: () {
-        AudioManager().stopMusic();
-      }),
+  JWSTCaptureLanding(),
+  WebviewScreen(link: nasa_jwst_eyes),
   GamingSectionLanding(),
   JwstmissionNews(),
   Doubtsolvingpage(),

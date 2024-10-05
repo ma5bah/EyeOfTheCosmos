@@ -16,7 +16,7 @@ List<ScopeItOurGameLevel> scopeItOurGameLevels = [
     title: 'Level Zero',
     
     onTap: () {
-      Get.to(LevelZero());
+      Get.to(const LevelZero());
     },
   ),
   ScopeItOurGameLevel(

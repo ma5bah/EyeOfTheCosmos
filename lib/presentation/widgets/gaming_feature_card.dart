@@ -7,7 +7,7 @@ class GamingFeatureCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 10),
       child: Container(
         height: 175,
         decoration: BoxDecoration(
@@ -22,21 +22,21 @@ class GamingFeatureCard extends StatelessWidget {
             ],
           ),
         ),
-        padding: EdgeInsets.all(10),
+        padding: const EdgeInsets.all(10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
               text,
-              style: TextStyle(
+              style: const TextStyle(
                 color: Colors.white,
                 fontSize: 14,
                 // overflow: TextOverflow.fade
               ),
             ),
-            SizedBox(height: 8),
-            Icon(Icons.more_horiz, color: Colors.white, size: 24), // More icon
+            const SizedBox(height: 8),
+            const Icon(Icons.more_horiz, color: Colors.white, size: 24), // More icon
           ],
         ),
       ),

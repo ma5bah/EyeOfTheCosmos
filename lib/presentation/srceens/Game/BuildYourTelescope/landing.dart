@@ -66,7 +66,7 @@ class _BuildYourTelescopeLandingState extends State<BuildYourTelescopeLanding> {
               ),
 
               // const Spacer(),
-              GamingFeatureCard(
+              const GamingFeatureCard(
                 text:
                     'This game teaches the player the basic concepts behind telescope design. The Webb Telescope may be unusual in appearance - but it has a lot in common with simple tube-shaped telescopes. The game includes an introduction to different types of telescopes and two telescope matching interactions',
               ),
@@ -74,7 +74,7 @@ class _BuildYourTelescopeLandingState extends State<BuildYourTelescopeLanding> {
                 height: 20,
               ),
               Center(
-                  child: Container(
+                  child: SizedBox(
                       height: MediaQuery.of(context).size.height * 0.46,
                       child: ListView.builder(
                         scrollDirection: Axis.vertical,

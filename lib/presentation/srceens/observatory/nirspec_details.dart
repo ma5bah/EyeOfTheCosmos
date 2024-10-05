@@ -9,8 +9,7 @@ class ImageDetailPage extends StatelessWidget {
       {required this.imageUrl,
       required this.title,
       required this.description,
-      Key? key})
-      : super(key: key);
+      super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,17 +24,17 @@ class ImageDetailPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.network(imageUrl),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Text(
               title,
-              style: TextStyle(color: Colors.white, fontSize: 24),
+              style: const TextStyle(color: Colors.white, fontSize: 24),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: Text(
                 description,
-                style: TextStyle(color: Colors.white, fontSize: 16),
+                style: const TextStyle(color: Colors.white, fontSize: 16),
                 textAlign: TextAlign.center,
               ),
             ),

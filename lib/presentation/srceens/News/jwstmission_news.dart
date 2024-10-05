@@ -62,7 +62,7 @@ class _JwstmissionNewsState extends State<JwstmissionNews> {
           color: Colors.white, // Set AppBar icons to white
         ),
       ),
-      drawer: DrawerWidget(),
+      drawer: const DrawerWidget(),
       body: Stack(
         fit: StackFit.expand,
         children: <Widget>[

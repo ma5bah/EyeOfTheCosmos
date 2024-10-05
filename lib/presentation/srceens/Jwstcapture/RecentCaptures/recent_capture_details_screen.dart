@@ -11,9 +11,9 @@ import 'package:eyesofcosmos/presentation/srceens/Jwstcapture/RecentCaptures/rec
 class RecentCaptureDetailsScreen extends StatefulWidget {
   final RecentCaptureModel model;
   const RecentCaptureDetailsScreen({
-    Key? key,
+    super.key,
     required this.model,
-  }) : super(key: key);
+  });
 
   @override
   State<RecentCaptureDetailsScreen> createState() =>
@@ -44,11 +44,11 @@ class _RecentCaptureDetailsScreenState
                 children: [
                   InkWell(
                       onTap: () {
-                        Get.offAll(RecentCaptureLanding());
+                        Get.offAll(const RecentCaptureLanding());
                       },
-                      child: Icon(Icons.arrow_back_ios, color: Colors.white)),
+                      child: const Icon(Icons.arrow_back_ios, color: Colors.white)),
                   Text(widget.model.captureName ?? " ",
-                      style: TextStyle(
+                      style: const TextStyle(
                           color: Colors.white,
                           fontSize: 35,
                           fontWeight: FontWeight.bold,
@@ -57,37 +57,37 @@ class _RecentCaptureDetailsScreenState
               )),
           Positioned(
             top: MediaQuery.of(context).padding.top + 80,
-            child: Container(
+            child: SizedBox(
               width: MediaQuery.of(context).size.width * 1,
               height: MediaQuery.of(context).size.height * 0.8,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   HomeSlider(
                     sliderData: widget.model.slidingImage ?? [],
                     CaptureName: widget.model.captureName ?? "",
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 5,
                   ),
                   OutlinedButton(
                       onPressed: () {
                         Get.to(Slideshow(CaptureName:widget.model.captureName??"" ,Images:widget.model.slidingImage ?? [],));
                       },
-                      style: ButtonStyle(
+                      style: const ButtonStyle(
                           backgroundColor:
                               WidgetStatePropertyAll(Colors.white)),
-                      child: Text(
+                      child: const Text(
                         "Slide show",
                         style: TextStyle(
                             fontSize: 20,
                             color: Colors.black,
                             fontWeight: FontWeight.bold),
                       )),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   Padding(
@@ -112,13 +112,13 @@ class _RecentCaptureDetailsScreenState
                           horizontal: 10, vertical: 5),
                       child: Column(
                         children: [
-                          Text(
+                          const Text(
                               style: TextStyle(color: Colors.white),
                               "This image of Arp 107, shown by Webb’s MIRI (Mid-Infrared Instrument), reveals the supermassive black hole that lies in the center of the large spiral galaxy to the right. This black hole, which pulls much of the dust into lanes, also display’s Webb’s characteristic diffraction spikes, caused by the light that it emits interacting with the structure of the telescope itself. Perhaps the defining feature of the region, which MIRI reveals, are the millions of young stars that are forming, highlighted in blue. These stars are surrounded by dusty silicates and soot-like molecules known as polycyclic aromatic hydrocarbons. The small elliptical galaxy to the left, which has already gone through much of its star formation, is composed of many of these organic molecules."),
-                          SizedBox(
+                          const SizedBox(
                             height: 10,
                           ),
-                          Align(
+                          const Align(
                             alignment: Alignment.topLeft,
                             child: Text(
                               "Fast Facts",
@@ -196,28 +196,28 @@ class FastFacts extends StatelessWidget {
   final String value;
 
   const FastFacts({
-    Key? key,
+    super.key,
     required this.itemNumber,
     required this.heading,
     required this.value,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
         Text(
-          "${itemNumber} . ",
-          style: TextStyle(
+          "$itemNumber . ",
+          style: const TextStyle(
               color: Colors.white, fontSize: 18, fontFamily: "Righteous"),
         ),
-        Text("${heading} : ",
-            style: TextStyle(
+        Text("$heading : ",
+            style: const TextStyle(
                 color: Colors.white, fontSize: 18, fontFamily: "Righteous")),
         Expanded(
           child: Text(
             value,
-            style: TextStyle(
+            style: const TextStyle(
                 color: Colors.white, fontSize: 14, fontFamily: "Righteous"),
             softWrap: false,
             overflow: TextOverflow.ellipsis,
@@ -243,9 +243,9 @@ class Keyword extends StatelessWidget {
           decoration: BoxDecoration(
               color: Colors.black, borderRadius: BorderRadius.circular(5)),
           child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
               child: Text(text,
-                  style: TextStyle(
+                  style: const TextStyle(
                       fontSize: 20,
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
@@ -258,17 +258,17 @@ class HomeSlider extends StatefulWidget {
   final List sliderData;
   final String CaptureName;
   const HomeSlider({
-    Key? key,
+    super.key,
     required this.sliderData,
     required this.CaptureName,
-  }) : super(key: key);
+  });
 
   @override
   State<HomeSlider> createState() => _HomeSliderState();
 }
 
 class _HomeSliderState extends State<HomeSlider> {
-  ValueNotifier<int> _selectedSlider = ValueNotifier(0);
+  final ValueNotifier<int> _selectedSlider = ValueNotifier(0);
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -277,7 +277,7 @@ class _HomeSliderState extends State<HomeSlider> {
           options: CarouselOptions(
               height: 180.0,
               autoPlay: true,
-              autoPlayInterval: Duration(seconds: 1),
+              autoPlayInterval: const Duration(seconds: 1),
               onPageChanged: (int page, _) {
                 _selectedSlider.value = page;
               }),
@@ -286,7 +286,7 @@ class _HomeSliderState extends State<HomeSlider> {
               builder: (BuildContext context) {
                 return Container(
                   width: MediaQuery.of(context).size.width,
-                  margin: EdgeInsets.symmetric(horizontal: 10.0),
+                  margin: const EdgeInsets.symmetric(horizontal: 10.0),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     image: DecorationImage(

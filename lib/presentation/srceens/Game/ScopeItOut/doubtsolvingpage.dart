@@ -20,7 +20,7 @@ class _DoubtsolvingpageState extends State<Doubtsolvingpage> {
       body: Stack(
         children: <Widget>[
           Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage(
                     'assets/images/scopeitoutgaminglanding.jpg'), // Ensure you have this image in your assets folder
@@ -31,7 +31,7 @@ class _DoubtsolvingpageState extends State<Doubtsolvingpage> {
           Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 50,
               ),
               Padding(
@@ -40,15 +40,15 @@ class _DoubtsolvingpageState extends State<Doubtsolvingpage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.arrow_back_ios,
                       color: Colors.white,
                     ),
                     OutlinedButton(
                     onPressed: () {
-                      Get.to((LevelOneEnding()));
+                      Get.to((const LevelOneEnding()));
                     },
-                    child: Text(
+                    child: const Text(
                       "Next Section",
                       style: TextStyle(
                           color: Colors.white,
@@ -67,7 +67,7 @@ class _DoubtsolvingpageState extends State<Doubtsolvingpage> {
                     Container(
                       width: MediaQuery.of(context).size.width * 0.4,
                       height: MediaQuery.of(context).size.height * 0.2,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         image: DecorationImage(
                           image: AssetImage(
                               'assets/images/gamingsection/scopeitout/astroavater2.png'), // Ensure you have this image in your assets folder
@@ -81,9 +81,9 @@ class _DoubtsolvingpageState extends State<Doubtsolvingpage> {
                       decoration: BoxDecoration(
                           color: Colors.grey.withOpacity(0.5),
                           borderRadius: BorderRadius.circular(10)),
-                      child: Center(
+                      child: const Center(
                         child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 4),
+                          padding: EdgeInsets.symmetric(horizontal: 4),
                           child: Text(
                             "I am your doubt solver,  Proteus You will find the solutions of your doubts in below :)",
                             textAlign: TextAlign.center,
@@ -98,10 +98,10 @@ class _DoubtsolvingpageState extends State<Doubtsolvingpage> {
                   ],
                 ),
               ),
-              Container(
+              SizedBox(
                 height: MediaQuery.of(context).size.height * 0.5,
                 width: MediaQuery.of(context).size.width * 0.9,
-                child: SingleChildScrollView(
+                child: const SingleChildScrollView(
                   child: Column(children: [
 
                     DoubtCard(heading: "Big Bang", description: "The Big Bang is the leading theory that explains how the universe began.  According to the theory, the universe  started as a single point, which was  incredibly hot and dense, about 13.8  billion years ago. Read More..."),
@@ -124,10 +124,10 @@ class DoubtCard extends StatelessWidget {
   final String heading;
   final String description;
   const DoubtCard({
-    Key? key,
+    super.key,
     required this.heading,
     required this.description,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -151,7 +151,7 @@ class DoubtCard extends StatelessWidget {
                                 Text(
                                   heading,
                                   textAlign: TextAlign.center,
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                       color: Colors.black,
                                       fontSize: 14,
                                       fontWeight: FontWeight.bold),
@@ -160,7 +160,7 @@ class DoubtCard extends StatelessWidget {
                                   description,
                                   textAlign: TextAlign.start,
       
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                       color: Colors.white,
                                       fontSize: 14,
                                       fontWeight: FontWeight.bold,

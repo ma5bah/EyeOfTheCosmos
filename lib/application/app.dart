@@ -23,7 +23,7 @@ class _EyesOfCosmosState extends State<EyesOfCosmos> {
           appBarTheme: const AppBarTheme(
             backgroundColor: Colors.black, // Customize app bar color
           )),
-      home: SpalshScreen(),
+      home: const SpalshScreen(),
     );
   }
 }

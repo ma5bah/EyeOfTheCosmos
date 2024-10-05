@@ -39,7 +39,7 @@ class _RecentCaptureLandingState extends State<RecentCaptureLanding> {
       body: Stack(
         children: [
           Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage(
                     'assets/images/jwstcapture/Recent Captures/recentcapturelandingbg.png'), // Ensure you have this image in your assets folder
@@ -54,10 +54,10 @@ class _RecentCaptureLandingState extends State<RecentCaptureLanding> {
                 children: [
                   InkWell(
                       onTap: () {
-                        Get.offAll(MainBottomNavScreen());
+                        Get.offAll(const MainBottomNavScreen());
                       },
-                      child: Icon(Icons.arrow_back_ios, color: Colors.white)),
-                  Text("Recently Captured",
+                      child: const Icon(Icons.arrow_back_ios, color: Colors.white)),
+                  const Text("Recently Captured",
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: 35,
@@ -68,7 +68,7 @@ class _RecentCaptureLandingState extends State<RecentCaptureLanding> {
           Positioned(
             top: MediaQuery.of(context).padding.top + 80,
             left: MediaQuery.of(context).padding.left + 30,
-            child: Container(
+            child: SizedBox(
               width: MediaQuery.of(context).size.width * 0.9,
               height: MediaQuery.of(context).size.height * 0.8,
               child: MasonryGridView.count(
@@ -82,7 +82,7 @@ class _RecentCaptureLandingState extends State<RecentCaptureLanding> {
                         ));
                       },
                       child: Padding(
-                        padding: EdgeInsets.only(right: 10, bottom: 10),
+                        padding: const EdgeInsets.only(right: 10, bottom: 10),
                         child: Container(
                           width: 167,
                           height: 154,
@@ -101,7 +101,7 @@ class _RecentCaptureLandingState extends State<RecentCaptureLanding> {
                                 bottom: 20,
                                 child: Text(
                                   recentCaptureItem[index].captureName ?? " ",
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     color: Colors.white,
                                     fontSize: 18,
                                     fontWeight: FontWeight.bold,
@@ -126,13 +126,13 @@ class PlanetCard extends StatelessWidget {
   final String title;
   final String img;
   const PlanetCard({
-    Key? key,
+    super.key,
     required this.title,
     required this.img,
-  }) : super(key: key);
+  });
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
         width: 138,
         height: 173,
         child: Stack(
@@ -166,7 +166,7 @@ class PlanetCard extends StatelessWidget {
               bottom: 10,
               child: Text(
                 title,
-                style: TextStyle(
+                style: const TextStyle(
                     color: Colors.white,
                     fontSize: 24,
                     fontWeight: FontWeight.bold,

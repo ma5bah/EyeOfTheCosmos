@@ -34,7 +34,7 @@ class OnboardingPage4 extends StatelessWidget {
                   children: [
                     InkWell(
                       onTap: () {
-                        Get.to(MainBottomNavScreen());
+                        Get.to(const MainBottomNavScreen());
                       },
                       child: const Text(
                         "Skip",

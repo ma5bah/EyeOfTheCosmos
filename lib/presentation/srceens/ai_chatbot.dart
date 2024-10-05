@@ -16,7 +16,7 @@ class _ChatScreenState extends State<ChatScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("AI Chatbot", style: TextStyle(color: Colors.white)),
+        title: Text("AI Chatbot"),
         centerTitle: true,
       ),
       body: Column(
@@ -52,7 +52,7 @@ class _ChatScreenState extends State<ChatScreen> {
                   ),
                 ),
                 IconButton(
-                  icon: Icon(Icons.send),
+                  icon: const Icon(Icons.send),
                   onPressed: () {
                     String message = _controller.text;
                     if (message.isNotEmpty) {
@@ -78,16 +78,16 @@ class ChatMessageWidget extends StatelessWidget {
   final ChatMessage message;
   final bool isLoading;
 
-  const ChatMessageWidget({Key? key, required this.message, required this.isLoading}) : super(key: key);
+  const ChatMessageWidget({super.key, required this.message, required this.isLoading});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+      margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
       child: Align(
         alignment: message.isUserMessage ? Alignment.centerRight : Alignment.centerLeft,
         child: Container(
-          padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+          padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
           decoration: BoxDecoration(
             color: message.isUserMessage ? Colors.blueAccent : Colors.grey[300],
             borderRadius: BorderRadius.circular(10),
@@ -122,14 +122,14 @@ class ChatController extends GetxController {
 
   void addMessage(ChatMessage message) {
     messages.add(message);
-    Future.delayed(Duration(milliseconds: 100), () {
+    Future.delayed(const Duration(milliseconds: 100), () {
       scrollController.jumpTo(scrollController.position.maxScrollExtent);
     });
   }
 
   void updateMessage(int index, ChatMessage updatedMessage) {
     messages[index] = updatedMessage;
-    Future.delayed(Duration(milliseconds: 100), () {
+    Future.delayed(const Duration(milliseconds: 100), () {
       scrollController.jumpTo(scrollController.position.maxScrollExtent);
     });
   }

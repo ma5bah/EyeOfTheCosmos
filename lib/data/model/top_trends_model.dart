@@ -38,7 +38,7 @@ List<ExploreItem> exploreItems = [
     imageUrl: 'assets/images/toptrends/game.png',
     onTap: () {
       controller.changeScreen(3);
-      Get.to(MainBottomNavScreen());
+      Get.to(const MainBottomNavScreen());
     },
   ),
 
@@ -47,14 +47,15 @@ List<ExploreItem> exploreItems = [
     imageUrl: 'assets/images/toptrends/image2.png',
     onTap: () {
       controller.changeScreen(4); //you
-      Get.to(MainBottomNavScreen());
+      Get.to(const MainBottomNavScreen());
     },
   ),
   ExploreItem(
     title: 'Explore\nJWST Captures',
     imageUrl: 'assets/images/toptrends/image3.png',
     onTap: () {
-      Get.to(JWSTCaptureLanding());
+      controller.changeScreen(1); //you
+      Get.to(MainBottomNavScreen());
     },
   ),
   // ExploreItem(
@@ -62,7 +63,14 @@ List<ExploreItem> exploreItems = [
   //   imageUrl: 'assets/images/toptrends/image4.png',
   //   onTap: () {},
   // ),
-
+  ExploreItem(
+    title: 'Observatory\nJames Webb',
+    imageUrl: 'assets/images/toptrends/image4.png',
+    onTap: () {
+      controller.changeScreen(1);
+      Get.to(WebbObservatoryPage());
+    },
+  ),
   ExploreItem(
     title: 'Solar System\nIn JWST Eyes',
     imageUrl: 'assets/images/toptrends/image5.png',
@@ -76,7 +84,7 @@ List<ExploreItem> exploreItems = [
     imageUrl: 'assets/images/toptrends/image5.png',
     onTap: () {
       controller.changeScreen(0);
-      Get.to(JWSTLiveTrackerPage());
+      Get.to(const JWSTLiveTrackerPage());
     },
   ),
   ExploreItem(
@@ -84,7 +92,7 @@ List<ExploreItem> exploreItems = [
     imageUrl: 'assets/images/toptrends/learn_about.jpg',
     onTap: () {
       controller.changeScreen(1);
-      Get.to(SolarSystemLanding());
+      Get.to(const SolarSystemLanding());
     },
   ),
 ];

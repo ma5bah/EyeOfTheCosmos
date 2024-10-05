@@ -82,7 +82,7 @@ class _BuildYourOwnLevel1Page2State extends State<BuildYourOwnLevel1Page2> {
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      appController.updateState('${controller}', 2);
+      appController.updateState('$controller', 2);
     });
 
     // Filter the items based on the selectedIndex
@@ -129,7 +129,7 @@ class _BuildYourOwnLevel1Page2State extends State<BuildYourOwnLevel1Page2> {
             ),
             const SizedBox(height: 20),
             Center(
-              child: Container(
+              child: SizedBox(
                 height: MediaQuery.of(context).size.height * 0.4,
                 width: MediaQuery.of(context).size.width * 0.8,
                 child: MasonryGridView.count(
@@ -140,7 +140,7 @@ class _BuildYourOwnLevel1Page2State extends State<BuildYourOwnLevel1Page2> {
                       onTap: () {
                         controller = index; // Track index of filteredItems
                         setState(() {});
-                        appController.updateState('${controller}', 2);
+                        appController.updateState('$controller', 2);
                       },
                       child: Padding(
                         padding: const EdgeInsets.only(right: 10, bottom: 10),
@@ -164,7 +164,7 @@ class _BuildYourOwnLevel1Page2State extends State<BuildYourOwnLevel1Page2> {
                                 left: 20,
                                 bottom: 20,
                                 child: Text(
-                                  '${filteredItems[index].title}',
+                                  filteredItems[index].title,
                                   style: const TextStyle(
                                       color: Colors.red,
                                       fontSize: 16,
@@ -180,7 +180,7 @@ class _BuildYourOwnLevel1Page2State extends State<BuildYourOwnLevel1Page2> {
                 ),
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             // Obx(() {
             //   print(
             //       'Current State: ${appController.myState}'); // Print to console
@@ -210,7 +210,7 @@ class _BuildYourOwnLevel1Page2State extends State<BuildYourOwnLevel1Page2> {
                   onPressed: () {
                     if (controller != -1) {
                       // Check if an item is selected
-                      Get.to(BuildYourOwnLevel1Page3());
+                      Get.to(const BuildYourOwnLevel1Page3());
                     }
                   },
                 ),

@@ -7,7 +7,7 @@ class LevelCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
       decoration: BoxDecoration(
         color: Colors.black87,
         border: Border.all(
@@ -19,7 +19,7 @@ class LevelCard extends StatelessWidget {
       child: Center(
           child: Text(
         text,
-        style: TextStyle(
+        style: const TextStyle(
             fontSize: 24, color: Colors.amber, fontWeight: FontWeight.bold),
       )),
     );

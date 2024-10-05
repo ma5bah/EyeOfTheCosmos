@@ -11,10 +11,10 @@ class PlanetDetailsPage extends StatefulWidget {
   final Color color;
   final dynamic planetDetails;
   const PlanetDetailsPage({
-    Key? key,
+    super.key,
     required this.color,
     required this.planetDetails,
-  }) : super(key: key);
+  });
 
   @override
   State<PlanetDetailsPage> createState() => _PlanetDetailsPageState();
@@ -31,6 +31,7 @@ class _PlanetDetailsPageState extends State<PlanetDetailsPage> {
     return "0KBjnNuhRHs";
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
@@ -43,14 +44,14 @@ class _PlanetDetailsPageState extends State<PlanetDetailsPage> {
                 width: MediaQuery.of(context).size.width * 1,
                 decoration: BoxDecoration(
                     color: widget.color,
-                    borderRadius: BorderRadius.only(
+                    borderRadius: const BorderRadius.only(
                         bottomLeft: Radius.elliptical(170, 100),
                         bottomRight: Radius.elliptical(170, 100))),
               ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  SizedBox(height: 50),
+                  const SizedBox(height: 50),
                   Row(
                     // mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -58,9 +59,9 @@ class _PlanetDetailsPageState extends State<PlanetDetailsPage> {
                         padding: const EdgeInsets.only(left: 20),
                         child: InkWell(
                             onTap: () {
-                              Get.offAll(SolarSystemLanding());
+                              Get.offAll(const SolarSystemLanding());
                             },
-                            child: Icon(Icons.arrow_back_ios,
+                            child: const Icon(Icons.arrow_back_ios,
                                 color: Colors.black)),
                       ),
                       Expanded(
@@ -68,7 +69,7 @@ class _PlanetDetailsPageState extends State<PlanetDetailsPage> {
                           padding: const EdgeInsets.only(left: 20),
                           child: Text(
                             widget.planetDetails.planetName,
-                            style: TextStyle(
+                            style: const TextStyle(
                               color: Colors.black,
                               fontSize: 35,
                               fontWeight: FontWeight.bold,
@@ -87,7 +88,7 @@ class _PlanetDetailsPageState extends State<PlanetDetailsPage> {
                   //         fontSize: 20,
                   //         fontWeight: FontWeight.bold,
                   //         fontFamily: "Righteous")),
-                  SizedBox(
+                  const SizedBox(
                     height: 30,
                   ),
                   Stack(children: [
@@ -115,7 +116,7 @@ class _PlanetDetailsPageState extends State<PlanetDetailsPage> {
                               videoId: videoID,
                             ));
                           },
-                          child: Icon(
+                          child: const Icon(
                             Icons.play_arrow_outlined,
                             size: 134,
                           ),
@@ -125,11 +126,11 @@ class _PlanetDetailsPageState extends State<PlanetDetailsPage> {
               )
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Center(
-            child: Container(
+            child: SizedBox(
               height: 120,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
@@ -137,7 +138,7 @@ class _PlanetDetailsPageState extends State<PlanetDetailsPage> {
                 itemCount: widget.planetDetails.detailsimages.length,
                 itemBuilder: (context, index) {
                   return Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                     child: Container(
                       width: 131,
                       height: 117,
@@ -189,7 +190,7 @@ class _PlanetDetailsPageState extends State<PlanetDetailsPage> {
         children: [
           Text(
             title,
-            style: TextStyle(
+            style: const TextStyle(
                 fontSize: 15, fontWeight: FontWeight.bold, color: Colors.white),
           ),
           Expanded(

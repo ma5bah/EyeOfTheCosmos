@@ -56,7 +56,7 @@ class _LevelOneStartingConversationState extends State<LevelOneStartingConversat
 
   void _updateText() {
     if (_currentIndex + 1 == conversations.length) {
-      Get.to(Levelonesconversationpart2());
+      Get.to(const Levelonesconversationpart2());
     }
     setState(() {
       _currentIndex = (_currentIndex + 1) % conversations.length;
@@ -71,7 +71,7 @@ class _LevelOneStartingConversationState extends State<LevelOneStartingConversat
         child: Stack(
           children: <Widget>[
             Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage(
                       'assets/images/scopeitoutgaminglanding.jpg'), // Ensure you have this image in your assets folder
@@ -92,7 +92,7 @@ class _LevelOneStartingConversationState extends State<LevelOneStartingConversat
                       Container(
                         width: MediaQuery.of(context).size.width * 0.4,
                         height: MediaQuery.of(context).size.height * 0.2,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           image: DecorationImage(
                             image: AssetImage(
                                 'assets/images/gamingsection/scopeitout/astroavater2.png'), // Ensure you have this image in your assets folder
@@ -112,7 +112,7 @@ class _LevelOneStartingConversationState extends State<LevelOneStartingConversat
                             child: Text(
                               conversations[_currentIndex].astro[0],
                               textAlign: TextAlign.center,
-                              style: TextStyle(
+                              style: const TextStyle(
                                   color: Colors.white,
                                   fontSize: 14,
                                   fontWeight: FontWeight.bold),
@@ -136,7 +136,7 @@ class _LevelOneStartingConversationState extends State<LevelOneStartingConversat
                             padding: const EdgeInsets.symmetric(horizontal: 4),
                             child: Text(conversations[_currentIndex].leo,
                                 textAlign: TextAlign.center,
-                                style: TextStyle(
+                                style: const TextStyle(
                                     color: Colors.white,
                                     fontSize: 14,
                                     fontWeight: FontWeight.bold)),
@@ -146,7 +146,7 @@ class _LevelOneStartingConversationState extends State<LevelOneStartingConversat
                       Container(
                         width: MediaQuery.of(context).size.width * 0.4,
                         height: MediaQuery.of(context).size.height * 0.2,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           image: DecorationImage(
                             image: AssetImage(
                                 'assets/images/gamingsection/scopeitout/leo.png'), // Ensure you have this image in your assets folder
@@ -162,7 +162,7 @@ class _LevelOneStartingConversationState extends State<LevelOneStartingConversat
                       Container(
                         width: MediaQuery.of(context).size.width * 0.4,
                         height: MediaQuery.of(context).size.height * 0.2,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           image: DecorationImage(
                             image: AssetImage(
                                 'assets/images/gamingsection/scopeitout/astroavater2.png'), // Ensure you have this image in your assets folder
@@ -182,7 +182,7 @@ class _LevelOneStartingConversationState extends State<LevelOneStartingConversat
                             child: Text(
                               conversations[_currentIndex].astro[1],
                               textAlign: TextAlign.center,
-                              style: TextStyle(
+                              style: const TextStyle(
                                   color: Colors.white,
                                   fontSize: 14,
                                   fontWeight: FontWeight.bold),

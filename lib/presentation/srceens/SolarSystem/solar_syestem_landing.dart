@@ -42,9 +42,9 @@ class _SolarSystemLandingState extends State<SolarSystemLanding> {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<MainBottomNavController>(builder: (controller) {
-      void _handleOnTab(int index) {
+      void handleOnTab(int index) {
         controller.changeScreen(index);
-        Get.to(MainBottomNavScreen());
+        Get.to(const MainBottomNavScreen());
       }
 
       return DefaultTabController(
@@ -53,7 +53,7 @@ class _SolarSystemLandingState extends State<SolarSystemLanding> {
             body: Stack(
               children: [
                 Container(
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage(
                           'assets/images/solarsystemlandingbg.png'), // Ensure you have this image in your assets folder
@@ -64,7 +64,7 @@ class _SolarSystemLandingState extends State<SolarSystemLanding> {
                 Positioned(
                     top: MediaQuery.of(context).padding.top + 20,
                     left: MediaQuery.of(context).padding.left + 30,
-                    child: Row(
+                    child: const Row(
                       children: [
                         Icon(Icons.arrow_back_ios, color: Colors.white),
                         Text("Solar System",
@@ -87,14 +87,14 @@ class _SolarSystemLandingState extends State<SolarSystemLanding> {
                     tabs: [
                       Tab(
                         child: Container(
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                               //    border: Border.all(color: Colors.white),
                               // borderRadius: BorderRadius.circular(20),
                               ),
-                          padding: EdgeInsets.symmetric(
+                          padding: const EdgeInsets.symmetric(
                               vertical: 5,
                               horizontal: 10), // Control the tab height here
-                          child: Text('Planets',
+                          child: const Text('Planets',
                               style: TextStyle(
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold,
@@ -103,15 +103,15 @@ class _SolarSystemLandingState extends State<SolarSystemLanding> {
                       ),
                       Tab(
                         child: Container(
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                               //    border: Border.all(color: Colors.white),
                               // borderRadius: BorderRadius.circular(20),
                               ),
-                          padding: EdgeInsets.symmetric(
+                          padding: const EdgeInsets.symmetric(
                               vertical: 5,
                               horizontal:
                                   10), // Consistent padding for both tabs
-                          child: Text(
+                          child: const Text(
                             'Galaxy',
                             style: TextStyle(
                                 fontSize: 20,
@@ -142,7 +142,7 @@ class _SolarSystemLandingState extends State<SolarSystemLanding> {
             ),
             bottomNavigationBar: BottomNavaigationBar(
               currentSelectedIndex: controller.currentSelectedIndex,
-              onTap: _handleOnTab,
+              onTap: handleOnTab,
             )),
       );
     });
@@ -152,9 +152,9 @@ class _SolarSystemLandingState extends State<SolarSystemLanding> {
 class PlanetTab extends StatelessWidget {
   final List<PlanetDetailsModel> plantdetailslist;
   const PlanetTab({
-    Key? key,
+    super.key,
     required this.plantdetailslist,
-  }) : super(key: key);
+  });
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -164,7 +164,7 @@ class PlanetTab extends StatelessWidget {
           // Place your planets widgets here
 
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -172,10 +172,10 @@ class PlanetTab extends StatelessWidget {
                     onTap: () {
                       Get.to(PlanetDetailsPage(
                         planetDetails: plantdetailslist[0],
-                        color: Color(0xFF535450),
+                        color: const Color(0xFF535450),
                       ));
                     },
-                    child: PlanetCard(
+                    child: const PlanetCard(
                       title: "Mercury",
                       img: "assets/images/solarsystem/mercury/mercury.png",
                     )),
@@ -184,34 +184,34 @@ class PlanetTab extends StatelessWidget {
                       print(plantdetailslist);
                       Get.to(PlanetDetailsPage(
                         planetDetails: plantdetailslist[0],
-                        color: Color(0xFF766547),
+                        color: const Color(0xFF766547),
                       ));
                     },
-                    child: PlanetCard(
+                    child: const PlanetCard(
                       title: "Venus",
                       img: "assets/images/solarsystem/venus/venus.png",
                     )),
               ],
             ),
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           InkWell(
             onTap: () {
               Get.to(PlanetDetailsPage(
                 planetDetails: plantdetailslist[2],
-                color: Color(0xFF333F76),
+                color: const Color(0xFF333F76),
               ));
             },
-            child: NewCard(
+            child: const NewCard(
                 heading1: "Our beloved",
                 heading2: "Earth",
                 img: "assets/images/solarsystem/earth/earthcover.png"),
           ),
 
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
 
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -219,10 +219,10 @@ class PlanetTab extends StatelessWidget {
                     onTap: () {
                       Get.to(PlanetDetailsPage(
                         planetDetails: plantdetailslist[3],
-                        color: Color(0xFFF69164),
+                        color: const Color(0xFFF69164),
                       ));
                     },
-                    child: PlanetCard(
+                    child: const PlanetCard(
                       title: "Mars",
                       img: "assets/images/solarsystem/mars/mars.png",
                     )),
@@ -230,35 +230,35 @@ class PlanetTab extends StatelessWidget {
                     onTap: () {
                       Get.to(PlanetDetailsPage(
                         planetDetails: plantdetailslist[5],
-                        color: Color(0xFFB2B08A),
+                        color: const Color(0xFFB2B08A),
                       ));
                     },
-                    child: PlanetCard(
+                    child: const PlanetCard(
                       title: "Saturn",
                       img: "assets/images/solarsystem/saturn/saturn.png",
                     )),
               ],
             ),
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
 
           InkWell(
             onTap: () {
               Get.to(PlanetDetailsPage(
                 planetDetails: plantdetailslist[5],
-                color: Color(0xFFB2B08A),
+                color: const Color(0xFFB2B08A),
               ));
             },
-            child: NewCard(
+            child: const NewCard(
                 heading1: "On Saturn",
                 heading2: "Cassini",
                 img: "assets/images/solarsystem/saturn/saturncover.png"),
           ),
 
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
 
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -266,10 +266,10 @@ class PlanetTab extends StatelessWidget {
                     onTap: () {
                       Get.to(PlanetDetailsPage(
                         planetDetails: plantdetailslist[4],
-                        color: Color(0xFF817769),
+                        color: const Color(0xFF817769),
                       ));
                     },
-                    child: PlanetCard(
+                    child: const PlanetCard(
                       title: "Jupyter",
                       img: "assets/images/solarsystem/jupyter/jupyter.png",
                     )),
@@ -277,10 +277,10 @@ class PlanetTab extends StatelessWidget {
                     onTap: () {
                       Get.to(PlanetDetailsPage(
                         planetDetails: plantdetailslist[6],
-                        color: Color(0xFFCAF1F1),
+                        color: const Color(0xFFCAF1F1),
                       ));
                     },
-                    child: PlanetCard(
+                    child: const PlanetCard(
                       title: "Uranus",
                       img: "assets/images/solarsystem/urenus/urenus.png",
                     )),
@@ -288,24 +288,24 @@ class PlanetTab extends StatelessWidget {
             ),
           ),
 
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
 
           InkWell(
             onTap: () {
               Get.to(PlanetDetailsPage(
                 planetDetails: plantdetailslist[6],
-                color: Color(0xFFCAF1F1),
+                color: const Color(0xFFCAF1F1),
               ));
             },
-            child: NewCard(
+            child: const NewCard(
                 heading1: "Hidden Truth of",
                 heading2: "Uranus",
                 img: "assets/images/solarsystem/urenus/urenuscover.png"),
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
 
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -313,10 +313,10 @@ class PlanetTab extends StatelessWidget {
                     onTap: () {
                       Get.to(PlanetDetailsPage(
                         planetDetails: plantdetailslist[7],
-                        color: Color(0xFF4371FC),
+                        color: const Color(0xFF4371FC),
                       ));
                     },
-                    child: PlanetCard(
+                    child: const PlanetCard(
                       title: "Neptune",
                       img: "assets/images/solarsystem/neptune/neptune.png",
                     )),
@@ -324,10 +324,10 @@ class PlanetTab extends StatelessWidget {
                     onTap: () {
                       Get.to(PlanetDetailsPage(
                         planetDetails: plantdetailslist[8],
-                        color: Color(0xFF8D7C6A),
+                        color: const Color(0xFF8D7C6A),
                       ));
                     },
-                    child: PlanetCard(
+                    child: const PlanetCard(
                       title: "pluto",
                       img: "assets/images/solarsystem/pluto/pluto.png",
                     )),
@@ -352,7 +352,7 @@ class GalaxyTab extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(15.0),
           child: Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage(
                     'assets/images/galaxyinsolar.png'), // Ensure you have this image in your assets folder
@@ -372,13 +372,13 @@ class PlanetCard extends StatelessWidget {
   final String title;
   final String img;
   const PlanetCard({
-    Key? key,
+    super.key,
     required this.title,
     required this.img,
-  }) : super(key: key);
+  });
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
         width: 138,
         height: 173,
         child: Stack(
@@ -412,7 +412,7 @@ class PlanetCard extends StatelessWidget {
               bottom: 10,
               child: Text(
                 title,
-                style: TextStyle(
+                style: const TextStyle(
                     color: Colors.white,
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
@@ -429,11 +429,11 @@ class NewCard extends StatelessWidget {
   final String heading2;
   final String img;
   const NewCard({
-    Key? key,
+    super.key,
     required this.heading1,
     required this.heading2,
     required this.img,
-  }) : super(key: key);
+  });
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -457,7 +457,7 @@ class NewCard extends StatelessWidget {
             children: [
               Text(
                 heading1,
-                style: TextStyle(
+                style: const TextStyle(
                     fontSize: 12,
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
@@ -465,7 +465,7 @@ class NewCard extends StatelessWidget {
               ),
               Text(
                 heading2,
-                style: TextStyle(
+                style: const TextStyle(
                     fontSize: 32,
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
