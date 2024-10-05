@@ -58,7 +58,7 @@ Our challenge was to create a captivating multimedia experience that not only co
 
 The "Eye of Cosmos" project was built with a mission to deliver an innovative, interactive, and educational tool that transcends traditional learning by blending entertainment and science. We implemented an **Agile Development Methodology** specifically **Scrum**, adhering to iterative updates, feedback integration, and refining the overall user experience.
 
-
+<img src="/assets/mockup/agile.png" alt="Agile Methodology">
 
 Key technologies include:
 - **JWST multimedia journey including images, audios and videos**
