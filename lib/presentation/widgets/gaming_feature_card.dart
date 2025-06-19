@@ -6,7 +6,7 @@ class GamingFeatureCard extends StatelessWidget {
   const GamingFeatureCard({super.key,required this.text});
   @override
   Widget build(BuildContext context) {
-    debugPrint('GamingFeatureCard: $text');
+    debugPrint('GamingFeatureCard: $text'); // Widget for displaying a gaming feature card with gradient background
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 10),
       child: Container(
