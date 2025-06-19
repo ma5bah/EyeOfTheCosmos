@@ -64,31 +64,41 @@ The "Eye of the Cosmos" project was built with a mission to deliver an innovativ
 
 <img src="/assets/mockup/agile.png" alt="Agile Methodology">
 
-Key technologies include:
-- **JWST multimedia journey including images, audios and videos**
-- **3D rendering for immersive JWST experiences**
-- **Chatbot integration** for interactive learning
-- **NASA API** for live tracking and mission data
-- **YouTube embedding** for real-time content
 
 ---
 
-## Hope to Achieve
+## Core Technologies
 
-Our aim is to inspire and inform users about the **James Webb Space Telescope** and the exciting discoveries it brings. By merging science with entertainment, we hope to:
+Our project leverages several cutting-edge tools and integrations:
 
-- Encourage curiosity and understanding of the universe.
-- Provide accessible tools for students, kids, and space enthusiasts to learn interactively.
-- Spark excitement about the ongoing journey of space exploration.
+* **JWST Multimedia Experience:** Showcasing a rich array of images, audio, and video content related to the James Webb Space Telescope.
+* **Immersive 3D Rendering:** Enables users to explore JWST in three dimensions for a hands-on, lifelike experience.
+* **Interactive Chatbot:** Offers conversational guidance and answers to enhance user engagement and learning.
+* **NASA API Integration:** Provides up-to-date mission tracking, live telemetry, and authentic data straight from NASA.
+* **YouTube Content Embedding:** Delivers real-time educational and news videos within the platform.
 
 ---
 
-## Highlighted Features
+## Our Mission
 
-- **Multimedia Journey**: Harmonized visuals and music depicting JWST discoveries.
-- **3D JWST Games**: Interactive telescope building, part matching, and size comparison games.
-- **Live Mission/News Updates**: Real-time tracking of JWST’s position and missions.
-- **Educational Resources**: Detailed information about JWST's instruments, science mission, and the cosmos.
+We aspire to ignite fascination and provide knowledge about the **James Webb Space Telescope** and its groundbreaking discoveries. By blending scientific content with interactive and entertaining experiences, our project aims to:
+
+* Fuel curiosity and deepen understanding of space science.
+* Deliver accessible, hands-on learning tools for students, young learners, and astronomy fans.
+* Generate excitement and keep the public connected to the ongoing story of space exploration.
+
+---
+
+## Key Features
+
+* **Multimedia Exploration:** Seamlessly blends visuals, soundtracks, and storytelling to bring JWST’s achievements to life.
+* **3D JWST Games:** Engage users through activities like assembling the telescope, matching components, and comparing sizes for deeper comprehension.
+* **Live Mission and News Feeds:** Stay updated with JWST’s current location, mission milestones, and the latest news.
+* **Comprehensive Educational Content:** Access in-depth details about JWST’s instruments, scientific objectives, and its role in exploring the universe.
+
+---
+
+
 
 ---
 
