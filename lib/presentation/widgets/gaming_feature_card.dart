@@ -35,7 +35,7 @@ class GamingFeatureCard extends StatelessWidget {
                 // overflow: TextOverflow.fade
               ),
             ),
-            const SizedBox(height: 8),
+            const SizedBox(height: 10),
             const Icon(Icons.more_horiz, color: Colors.white, size: 24), // More icon
           ],
         ),
