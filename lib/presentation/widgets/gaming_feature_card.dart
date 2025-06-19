@@ -37,7 +37,7 @@ class GamingFeatureCard extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 10),
-            const Icon(Icons.more_horiz, color: Colors.white, size: 24), // More icon
+            const Icon(Icons.more_horiz, color: Colors.white, size: 26),// More icon
           ],
         ),
       ),
