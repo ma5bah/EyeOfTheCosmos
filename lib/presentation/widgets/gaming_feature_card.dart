@@ -37,7 +37,11 @@ class GamingFeatureCard extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 10),
-            const Icon(Icons.more_horiz, color: Colors.white, size: 26),// More icon
+            Tooltip(
+                message: 'More options',
+                child: const Icon(Icons.more_horiz, color: Colors.white, size: 26),
+            ),
+
           ],
         ),
       ),
