@@ -6,6 +6,7 @@ class GamingFeatureCard extends StatelessWidget {
   const GamingFeatureCard({super.key,required this.text});
   @override
   Widget build(BuildContext context) {
+    debugPrint('GamingFeatureCard: $text');
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 10),
       child: Container(
